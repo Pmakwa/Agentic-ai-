@@ -1,16 +1,10 @@
 {
-  "ts": "2026-09-23 19:46:29",
+  "ts": "2026-09-23 19:52:01",
   "workspace": "/home/user/uai-cos",
-  "total_before": 23501033,
-  "freed": 30346,
+  "total_before": 23880087,
+  "freed": 0,
   "apply": true,
-  "junk": [
-    [
-      "tools/__pycache__",
-      "cache-dir",
-      30346
-    ]
-  ],
+  "junk": [],
   "empty": [],
   "duplicates": [
     [
@@ -83,15 +77,9 @@
   "bigdirs": [
     [
       ".git",
-      9176656
+      9313099
     ]
   ],
-  "deleted": [
-    [
-      "tools/__pycache__",
-      "cache-dir",
-      30346
-    ]
-  ],
+  "deleted": [],
   "skipped": []
 }
