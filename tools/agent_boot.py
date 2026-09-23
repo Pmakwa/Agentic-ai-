@@ -151,6 +151,9 @@ UAI-COS BOOT ATTESTATION
 5. Conflict = signal → detect → classify → resolve → record (chhupao nahi).
 6. High-risk/irreversible (delete/publish/payment/external-send/push) = **pehle user confirmation**.
 7. Verify before trust; continuous learning, blind learning nahi (permanent rule tabhi jab user kahe).
+8. **Kaam ke baad ka cycle:** evidence (probes/logs) → `python3 tools/cleanup_workspace.py` report → `phase_runner.py` update → (rules badle to) `agent_boot.py --write` → `sync_to_github.sh` → Hindi summary.
+9. **Heavy deps workspace me nahi** (`node_modules`/`.pnpm`/`dist` → `/opt/uai-cache/`), aur cleanup tool ki protections hataana MANA (node_modules dedupe ne RSSHub toda tha).
+10. **Structured prompts** (V2/Phase-1/2/3 jaise) sab `PROMPTS/registry.json` me + apply karke `applied_in` likho.
 
 ### 3. HARD LIMITS (spec §24 / §29 — inhe todna MANA hai)
 - Authentication, access-control, paywall, CAPTCHA, anti-bot **bypass nahi** karna. Cookie/identity-pool wale repos bhi excluded.
