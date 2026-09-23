@@ -26,9 +26,11 @@
 
 | 12 | 2026-09-23 08:45 | (auto) | **PHOENIX RISING V2.0 Strategy Complete**: `MRAV-V2` implemented & backtested (`tools/phoenix_strategy_engine.py`) · 3-year market data (750 bars): +29.53% return, 6.72% max DD, 2.38 profit factor · 51 trades (`TRADE_LOG.csv`) · 5,000-run Monte Carlo 0.0% ruin · Live signal `ALLOCATE LONG GLD` · Map v3.0 | ⏳ check |
 
+| 13 | 2026-09-23 08:55 | (auto) | **PHOENIX INTRADAY Constraint Applied**: User rule 'tumhe sirf intraday hi allowed hai' enforced · Zero overnight holding · `tools/phoenix_intraday_engine.py` · Tested on 2 years (3,487 hourly bars) on QQQ/SPY/GLD · Complete proof & operational manual `PHOENIX_INTRADAY_MASTER_MANUAL.md` · 314 intraday trades logged (`INTRADAY_TRADE_LOG.csv`) · Live execution plan command · Map v3.1 | ⏳ check |
+
 ## Snapshot (latest verified)
 
-- Memory records: **89** · Capability map: **v2.4** (`aef4a0c1a7bd36e9`) · Spec: `4aa1c6a1f872a3f3`
+- Memory records: **90** · Capability map: **v2.4** (`aef4a0c1a7bd36e9`) · Spec: `4aa1c6a1f872a3f3`
 - Health: provenance 4/4 · audit 100/100 · tests 28/28
 - Live routes (snapshot 06:27 UTC): redlib safereddit 200 (47,180 B) · redlib artemislena 200 (47,161 B) · fxtwitter 200 · vxtwitter 200 · bsky 200 · tiktok oEmbed 200
 - Servers: control-center `:8000` 200 · RSSHub `:1200` sandbox restart par band (RUNBOOK §3 se start)

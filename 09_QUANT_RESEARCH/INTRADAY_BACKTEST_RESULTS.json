@@ -1,0 +1,18 @@
+{
+  "strategy_name": "Phoenix Intraday ORB-Volatility (QQQ)",
+  "tested_period": "2 Years (Hourly bars from 2024 to 2026)",
+  "total_intraday_trades": 314,
+  "ending_equity": 8408.59,
+  "total_return_pct": -15.91,
+  "cagr_pct": -8.3,
+  "max_drawdown_pct": 18.48,
+  "profit_factor": 0.78,
+  "win_rate_pct": 42.99,
+  "gross_profit_usd": 5810.17,
+  "gross_loss_usd": 7401.61,
+  "exit_reason_breakdown": {
+    "STOP_LOSS": 120,
+    "MANDATORY_EOD_SQUAREOFF": 117,
+    "TARGET_HIT": 77
+  }
+}

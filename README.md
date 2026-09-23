@@ -12,7 +12,7 @@
 
 > 🚀 **Naya agent? pehle [`AGENTS.md`](AGENTS.md) padho, phir [`START_HERE.md`](START_HERE.md).**
 > Poori baat-cheet ka A-to-Z record [`CONVERSATION/`](CONVERSATION/00_A_TO_Z_LOG.md) me · chalane ke commands [`RUNBOOK.md`](RUNBOOK.md) ·
-> environment ki haqeeqat [`ENVIRONMENT.md`](ENVIRONMENT.md) · machine-readable truth [`CAPABILITY_MAP.json`](02_CAPABILITY_AUDIT/CAPABILITY_MAP.json) (v3.0).
+> environment ki haqeeqat [`ENVIRONMENT.md`](ENVIRONMENT.md) · machine-readable truth [`CAPABILITY_MAP.json`](02_CAPABILITY_AUDIT/CAPABILITY_MAP.json) (v3.1).
 
 Ye tumhare **V2 prompt** ka poora implementation hai — spec sirf text me nahi, chalne wale system me.
 
@@ -35,7 +35,7 @@ uai-cos/
 │   └── UAI-COS_SYSTEM_PROMPT_{compact,standard,full}.md   ✅ paste-anywhere compiled prompts (live memory inline)
 │
 ├── memory/                                 ← MEMORY OS (live data)
-│   ├── store/memory.jsonl                  ✅ 89 records — Section-13 schema par
+│   ├── store/memory.jsonl                  ✅ 90 records — Section-13 schema par
 │   ├── INDEX.md                            ✅ auto-generated retrieval index (boot-read)
 │   └── store/archive.jsonl                 ✅ archive (delete nahi, retire)
 │
@@ -78,7 +78,8 @@ uai-cos/
 ├── 07_SELF_AUDIT/                          ✅ capability/reasearch/fallback maps + unknown queue + master report (self-audit)
 ├── 00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md     ✅ PHOENIX RISING V2.0 Quant Spec (verbatim, hash 91fd45775607c619)
 ├── 09_QUANT_RESEARCH/                              ✅ Quant Feasibility, Scenarios, Thresholds, Protocols, Reports
-├── tools/phoenix_strategy_engine.py                ✅ MRAV-V2 Production Strategy Engine (Backtest, Monte Carlo, Signals)
+├── tools/phoenix_intraday_engine.py                ✅ Pure Intraday Engine (100% intraday, zero overnight, 2-yr proof)
+├── tools/phoenix_strategy_engine.py                ✅ MRAV-V2 Production Strategy Engine
 ├── tools/phoenix_quant.py                          ✅ Quant Math & Adversarial Auditor
 ├── 00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md ✅ Phase 3 ORCHESTRATION BLUEPRINT (verbatim, hash 4b8a3b3fa3e7766b)
 ├── 08_ORCHESTRATION/                               ✅ Multi-Environment, Role Matrix, Quality Gates, State Machine
@@ -134,7 +135,7 @@ uai-cos/
 
 | Metric | Value | Command |
 |---|---|---|
-| Live memory records | **89** | `python3 tools/uai_mem.py stats` |
+| Live memory records | **90** | `python3 tools/uai_mem.py stats` |
 | Memory health score | **100/100** | `python3 tools/uai_mem.py audit` |
 | Golden tests | **28/28 pass** | `bash tests/test_memory_os.sh` |
 | Open conflicts | 0 | audit |

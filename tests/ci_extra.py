@@ -166,6 +166,9 @@ try:
                "09_QUANT_RESEARCH/TRADE_LOG.csv",
                "09_QUANT_RESEARCH/BACKTEST_RESULTS.json",
                "tools/phoenix_strategy_engine.py",
+               "tools/phoenix_intraday_engine.py",
+               "09_QUANT_RESEARCH/PHOENIX_INTRADAY_MASTER_MANUAL.md",
+               "09_QUANT_RESEARCH/INTRADAY_TRADE_LOG.csv",
                "tools/phoenix_quant.py"]
     miss = [f for f in deliver if not (ROOT / f).exists()]
     if miss:

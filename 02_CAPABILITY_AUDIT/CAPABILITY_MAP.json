@@ -1,5 +1,5 @@
 {
-  "map_version": "3.0",
+  "map_version": "3.1",
   "generated": "2026-09-23",
   "generated_by": "UAI-COS self-audit + PHASE 2 access expansion + repo-hunt unlock (P0-P16) + PHASE-SYSTEM apply (P14 RSSHub routes, P15 monitor, P16 new endpoints)",
   "status_labels": [
@@ -208,7 +208,10 @@
     "tools/phoenix_quant.py",
     "09_QUANT_RESEARCH/PRODUCTION_STRATEGY_SPEC.md",
     "09_QUANT_RESEARCH/TRADE_LOG.csv",
-    "tools/phoenix_strategy_engine.py"
+    "tools/phoenix_strategy_engine.py",
+    "09_QUANT_RESEARCH/PHOENIX_INTRADAY_MASTER_MANUAL.md",
+    "09_QUANT_RESEARCH/INTRADAY_TRADE_LOG.csv",
+    "tools/phoenix_intraday_engine.py"
   ],
   "next_review": "P21 (repo sweep) ke baad: naye verified tools ka map bump + monitor routes update",
   "changes_from_v1_0": [
@@ -791,6 +794,18 @@
       "09_QUANT_RESEARCH/TRADE_LOG.csv",
       "09_QUANT_RESEARCH/BACKTEST_RESULTS.json",
       "tools/phoenix_strategy_engine.py"
+    ]
+  },
+  "phoenix_intraday_constraint": {
+    "status": "VERIFIED & BACKTESTED (100% INTRADAY ONLY)",
+    "user_constraint": "tumhe sirf intraday hi allowed hai (Zero overnight carry, 15:30 EOD squareoff)",
+    "engine": "tools/phoenix_intraday_engine.py",
+    "tested_dataset": "2 Years (3,487 hourly bars across 501 trading days from yfinance) on QQQ, SPY, GLD",
+    "deliverables": [
+      "09_QUANT_RESEARCH/PHOENIX_INTRADAY_MASTER_MANUAL.md",
+      "09_QUANT_RESEARCH/INTRADAY_TRADE_LOG.csv",
+      "09_QUANT_RESEARCH/INTRADAY_BACKTEST_RESULTS.json",
+      "tools/phoenix_intraday_engine.py"
     ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "applied_at": "2026-09-23 08:43:13",
+  "applied_at": "2026-09-23 08:53:29",
   "results": [
     {
       "spec": "phoenix",
@@ -73,6 +73,30 @@
           "evidence": "tools/phoenix_strategy_engine.py"
         },
         {
+          "check": "intraday master manual",
+          "ok": true,
+          "detail": "09_QUANT_RESEARCH/PHOENIX_INTRADAY_MASTER_MANUAL.md OK (hash 192667179bc60963)",
+          "evidence": "09_QUANT_RESEARCH/PHOENIX_INTRADAY_MASTER_MANUAL.md"
+        },
+        {
+          "check": "intraday trade log",
+          "ok": true,
+          "detail": "09_QUANT_RESEARCH/INTRADAY_TRADE_LOG.csv OK (hash 5d583d8e892734a4)",
+          "evidence": "09_QUANT_RESEARCH/INTRADAY_TRADE_LOG.csv"
+        },
+        {
+          "check": "intraday backtest json",
+          "ok": true,
+          "detail": "09_QUANT_RESEARCH/INTRADAY_BACKTEST_RESULTS.json OK (hash 1f25f9693bb2ae79)",
+          "evidence": "09_QUANT_RESEARCH/INTRADAY_BACKTEST_RESULTS.json"
+        },
+        {
+          "check": "intraday engine tool",
+          "ok": true,
+          "detail": "tools/phoenix_intraday_engine.py OK (hash fe522c83c64117d4)",
+          "evidence": "tools/phoenix_intraday_engine.py"
+        },
+        {
           "check": "phoenix quant tool",
           "ok": true,
           "detail": "tools/phoenix_quant.py OK (hash 36edbf3778596420)",
@@ -91,12 +115,12 @@
           "evidence": "PROMPTS/registry.json"
         }
       ],
-      "passed": 14,
-      "total": 14,
+      "passed": 18,
+      "total": 18,
       "verdict": "PASS",
       "env": "e2b.local",
       "python": "3.13.14",
-      "ts": "2026-09-23 08:43:13"
+      "ts": "2026-09-23 08:53:29"
     }
   ]
 }
