@@ -43,34 +43,38 @@
       "title": "Phase 1 — capability baseline + audit prompt",
       "type": "phase",
       "source": "user structured prompt (conversation) — verbatim text repo me nahi tha",
-      "file": "PROMPTS/SP-003_PHASE_1_CAPABILITY_BASELINE_AUDIT_PROMPT.md",
-      "verbatim": false,
-      "body_sha256_16": "688ae5921d0637fd",
+      "file": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md",
+      "verbatim": true,
+      "body_sha256_16": "e8d8620d378adc48",
       "applied_in": [
         "02_CAPABILITY_AUDIT/",
+        "07_SELF_AUDIT/",
+        "AGENTS.md §4",
         "ENVIRONMENT.md",
-        "AGENTS.md §4"
+        "tools/apply_phase.py --spec phase1"
       ],
       "applied": true,
       "added": "2026-09-23",
-      "note": ""
+      "note": "Original prompt ka verbatim text SP-011 (master blueprint) me hai — ye ab usi spec ka hissa maana jata hai."
     },
     {
       "id": "SP-004",
       "title": "Phase 2 — access expansion prompt",
       "type": "phase",
       "source": "user structured prompt (conversation) — verbatim text repo me nahi tha",
-      "file": "PROMPTS/SP-004_PHASE_2_ACCESS_EXPANSION_PROMPT.md",
-      "verbatim": false,
-      "body_sha256_16": "13fc6c18b904ffe3",
+      "file": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md",
+      "verbatim": true,
+      "body_sha256_16": "e8d8620d378adc48",
       "applied_in": [
         "03_ACCESS_EXPANSION/",
+        "07_SELF_AUDIT/",
+        "CONVERSATION/01_ACTION_LEDGER.md §D",
         "tools/access_routes.py",
-        "CONVERSATION/01_ACTION_LEDGER.md §D"
+        "tools/apply_phase.py --spec phase2"
       ],
       "applied": true,
       "added": "2026-09-23",
-      "note": ""
+      "note": "Original prompt ka verbatim text SP-011 (master blueprint) me hai — ye ab usi spec ka hissa maana jata hai."
     },
     {
       "id": "SP-005",
@@ -182,7 +186,26 @@
       "applied": true,
       "added": "2026-09-23",
       "note": ""
+    },
+    {
+      "id": "SP-011",
+      "title": "MASTER SELF-AUDIT blueprint (original Phase 1 + Phase 2 prompt, verbatim)",
+      "type": "spec",
+      "source": "user message (Arena chat) 2026-09-23 — direct paste",
+      "file": "PROMPTS/SP-011_MASTER_SELF_AUDIT_BLUEPRINT_ORIGINAL_PHASE_1_PHASE_2_PROMPT_VERBATIM.md",
+      "verbatim": true,
+      "body_sha256_16": "e8d8620d378adc48",
+      "applied_in": [
+        "07_SELF_AUDIT/ (4 maps + report + roadmap)",
+        "tools/apply_phase.py --spec self_audit",
+        "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md",
+        "tools/agent_boot.py (§4c PHASE SPECS)",
+        "tests/ci_extra.py"
+      ],
+      "applied": true,
+      "added": "2026-09-23",
+      "note": ""
     }
   ],
-  "updated": "2026-09-23 06:55:23"
+  "updated": "2026-09-23 07:25:49"
 }

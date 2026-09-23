@@ -1,0 +1,44 @@
+{
+  "hostname": "e2b.local",
+  "os": "",
+  "kernel": "6.1.158+",
+  "cpu_vcpu": 2,
+  "ram_mb": 1984,
+  "disk_free": "18G",
+  "python": "Python 3.13.14",
+  "node": "v20.20.2",
+  "node22": "v22.14.0",
+  "sudo": true,
+  "opt_cache": {
+    "PERSIST_STAMP.txt": true,
+    "bin/yq": true,
+    "node22/bin/node": true,
+    "rsshub/dist/index.mjs": true
+  },
+  "workspace_mb": "9",
+  "tools": {
+    "git": true,
+    "curl": true,
+    "jq": true,
+    "rg": true,
+    "pandoc": true,
+    "ffmpeg": true,
+    "gallery-dl": true,
+    "yt-dlp": true,
+    "yq": true,
+    "crane": true
+  },
+  "network": {
+    "github": 200,
+    "jina": 200,
+    "wikipedia": 200
+  },
+  "services": {
+    "rsshub_1200": 200,
+    "control_center_8000": 0
+  },
+  "internal": {
+    "memory_audit": "",
+    "provenance": "PROVENANCE OK — imported spec + raw extraction untouched hai"
+  }
+}

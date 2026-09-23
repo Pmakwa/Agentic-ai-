@@ -1,0 +1,62 @@
+=== SELF-AUDIT ENV PROBE — 2026-09-23T07:20:22Z ===
+
+--- [1] OS / resources
+Linux e2b.local 6.1.158+ #1 SMP PREEMPT_DYNAMIC Fri Jul 17 14:31:34 UTC 2026 x86_64 GNU/Linux
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+cpu=2 vCPU | ram=1984MB | swap=0MB
+/dev/root        25G  4.1G   20G  18% /
+/dev/root        25G  4.1G   20G  18% /
+tmpfs           993M   13M  981M   2% /tmp
+user=user uid=1000
+sudo: uid=0(root) gid=0(root) groups=0(root)
+
+--- [2] Runtimes
+Python 3.13.14
+v20.20.2
+/bin/bash: line 1: /opt/uai-cache/node22/bin/node: No such file or directory
+pip pkgs: 182
+
+--- [3] Toolchain (which + version)
+curl         /usr/bin/curl
+jq           /usr/bin/jq
+rg           MISSING
+fd           MISSING
+pandoc       MISSING
+pdflatex     MISSING
+ffmpeg       MISSING
+yq           MISSING
+crane        MISSING
+aria2c       MISSING
+gallery-dl   MISSING
+yt-dlp       MISSING
+git          /usr/bin/git
+sqlite3      MISSING
+duckdb       MISSING
+tesseract    MISSING
+ocrmypdf     MISSING
+
+--- [4] Network
+2606:4700:10::ac42:93f3 example.com
+example.com -> 200
+api.github.com -> 200
+r.jina.ai -> 200
+
+--- [5] Local services
+control-center :8000 -> 000
+RSSHub :1200 -> 000
+
+--- [6] Persistence
+/opt/uai-cache: 
+workspace: 8.4M
+
+--- [7] Automation
+
+--- [8] UAI-COS internal checks
+
+HEALTH SCORE: 100/100
+PROVENANCE OK — imported spec + raw extraction untouched hain, source traceable hai.
+{"total_before": 3059837, "junk": 0, "empty": 0, "dupes": 0, "deleted": 0, "freed": 0, "bigdirs": [[".git", 3244015]]}
+
+=== END PROBE ===

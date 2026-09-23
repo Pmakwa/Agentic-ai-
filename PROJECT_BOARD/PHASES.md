@@ -31,6 +31,8 @@
 | P21 | **Repo unlock sweep (30+ starred repos) — test karo, verified tools lock karo** | 🟡 NEXT | agent | target: 06_REPO_HUNT/probes/repo_sweep_starred.txt + CAPABILITY_MAP bump + social_unlock subcommands | kaam shuru karo + evidence add karo |
 | P22 | **Structured prompt registry + apply (V2/Phase-1/2/3 jaise saare prompts)** | ✅ DONE | agent | tools/prompt_registry.py + PROMPTS/registry.json (10 entries, SP-001..SP-010) + boot payload §4b + AGENTS §13 + PHASE_PROTOCOL §8 | - |
 | P23 | **Workspace hygiene: junk/duplicate cleanup + heavy deps /opt me** | ✅ DONE | agent | tools/cleanup_workspace.py (protected heavy dirs) + logs/cleanup_2026-09-23.md + workspace 1.1GB->8.1MB + RSSHub /opt/uai-cache/rsshub | - |
+| P24 | **MASTER SELF-AUDIT blueprint apply (original Phase 1 + Phase 2 prompt)** | ✅ DONE | agent | 00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md (hash e8d8620d378adc48) + 07_SELF_AUDIT/ (4 maps + report + roadmap) + tools/apply_phase.py (v2 6/6, self_audit 9/9, phase1 6/6, phase2 7/7) | kaam shuru karo + evidence add karo |
+| P25 | **Fresh-sandbox recovery + continuous self-audit tooling** | ✅ DONE | agent | tools/bootstrap_environment.sh (apt+pip+yq+crane+node22+RSSHub, aaj verify) + tools/self_audit.py (env probe v1.2) + RSSHub 3 routes 200 + social status 11/11 | kaam shuru karo + evidence add karo |
 <!-- PHASES:END -->
 
 **Total:** 21 phases · **Updated:** 2026-09-23

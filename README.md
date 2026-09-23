@@ -2,7 +2,7 @@
 
 > 🚀 **Naya agent? pehle [`AGENTS.md`](AGENTS.md) padho, phir [`START_HERE.md`](START_HERE.md).**
 > Poori baat-cheet ka A-to-Z record [`CONVERSATION/`](CONVERSATION/00_A_TO_Z_LOG.md) me · chalane ke commands [`RUNBOOK.md`](RUNBOOK.md) ·
-> environment ki haqeeqat [`ENVIRONMENT.md`](ENVIRONMENT.md) · machine-readable truth [`CAPABILITY_MAP.json`](02_CAPABILITY_AUDIT/CAPABILITY_MAP.json) (v2.6).
+> environment ki haqeeqat [`ENVIRONMENT.md`](ENVIRONMENT.md) · machine-readable truth [`CAPABILITY_MAP.json`](02_CAPABILITY_AUDIT/CAPABILITY_MAP.json) (v2.7).
 
 Ye tumhare **V2 prompt** ka poora implementation hai — spec sirf text me nahi, chalne wale system me.
 
@@ -25,7 +25,7 @@ uai-cos/
 │   └── UAI-COS_SYSTEM_PROMPT_{compact,standard,full}.md   ✅ paste-anywhere compiled prompts (live memory inline)
 │
 ├── memory/                                 ← MEMORY OS (live data)
-│   ├── store/memory.jsonl                  ✅ 82 records — Section-13 schema par
+│   ├── store/memory.jsonl                  ✅ 85 records — Section-13 schema par
 │   ├── INDEX.md                            ✅ auto-generated retrieval index (boot-read)
 │   └── store/archive.jsonl                 ✅ archive (delete nahi, retire)
 │
@@ -65,6 +65,11 @@ uai-cos/
 │   └── probes/                             ✅ raw evidence (2 probe files)
 │
 ├── tools/github_unlock.py                  ✅ GitHub toolkit (12 commands, bina token)
+├── 07_SELF_AUDIT/                          ✅ capability/reasearch/fallback maps + unknown queue + master report (self-audit)
+├── 00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md ✅ Phase 1+2 ka original prompt (verbatim, hash e8d8620d378adc48)
+├── tools/apply_phase.py                    ✅ spec apply engine (v2 | self_audit | phase1 | phase2) + attestation
+├── tools/self_audit.py                     ✅ continuous self-audit (env probe + diff + version bump)
+├── tools/bootstrap_environment.sh          ✅ fresh sandbox recovery (~60s: apt/pip/yq/crane/node22, RSSHub ~2min)
 ├── PROMPTS/registry.json + REGISTRY.md     ✅ structured prompts (V1/V2/Phase-1/2/3/rules) + kahan apply hue
 ├── tools/prompt_registry.py                ✅ structured prompt add/apply/verify engine
 ├── tools/cleanup_workspace.py              ✅ workspace hygiene (junk/duplicate cleanup, time-to-time)
@@ -111,7 +116,7 @@ uai-cos/
 
 | Metric | Value | Command |
 |---|---|---|
-| Live memory records | **82** | `python3 tools/uai_mem.py stats` |
+| Live memory records | **85** | `python3 tools/uai_mem.py stats` |
 | Memory health score | **100/100** | `python3 tools/uai_mem.py audit` |
 | Golden tests | **28/28 pass** | `bash tests/test_memory_os.sh` |
 | Open conflicts | 0 | audit |

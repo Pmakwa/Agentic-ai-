@@ -1,5 +1,5 @@
 {
-  "map_version": "2.6",
+  "map_version": "2.7",
   "generated": "2026-09-23",
   "generated_by": "UAI-COS self-audit + PHASE 2 access expansion + repo-hunt unlock (P0-P16) + PHASE-SYSTEM apply (P14 RSSHub routes, P15 monitor, P16 new endpoints)",
   "status_labels": [
@@ -190,7 +190,14 @@
     "PROMPTS/REGISTRY.md",
     "tools/prompt_registry.py",
     "tools/cleanup_workspace.py",
-    "CONVERSATION/04_STANDING_INSTRUCTIONS.md"
+    "CONVERSATION/04_STANDING_INSTRUCTIONS.md",
+    "07_SELF_AUDIT/00_SELF_AUDIT_MASTER_REPORT.md",
+    "07_SELF_AUDIT/AGENT_CAPABILITY_MAP.json",
+    "tools/apply_phase.py",
+    "tools/self_audit.py",
+    "tools/bootstrap_environment.sh",
+    "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md",
+    "PROJECT_BOARD/PHASE_APPLY.md"
   ],
   "next_review": "P21 (repo sweep) ke baad: naye verified tools ka map bump + monitor routes update",
   "changes_from_v1_0": [
@@ -697,6 +704,26 @@
       "PROMPTS/REGISTRY.md",
       "AGENTS.md §13",
       "PHASE_PROTOCOL.md §8"
+    ]
+  },
+  "self_audit_blueprint": {
+    "status": "VERIFIED (applied)",
+    "spec": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md (sha256:e8d8620d378adc48) — user ka original Phase 1 + Phase 2 prompt",
+    "engine": "tools/apply_phase.py (--spec v2|self_audit|phase1|phase2|all) + tools/self_audit.py (continuous refresh)",
+    "deliverables": [
+      "07_SELF_AUDIT/AGENT_CAPABILITY_MAP.json (v1.2)",
+      "07_SELF_AUDIT/RESEARCH_CAPABILITY_MAP.json",
+      "07_SELF_AUDIT/ENVIRONMENT_FALLBACK_MAP.json",
+      "07_SELF_AUDIT/UNKNOWN_CAPABILITY_QUEUE.json",
+      "07_SELF_AUDIT/CAPABILITY_EXPANSION_ROADMAP.md",
+      "07_SELF_AUDIT/00_SELF_AUDIT_MASTER_REPORT.md"
+    ],
+    "env_reset_finding": "2026-09-23 07:20 UTC — /opt/uai-cache + pip tools reset mile; bootstrap_environment.sh se recovery VERIFIED (~60s + RSSHub ~2min)",
+    "post_apply_checks": "v2 6/6 · self_audit 9/9 · phase1 6/6 · phase2 7/7 PASS",
+    "evidence": [
+      "PROJECT_BOARD/PHASE_APPLY.md",
+      "logs/phase_apply_all_2026-09-23.json",
+      "07_SELF_AUDIT/probes/"
     ]
   }
 }

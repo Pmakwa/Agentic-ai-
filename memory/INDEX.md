@@ -1,6 +1,6 @@
 # MEMORY INDEX — UAI-COS v2.0
 
-> Generated: 2026-09-23T06:54:46  |  live records: **82**  |  total (incl. archived/deleted): 82
+> Generated: 2026-09-23T07:25:37  |  live records: **85**  |  total (incl. archived/deleted): 85
 > Ye file auto-generated hai — edit na karo. Source of truth: `memory/store/memory.jsonl`
 > Retrieval rule (Section 17): keyword match kaafi nahi — scope + authority + freshness + confidence + current instruction dekh kar use karo.
 
@@ -31,7 +31,7 @@
 | `MEM-CONS-0003` | verified | high | High-risk ya irreversible action (delete, publish, payment, external send) se pehle user confirmation lena compulsory hai. | user_instruction | - |
 | `MEM-CONS-0004` | verified | high | Capability claims sirf evidence ke saath: 'full internet' ya 'sab access' jaisa dava nahi; paywall/login/CAPTCHA bypass kabhi nahi; RESTRICTED sites (reddit, SO direct, medium, quora, Bloomberg, WSJ, ScienceDirect, TripAdvisor, NSE, Instagram/LinkedIn login walls) ko blocked hi maana jaayega. | tool_result | - |
 
-## SEMANTIC (34)
+## SEMANTIC (35)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -69,6 +69,7 @@
 | `MEM-SEM-0032` | verified | high | Discord invite API (discord.com/api/v9/invites/<code>?with_counts=true) aur Spotify oEmbed (open.spotify.com/oembed?url=) tokenless public metadata dete hain — guild member counts (Python: 431,757 members / 29,845 online) aur track title/thumbnail/embed URL. | live test 2026-09-23 | - |
 | `MEM-SEM-0033` | verified | very_high | RSSHub sweep (250 namespaces, automated): 120 WORKING (48%) — top routes /bilibili/app/android (491 items), /ai-bot/daily-ai-news (436), /aiaa/journal/aiaaj (205), /4chan/g/catalog (151), /android/pixel-update-bulletin (107), /amazon/awsblogs (50). Fail hone ka pattern: upstream IP block, login/cookie (boundary), ya china-only geo-block. | live sweep 2026-09-23 | - |
 | `MEM-SEM-0034` | verified | very_high | Workspace ab lean hai: heavy artifacts /opt/uai-cache me — rsshub (996M, 2015 namespaces, :1200), bin/{yq,crane} (25M), node22 (200M), models (469M+87M). Workspace repo sirf 8 MB (pehle 1.1 GB). Cleanup cadence: har 3-5 turn ya push se pehle tools/cleanup_workspace.py (report -> --apply). | cleanup run 2026-09-23 | - |
+| `MEM-SEM-0035` | verified | very_high | Self-audit deliverables (07_SELF_AUDIT/): AGENT_CAPABILITY_MAP.json (tools/env/access/permissions/hard-limits/boundaries + change_log), RESEARCH_CAPABILITY_MAP.json (25 methods: 21 AVAILABLE, 4 PARTIAL), ENVIRONMENT_FALLBACK_MAP.json (12 cases: X->fxtwitter, Reddit->redlib+pullpush, reset->bootstrap...), UNKNOWN_CAPABILITY_QUEUE.json (10 unknowns with test method), CAPABILITY_EXPANSION_ROADMAP.md, 00_SELF_AUDIT_MASTER_REPORT.md (A-M). Continuous update: tools/self_audit.py (env probe + diff + version bump). | self-audit run 2026-09-23 | - |
 
 ## EPISODIC (4)
 
@@ -119,7 +120,7 @@
 | `MEM-DEC-0005` | active | high | Self-audit ko versioned rakha jaayega (v1.0 -> v1.x): environment/tools/permissions badalne par map + memory + probe evidence update honge — blueprint Part 22 ke according. | user_instruction | - |
 | `MEM-DEC-0006` | verified | very_high | Decision: koi bhi agent kaam se pehle V2 system me boot hoga — proof dena padega (attestation). Boot fail = kaam nahi shuru, pehle boot karaya jayega (booot prompt/system paste). | user instruction 2026-09-23 | - |
 
-## ERROR (6)
+## ERROR (7)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -129,13 +130,15 @@
 | `MEM-ERR-0004` | verified | high | Devanagari rendering trap: matplotlib complex-script shaping sahi nahi karta ('सदासुहागिन' -> galat matra order), aur Devanagari font me Latin glyphs nahi hote (boxes aa jate hain). Fix: image me Hindi text PIL (Raqm=True) se likho; matplotlib me font.family=['Noto Sans Devanagari','DejaVu Sans'] fallback lagao. | tool_result | - |
 | `MEM-ERR-0005` | verified | high | Shell safety: 'pkill -f <pattern>' khud ki shell bhi maar sakta hai (pattern self-match) — pehle pattern verify karo ya PID se kill karo. | tool_result | - |
 | `MEM-ERR-0006` | verified | very_high | CLEANUP INCIDENT (2026-09-23): workspace cleanup tool ke pehle version ne node_modules/.pnpm + lib/ ke andar 'duplicates' delete kar diye (7959 files) jisse RSSHub toota (ERR_MODULE_NOT_FOUND punycode.js). Recovery: /opt/uai-cache/rsshub me fresh clone + pnpm install (22.7s) + pnpm build (16.4s) -> 4 routes verified 200. | agent incident + fix 2026-09-23 | - |
+| `MEM-ERR-0007` | verified | very_high | ENV RESET (2026-09-23 07:20 UTC): fresh sandbox me /opt/uai-cache khaali mila (RSSHub, node22, yq/crane, models gaye) aur pip tools (gallery-dl, yt-dlp, rg, pandoc, ffmpeg) gayab the. Workspace /home/user safe tha. Root cause: /opt root-owned tha (mkdir permission fail). Fix: bootstrap_environment.sh me sudo mkdir + chown, phir ~60s me sab wapas (apt+pip+yq+crane+node22) aur RSSHub ~2min me rebuild. | live incident + fix 2026-09-23 | - |
 
-## SOURCE (2)
+## SOURCE (3)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
 | `MEM-SRC-0001` | verified | high | UAI-COS V1 (22.7k chars) aur V2 (44.3k chars, 112 sections) ka original source: shared ChatGPT chat 'System Dekho Dhyan Se'. | url | - |
 | `MEM-SRC-0002` | verified | very_high | RSSHub (local :1200, 2015 namespaces) se 28 routes live-verified: Weibo hot search, Threads, Bilibili, Zhihu hot, GitHub activity, YouTube community, The Hindu, DNA India, NASA APOD, DeepMind/Anthropic blog, HuggingFace, arXiv, MIT OCW, Steam, Bandcamp, SoundCloud, GitLab, Substack, Medium, Pinterest, TikTok live, Wikipedia, HN threads, DockerHub, npm, EZTV, Telegram, Mastodon. Twitter/Instagram/Bluesky-keyword/Spotify/LinkedIn/Notion cookies ya token maangte hain -> boundary. | live test 2026-09-23 | - |
+| `MEM-SRC-0003` | verified | very_high | MASTER SELF-AUDIT blueprint = user ka original Phase 1 + Phase 2 structured prompt (35 sections). Verbatim import: 00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md (canonical hash e8d8620d378adc48, raw: 00_SYSTEM/_raw/prompt_master_self_audit_raw.md). Ye prompt capability discovery + access/research mapping + fallback + expansion maangta hai — zero-assumption, no-false-power. | user message 2026-09-23 (direct paste) | - |
 
 ## TEMPORAL (2)
 

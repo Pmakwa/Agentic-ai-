@@ -194,6 +194,22 @@
       "owner": "agent",
       "evidence": "tools/cleanup_workspace.py (protected heavy dirs) + logs/cleanup_2026-09-23.md + workspace 1.1GB->8.1MB + RSSHub /opt/uai-cache/rsshub",
       "next_step": "-"
+    },
+    {
+      "id": "P24",
+      "title": "MASTER SELF-AUDIT blueprint apply (original Phase 1 + Phase 2 prompt)",
+      "status": "done",
+      "owner": "agent",
+      "evidence": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md (hash e8d8620d378adc48) + 07_SELF_AUDIT/ (4 maps + report + roadmap) + tools/apply_phase.py (v2 6/6, self_audit 9/9, phase1 6/6, phase2 7/7)",
+      "next_step": "kaam shuru karo + evidence add karo"
+    },
+    {
+      "id": "P25",
+      "title": "Fresh-sandbox recovery + continuous self-audit tooling",
+      "status": "done",
+      "owner": "agent",
+      "evidence": "tools/bootstrap_environment.sh (apt+pip+yq+crane+node22+RSSHub, aaj verify) + tools/self_audit.py (env probe v1.2) + RSSHub 3 routes 200 + social status 11/11",
+      "next_step": "kaam shuru karo + evidence add karo"
     }
   ],
   "recurring_checklist": [

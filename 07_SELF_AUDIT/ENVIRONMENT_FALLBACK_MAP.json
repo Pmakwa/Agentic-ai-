@@ -1,0 +1,82 @@
+{
+  "map_name": "ENVIRONMENT FALLBACK MAP",
+  "version": "1.0",
+  "generated": "2026-09-23 07:23:26 UTC",
+  "route": "DIRECT -> ALTERNATIVE -> ENVIRONMENT CHANGE -> EXTERNAL DEPENDENCY -> HUMAN STEP -> HARD LIMIT (spec §16)",
+  "cases": [
+    {
+      "task": "X/Twitter posts dekhna",
+      "direct": "x.com BINA creds = RESTRICTED",
+      "alternative": "fxtwitter/vxtwitter bridge (VERIFIED 200) + yt-dlp video",
+      "human_step": "user API creds de to full timeline",
+      "final": "VERIFIED (alternative)"
+    },
+    {
+      "task": "Reddit browse",
+      "direct": "reddit.com = IP-block 403",
+      "alternative": "redlib instances (safereddit, red.artemislena.eu) + pullpush.io JSON (q=/ids=) — dono VERIFIED",
+      "final": "VERIFIED (alternative)"
+    },
+    {
+      "task": "Instagram posts",
+      "direct": "login-wall",
+      "alternative": "Instagram oEmbed public post (limited), gallery-dl public profile (RATE-LIMITED/429)",
+      "final": "PARTIAL + boundary (creds nahi to poori access nahi)"
+    },
+    {
+      "task": "Facebook page posts",
+      "direct": "login-wall",
+      "alternative": "facebook-scraper (0 posts aaye) — fail",
+      "final": "UNAVAILABLE (tokenless)"
+    },
+    {
+      "task": "Paywalled article",
+      "direct": "paywall = PROHIBITED",
+      "alternative": "r.jina.ai reader (kuch sites) + RSS feed + Wayback snapshot (agar public)",
+      "final": "CONDITIONAL"
+    },
+    {
+      "task": "Browser me site par click/interaction",
+      "direct": "GUI browser nahi",
+      "alternative": "RSSHub Playwright routes (subset, headless) + curl POST APIs",
+      "final": "PARTIAL (routes tak; arbitrary interaction nahi)"
+    },
+    {
+      "task": "PDF book/journals",
+      "direct": "publisher paywall",
+      "alternative": "OpenAIRE/arXiv/OA copies + authors' preprints + Wayback",
+      "final": "CONDITIONAL"
+    },
+    {
+      "task": "Email/Telegram message bhejna",
+      "direct": "nahi",
+      "alternative": "Telegram bot API (user token de to) — scripts repo me ready",
+      "human_step": "user BotFather token de",
+      "final": "CONDITIONAL (user dependency)"
+    },
+    {
+      "task": "Publishing (post/blog)",
+      "direct": "nahi",
+      "alternative": "GitHub push (VERIFIED) — pages/twitter via user creds",
+      "final": "PARTIAL"
+    },
+    {
+      "task": "User ke apne system par kaam",
+      "direct": "sandbox ke bahar nahi",
+      "alternative": "user repo clone kar ke chala sakta hai (bootstrap script ready)",
+      "final": "CONDITIONAL (user action)"
+    },
+    {
+      "task": "Zyada compute (bade models, heavy jobs)",
+      "direct": "2 vCPU/2GB — GPU nahi",
+      "alternative": "chhote models (Qwen 0.5B), API providers (user key), GitHub Actions (free CI compute — VERIFIED runner)",
+      "final": "CONDITIONAL"
+    },
+    {
+      "task": "Environment reset ke baad capability wapas",
+      "direct": "reset se sab gaya",
+      "alternative": "`bash tools/bootstrap_environment.sh` — VERIFIED (apt+pip+yq+crane+node22 turant, RSSHub ~5min)",
+      "final": "VERIFIED (recovery path)"
+    }
+  ]
+}

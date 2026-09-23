@@ -1,0 +1,99 @@
+{
+  "map_name": "UNKNOWN CAPABILITY QUEUE",
+  "version": "1.0",
+  "generated": "2026-09-23 07:23:26 UTC",
+  "rule": "Unknown ko VERIFIED nahi maan sakte; yahan test method ke saath rakha gaya (spec §32).",
+  "queue": [
+    {
+      "unknown": "Platform-level persistent memory (repo ke bahar)",
+      "why": "naye session me user preferences yaad rahengi?",
+      "test": "naye session me pooch kar check karna (cross-turn memory probe)",
+      "risk": "low",
+      "value": "high",
+      "result": null,
+      "class": "UNKNOWN"
+    },
+    {
+      "unknown": "Connectors/plugins (Google Drive, Notion, MCP) available hain?",
+      "why": "cloud files par kaam",
+      "test": "ask_user / platform tool list compare",
+      "risk": "low",
+      "value": "high",
+      "result": null,
+      "class": "UNKNOWN"
+    },
+    {
+      "unknown": "Sub-agent spawning / multi-agent orchestration",
+      "why": "parallel research agents",
+      "test": "platform docs + try (agar interface de)",
+      "risk": "low",
+      "value": "medium",
+      "result": null,
+      "class": "UNKNOWN"
+    },
+    {
+      "unknown": "Image generation quota/model details + editing fidelity",
+      "why": "visual deliverables",
+      "test": "1 test image generate karke check",
+      "risk": "low",
+      "value": "medium",
+      "result": null,
+      "class": "UNKNOWN"
+    },
+    {
+      "unknown": "TTS languages/voices (Hindi quality)",
+      "why": "voice deliverables",
+      "test": "add_voice se Hindi audition",
+      "risk": "low",
+      "value": "medium",
+      "result": null,
+      "class": "UNKNOWN"
+    },
+    {
+      "unknown": "Video generation/editing",
+      "why": "video tasks",
+      "test": "tool list me hai ya nahi — abhi exposed nahi",
+      "risk": "low",
+      "value": "medium",
+      "result": null,
+      "class": "UNAVAILABLE (abhi)"
+    },
+    {
+      "unknown": "Persistence of /opt across future turns (2026-09-23 ko reset hua)",
+      "why": "RSSHub/node22 rebuild cost",
+      "test": "agle turn me /opt/uai-cache stamp check",
+      "risk": "low",
+      "value": "high",
+      "result": null,
+      "class": "UNKNOWN (monitoring)"
+    },
+    {
+      "unknown": "User ke GitHub PAT ki validity/scope (fine-grained?)",
+      "why": "push reliability",
+      "test": "sync_to_github.sh khud verify karta hai (api.github.com/user + push)",
+      "risk": "low",
+      "value": "high",
+      "result": "classic PAT working — VERIFIED",
+      "class": "VERIFIED"
+    },
+    {
+      "unknown": "Kaunse external APIs user ke naam par rate-limit-friendly hain (bade volume)",
+      "why": "scale research",
+      "test": "per-API benchmark (chhote batches)",
+      "risk": "low",
+      "value": "medium",
+      "result": null,
+      "class": "UNKNOWN"
+    },
+    {
+      "unknown": "Open web me kuch naye sources (2026 me bane) jo abhi map me nahi",
+      "why": "coverage",
+      "test": "quarterly source sweep (P21 repo sweep)",
+      "risk": "low",
+      "value": "medium",
+      "result": null,
+      "class": "UNKNOWN"
+    }
+  ],
+  "last_auto_check": "2026-09-23 07:24 UTC"
+}

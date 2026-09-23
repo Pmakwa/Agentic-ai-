@@ -67,6 +67,8 @@ UAI-COS BOOT ATTESTATION
 | 9 | `PHASE_PROTOCOL.md` | Naya phase/prompt apply karne ka contract (import → evidence → push) + recurring kaam |
 | 10 | `PROMPTS/REGISTRY.md` | **Structured prompts** (V1/V2/Phase-1/2/3/rules) ka index + kahan apply hue |
 | 11 | `logs/cleanup_*.md` | Workspace hygiene ka last report (kya/kya delete hua aur kyun) |
+| 12 | `00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md` | **Original Phase 1 + Phase 2 prompt** (verbatim) — `apply_phase.py --spec self_audit` se apply |
+| 13 | `07_SELF_AUDIT/` | Capability / research / fallback maps + unknown queue + expansion roadmap |
 
 ---
 
@@ -194,6 +196,16 @@ python3 tools/cleanup_workspace.py --check         # exit 1 agar junk mila (moni
 - ⚠️ **Lesson (2026-09-23):** cleanup tool ke pehle version ne node_modules + `lib/` ke andar "duplicates"
   delete kar diye → RSSHub toot gaya (7959 files). Ab heavy dirs protected hain aur dedupe alag flag hai.
   **Ye protections hataana mana hai.** Har deletion ka reason `logs/cleanup_*.md` me likha jaata hai.
+
+## 13b. SPECS APPLY (V2 + Phase-1/2 blueprint) — har agent apne env me
+
+```bash
+python3 tools/apply_phase.py --list        # v2 | self_audit | phase1 | phase2
+python3 tools/apply_phase.py --spec all    # checks chalao -> attestation PROJECT_BOARD/PHASE_APPLY.md me
+python3 tools/self_audit.py                # env probe + capability map v-bump (continuous update, spec §22)
+bash tools/bootstrap_environment.sh        # fresh sandbox me toolchain wapas (reset ho jaye to)
+```
+Rule: **apply = checks chala kar apna environment ka sach likhna**, sirf file padhna nahi.
 
 ## 13. Structured prompts registry (V2 / Phase-1 / Phase-2 / aage jo bhi)
 

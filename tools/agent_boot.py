@@ -169,6 +169,21 @@ UAI-COS BOOT ATTESTATION
 - Task ke end me: **Hindi summary + options (a/b/c)**.
 - Naya capability = install → **live test** → evidence `probes/` me → report → CAPABILITY_MAP bump → memory record → README/index sync.
 
+### 4c. PHASE SPECS — ye specs har agent ko APNE environment me apply karni hain
+Kanoon: **kaam shuru karne se pehle inhe apply karo** (apply = checks chala kar apna sach likhna, sirf padhna nahi).
+```bash
+python3 tools/apply_phase.py --list            # kaunsi specs hain
+python3 tools/apply_phase.py --spec all        # V2 + master self-audit blueprint (Phase 1+2) — attestation deta hai
+python3 tools/apply_phase.py --spec self_audit # sirf blueprint (capability/access audit)
+```
+| spec | file | hash | kya hai |
+|---|---|---|---|
+| `v2` | 00_SYSTEM/00_UAI-COS_V2.0_SPEC.md | 4aa1c6a1f872a3f3 | canonical system spec (112 sections) |
+| `self_audit` | 00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md | e8d8620d378adc48 | MASTER SELF-AUDIT blueprint = **original Phase 1 + Phase 2 prompt** (35 sections) |
+| `phase1` | (same file) | e8d8620d378adc48 | self-capability inventory (zero-assumption) |
+| `phase2` | (same file) | e8d8620d378adc48 | access / research / fallback mapping |
+Attestation `PROJECT_BOARD/PHASE_APPLY.md` me record hoti hai; deliverables `07_SELF_AUDIT/` me.
+
 ### 4b. STRUCTURED PROMPTS (PROMPTS/registry.json — user ke prompts + kahan apply hue)
 {prompts_block}
 

@@ -1,0 +1,55 @@
+{
+  "map_name": "RESEARCH CAPABILITY MAP",
+  "version": "1.0",
+  "generated": "2026-09-23 07:23:26 UTC",
+  "methods": {
+    "1 keyword_search": "AVAILABLE (web_search tool, depth 1-3)",
+    "2 semantic_search": "PARTIAL (web par vector search nahi; local memory me fastembed embeddings available)",
+    "3 exact_phrase_search": "AVAILABLE (quoted query + site: operators web_search me)",
+    "4 domain_restricted_search": "AVAILABLE (site: operator)",
+    "5 source_specific_search": "AVAILABLE (direct APIs: Crossref/OpenAIRE/arXiv/StackExchange/GitHub/Wayback + RSSHub feeds)",
+    "6 multi_query_research": "AVAILABLE (ek turn me multiple searches parallel)",
+    "7 iterative_search": "AVAILABLE (evidence-driven follow-ups)",
+    "8 citation_chaining": "PARTIAL (references ke title se search; koi dedicated citation graph tool nahi)",
+    "9 primary_source_search": "AVAILABLE (gov/company/paper PDFs, Wayback, reader proxy)",
+    "10 secondary_source_search": "AVAILABLE (news RSS + search results)",
+    "11 document_search": "AVAILABLE (PDF text: pypdf/pdftotext/reader; 30-page cap fetch_page me)",
+    "12 pdf_research": "AVAILABLE (download + parse + cite)",
+    "13 dataset_research": "PARTIAL (public datasets via APIs/CSV; large DWH nahi)",
+    "14 technical_documentation": "AVAILABLE (docs sites, GitHub, changelogs)",
+    "15 repository_research": "AVAILABLE (GitHub API + code search limits: unauth 10/min)",
+    "16 historical_research": "AVAILABLE (Wayback + archives)",
+    "17 current_event_research": "AVAILABLE (news RSS + search)",
+    "18 comparative_research": "AVAILABLE (multi-source tables)",
+    "19 contradiction_search": "AVAILABLE (deliberate disconfirming searches — spec §17 L4)",
+    "20 claim_verification": "AVAILABLE (primary source + cross-check; labels: VERIFIED/SUPPORTED/UNVERIFIED)",
+    "21 source_triangulation": "AVAILABLE (3+ independent sources rule)",
+    "22 timeline_reconstruction": "AVAILABLE (dated sources + archives)",
+    "23 entity_identification": "AVAILABLE (Wikidata/Wikipedia APIs + structured sources)",
+    "24 cross_source_consistency": "AVAILABLE (diff/tables via python)",
+    "25 evidence_gap_analysis": "AVAILABLE (gap list per report — spec §17 L6)"
+  },
+  "source_quality_engine": {
+    "taxonomy": [
+      "primary/secondary",
+      "official/unofficial",
+      "original/derivative",
+      "publish+update date",
+      "methodology",
+      "corroboration",
+      "conflict-of-interest",
+      "transparency",
+      "reproducibility",
+      "directness",
+      "completeness"
+    ],
+    "conflict_rule": "conflict ko chhupate nahi: dono claims + source quality + unresolved uncertainty likhte hain (spec §9)"
+  },
+  "provenance_standard": "CLAIM -> SOURCE(url) -> LOCATION -> DATE -> EXTRACTION -> VERIFICATION -> CONFIDENCE (spec §19)",
+  "depth_engine": "L1 discovery -> L2 primary -> L3 cross-verify -> L4 contradiction -> L5 context -> L6 gaps -> L7 confidence -> L8 synthesis (spec §17)",
+  "limits": {
+    "paywall": "reader proxy/OA copies tak; bypass nahi",
+    "js_heavy": "RSSHub subset + API alternatives",
+    "rate_limits": "GitHub unauth 10/min search, GDELT 30s gap, pullpush 429 par backoff"
+  }
+}

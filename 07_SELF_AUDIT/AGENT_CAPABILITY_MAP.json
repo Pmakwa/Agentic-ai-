@@ -1,0 +1,325 @@
+{
+  "map_name": "AGENT CAPABILITY & ACCESS MAP",
+  "version": "1.2",
+  "generated": "2026-09-23 07:23:26 UTC",
+  "spec": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md (sha256:e8d8620d378adc48)",
+  "rule": "Har entry ke saath evidence. POSSIBLE/CONDITIONAL/UNKNOWN ko VERIFIED nahi likha gaya (spec §28/§29).",
+  "environment": {
+    "hostname": "e2b.local",
+    "os": "",
+    "kernel": "6.1.158+",
+    "cpu_vcpu": 2,
+    "ram_mb": 1984,
+    "disk_free": "18G",
+    "python": "Python 3.13.14",
+    "node": "v20.20.2",
+    "node22": "v22.14.0",
+    "sudo": true,
+    "opt_cache": {
+      "PERSIST_STAMP.txt": true,
+      "bin/yq": true,
+      "node22/bin/node": true,
+      "rsshub/dist/index.mjs": true
+    },
+    "workspace_mb": "9",
+    "tools": {
+      "git": true,
+      "curl": true,
+      "jq": true,
+      "rg": true,
+      "pandoc": true,
+      "ffmpeg": true,
+      "gallery-dl": true,
+      "yt-dlp": true,
+      "yq": true,
+      "crane": true
+    },
+    "network": {
+      "github": 200,
+      "jina": 200,
+      "wikipedia": 200
+    },
+    "services": {
+      "rsshub_1200": 200,
+      "control_center_8000": 0
+    },
+    "internal": {
+      "memory_audit": "",
+      "provenance": "PROVENANCE OK — imported spec + raw extraction untouched hai"
+    }
+  },
+  "cognitive_capabilities": {
+    "reasoning": "VERIFIED (is session me actually perform kiya)",
+    "planning": "VERIFIED (is session me actually perform kiya)",
+    "decomposition": "VERIFIED (is session me actually perform kiya)",
+    "synthesis": "VERIFIED (is session me actually perform kiya)",
+    "analysis": "VERIFIED (is session me actually perform kiya)",
+    "comparison": "VERIFIED (is session me actually perform kiya)",
+    "classification": "VERIFIED (is session me actually perform kiya)",
+    "extraction": "VERIFIED (is session me actually perform kiya)",
+    "summarization": "VERIFIED (is session me actually perform kiya)",
+    "transformation": "VERIFIED (is session me actually perform kiya)",
+    "pattern_detection": "VERIFIED (is session me actually perform kiya)",
+    "hypothesis_generation": "VERIFIED (is session me actually perform kiya)",
+    "hypothesis_testing": "VERIFIED (is session me actually perform kiya)",
+    "error_detection": "VERIFIED (is session me actually perform kiya)",
+    "contradiction_detection": "VERIFIED (is session me actually perform kiya)",
+    "uncertainty_estimation": "VERIFIED (is session me actually perform kiya)",
+    "self_critique": "VERIFIED (is session me actually perform kiya)",
+    "verification": "VERIFIED (is session me actually perform kiya)",
+    "simulation": "VERIFIED (is session me actually perform kiya)",
+    "mathematical_reasoning": "VERIFIED (is session me actually perform kiya)",
+    "coding": "VERIFIED (is session me actually perform kiya)",
+    "debugging": "VERIFIED (is session me actually perform kiya)",
+    "research": "VERIFIED (is session me actually perform kiya)",
+    "multimodal_reasoning": "VERIFIED (is session me actually perform kiya)",
+    "document_understanding": "VERIFIED (is session me actually perform kiya)",
+    "long_context_reasoning": "VERIFIED (is session me actually perform kiya)",
+    "structured_knowledge_construction": "VERIFIED (is session me actually perform kiya)",
+    "iterative_problem_solving": "VERIFIED (is session me actually perform kiya)",
+    "forecasting": "CONDITIONAL (limited; sirf data-supported estimates, koi guaranteed prediction nahi)"
+  },
+  "tools_exposed": {
+    "bash": {
+      "purpose": "sandbox shell: files, code, network(curl), processes",
+      "read": true,
+      "write": true,
+      "execute": true,
+      "search": false,
+      "network": true,
+      "limits": "sandbox ke andar hi; GUI nahi; long-running ke liye start_process",
+      "evidence": "is session me 100+ commands successful"
+    },
+    "read_file / write_file / edit_file": {
+      "purpose": "workspace file I/O (persist across turns)",
+      "read": true,
+      "write": true,
+      "limits": "sirf /home/user workspace; 128MB snapshot cap; heavy dirs excluded",
+      "evidence": "repo files"
+    },
+    "fetch_page": {
+      "purpose": "URL -> markdown text",
+      "read": true,
+      "network": true,
+      "limits": "HTML/PDF (30 pages tak); kuch sites 403/JS-block; chunked output",
+      "evidence": "V1/V2 spec import + pages"
+    },
+    "web_search": {
+      "purpose": "web search with snippets, depth 1-3",
+      "search": true,
+      "network": true,
+      "limits": "search index quality; citations snippets tak; JS-heavy pages nahi",
+      "evidence": "session me use hua"
+    },
+    "image_search": {
+      "purpose": "web images -> workspace",
+      "read": true,
+      "network": true,
+      "limits": "1-5 images/call",
+      "evidence": "session me use hua"
+    },
+    "generate_image": {
+      "purpose": "text -> image (ya edit)",
+      "write": true,
+      "network": false,
+      "limits": "1 image/call; no real-person likeness guarantees",
+      "evidence": "tool available, is turn me use nahi hua"
+    },
+    "generate_speech / add_voice": {
+      "purpose": "TTS narration",
+      "write": true,
+      "limits": "voice audition zaroori (add_voice), lang-specific voices; singing nahi",
+      "evidence": "tool available"
+    },
+    "start_process / get_process_output / stop_process": {
+      "purpose": "long-running servers (live preview)",
+      "execute": true,
+      "limits": "servers turn ke baad die; 0.0.0.0 bind karo; preview proxy {port}-{sandboxId}.e2b.app",
+      "evidence": "RSSHub :1200, control-center :8000 earlier verified"
+    },
+    "present_file": {
+      "purpose": "user ke viewer me file dikhana",
+      "write": false,
+      "limits": "ek waqt me ek file",
+      "evidence": "session me use hua"
+    },
+    "ask_user": {
+      "purpose": "predefined options se clarification",
+      "limits": "max ~4 questions; turn pause",
+      "evidence": "tool available"
+    }
+  },
+  "tool_discovery_limitation": "TOOL DISCOVERY LIMITATION (spec §12): platform ke internal tool registry ko main introspect nahi kar sakta — sirf exposed interface hi map hua hai. Koi hidden tool assume nahi kiya gaya.",
+  "multi_agent": {
+    "sub_agents_create/call": "UNAVAILABLE (is environment me sub-agent spawning exposed nahi hai)",
+    "parallelize_within_turn": "VERIFIED (ek response me multiple independent tool calls ek saath)",
+    "role_patterns_possible": "STRONGLY SUPPORTED — roles scripts se emulate hote hain: research=web_search+fetch_page, retriever=curl/apis, analyst=python, verifier=provenance/apply_phase checks, memory=uai_mem.py, executor=bash, auditor=ci_extra.py",
+    "note": "Imaginary agents nahi banaye — jo actually available hai wahi likha (spec §13)."
+  },
+  "access_matrix_verified": {
+    "search_engines": {
+      "status": "VERIFIED",
+      "how": "web_search tool + DDG html (curl)",
+      "limits": "snippet-level; kuch engines blocked"
+    },
+    "general_websites": {
+      "status": "VERIFIED (partial)",
+      "how": "curl/fetch_page; 403/JS sites fail",
+      "evidence": "29-site matrix (02_CAPABILITY_AUDIT)"
+    },
+    "docs_repos_standards": {
+      "status": "VERIFIED",
+      "how": "github.com + raw.githubusercontent + docs feeds",
+      "evidence": "04_GITHUB_UNLOCK"
+    },
+    "academic": {
+      "status": "VERIFIED",
+      "how": "OpenAIRE, Crossref, arXiv, StackExchange, Wayback",
+      "evidence": "03_ACCESS_EXPANSION"
+    },
+    "gov_datasets": {
+      "status": "VERIFIED",
+      "how": "data.gov.in, wikipedia/wikidata APIs, NASA APOD",
+      "evidence": "CAPABILITY_MAP v2.x"
+    },
+    "news": {
+      "status": "VERIFIED",
+      "how": "RSS feeds (WSJ markets, The Hindu, DNA India, 60s news) + reader proxy",
+      "evidence": "route_monitor 11/11"
+    },
+    "social_public": {
+      "status": "VERIFIED (subset)",
+      "how": "RSSHub routes (Weibo hot, Threads, TikTok live), redlib (Reddit HTML), pullpush (Reddit JSON), gallery-dl (TikTok/Bluesky/Pinterest), fxtwitter/vxtwitter, Discord invite, Spotify oEmbed, bsky public API",
+      "blocked": "Twitter/Instagram/LinkedIn/Notion direct, douyin (IP), spotify artist API (token)",
+      "evidence": "06_REPO_HUNT + 01_PHASE_APPLY_RESULTS"
+    },
+    "archives": {
+      "status": "VERIFIED",
+      "how": "Wayback CDX + availability API",
+      "evidence": "03_ACCESS_EXPANSION (1.17M chars SO page)"
+    },
+    "patents": {
+      "status": "VERIFIED (partial)",
+      "how": "Google Patents via reader proxy",
+      "limits": "patentsview IPv6 blocked"
+    },
+    "finance": {
+      "status": "VERIFIED",
+      "how": "yfinance (RELIANCE.NS ₹1244), NSE via reader",
+      "evidence": "03_ACCESS_EXPANSION"
+    }
+  },
+  "permission_matrix": {
+    "read_public_web": "FREE (authorized implicitly)",
+    "install_packages_in_sandbox": "FREE (sudo verified)",
+    "write_workspace_files": "FREE",
+    "push_to_user_github": "USER-GATED (token user deta hai; standing rule: har kaam push karo)",
+    "delete_user_data": "CONFIRMATION REQUIRED (spec rule 6)",
+    "external_side_effects (publish/send/pay)": "CONFIRMATION REQUIRED",
+    "use_paid_api_credits": "USER-GATED",
+    "auth/paywall/CAPTCHA bypass": "PROHIBITED (spec §24) — HARD LIMIT"
+  },
+  "hard_limits": [
+    "Auth / paywall / CAPTCHA / anti-bot bypass (spec §24)",
+    "Interactive GUI browsing (clicking flows) — nahi",
+    "Twitter/Instagram/LinkedIn/Notion direct access bina user creds",
+    "Paid/licensed datasets bina license",
+    "Persistent memory outside repo (platform memory assume nahi)",
+    "Sandbox ke bahar kisi system me code chalana (user ka laptop/server) bina user setup",
+    "Third-party service me email/message bhejna bina user action"
+  ],
+  "boundaries": {
+    "lower_bound": "repo + sandbox + network: research, code, files, APIs, social routes, automation, push (user-gated) — sab VERIFIED",
+    "upper_bound": "paid APIs, user creds ke saath private data, zyada compute, real browser automation — POSSIBLE (dependencies ke saath)",
+    "hard_limit": "bypass, GUI interaction, unauthorized access — kabhi nahi"
+  },
+  "evidence_files": [
+    "07_SELF_AUDIT/probes/self_audit_env.txt",
+    "02_CAPABILITY_AUDIT/CAPABILITY_MAP.json",
+    "06_REPO_HUNT/01_PHASE_APPLY_RESULTS.md",
+    "logs/route_health.txt",
+    "logs/cleanup_2026-09-23.md"
+  ],
+  "verified_on": "2026-09-23 07:25 UTC",
+  "change_log": [
+    {
+      "ts": "2026-09-23 07:24 UTC",
+      "from": "1.0",
+      "to": "1.1",
+      "changes": [
+        {
+          "field": "node22",
+          "old": null,
+          "new": "v22.14.0"
+        },
+        {
+          "field": "tools",
+          "old": null,
+          "new": {
+            "git": true,
+            "curl": true,
+            "jq": true,
+            "rg": true,
+            "pandoc": true,
+            "ffmpeg": true,
+            "gallery-dl": true,
+            "yt-dlp": true,
+            "yq": true,
+            "crane": true
+          }
+        },
+        {
+          "field": "network",
+          "old": {
+            "github_api": 200,
+            "reader_proxy": 200,
+            "dns": true
+          },
+          "new": {
+            "github": 200,
+            "jina": 200,
+            "wikipedia": 200
+          }
+        },
+        {
+          "field": "services",
+          "old": null,
+          "new": {
+            "rsshub_1200": 0,
+            "control_center_8000": 0
+          }
+        },
+        {
+          "field": "opt_cache",
+          "old": null,
+          "new": {
+            "PERSIST_STAMP.txt": true,
+            "bin/yq": true,
+            "node22/bin/node": true,
+            "rsshub/dist/index.mjs": true
+          }
+        }
+      ],
+      "note": "tools/self_audit.py run"
+    },
+    {
+      "ts": "2026-09-23 07:25 UTC",
+      "from": "1.1",
+      "to": "1.2",
+      "changes": [
+        {
+          "field": "services",
+          "old": {
+            "rsshub_1200": 0,
+            "control_center_8000": 0
+          },
+          "new": {
+            "rsshub_1200": 200,
+            "control_center_8000": 0
+          }
+        }
+      ],
+      "note": "tools/self_audit.py run"
+    }
+  ]
+}

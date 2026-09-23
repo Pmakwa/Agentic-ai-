@@ -120,6 +120,19 @@ Rules:
 3. Delete karne se pehle report padho; har deletion ka reason `logs/cleanup_*.md` me.
 4. User ka sawaal/jawab, phase, prompt — sab repo me (sync rule).
 
+## 9. SPECS APPLY (V2 / Phase-1 / Phase-2 / aage jo bhi structured prompt)
+
+| Spec | File | Apply command |
+|---|---|---|
+| V2 (112 sections) | `00_SYSTEM/00_UAI-COS_V2.0_SPEC.md` | `python3 tools/apply_phase.py --spec v2` |
+| MASTER SELF-AUDIT (= original Phase 1+2 prompt) | `00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md` | `--spec self_audit` / `--spec phase1` / `--spec phase2` |
+| Naya structured prompt | `tools/import_prompt.py` + `tools/prompt_registry.py add` | phir uske hisaab se spec/check add karo |
+
+- Attestation: `PROJECT_BOARD/PHASE_APPLY.md` (append-only) · logs `logs/phase_apply_*.json`.
+- Continuous update: `python3 tools/self_audit.py` (env probe + map version bump, spec §22).
+- Fresh sandbox: `bash tools/bootstrap_environment.sh` (apt+pip+yq+crane+node22, RSSHub ~2min).
+- **Fail ho to honest likho** (verdict PARTIAL/FAIL + gap list) — false PASS mana hai (§29).
+
 ## 8. Sync rule (user ka standing instruction)
 
 Har baat-cheet/kaam repo me jaata hai →

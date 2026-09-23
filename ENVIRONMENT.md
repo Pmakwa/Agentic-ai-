@@ -69,6 +69,13 @@ Oneshot ka `inactive (dead)` = **success**, failure nahi.
 - IPv6 blocked, kuch hosts egress-IP block karte hain
 - CAPTCHA/login-wall/paywall bypass **allowed nahi** (spec §24) — chahe tool available ho
 
+## ⚠️ Persistence reality (2026-09-23 update)
+
+**/opt reset hua mila** ek fresh sandbox me (RSSHub, node22, yq/crane gaye; pip tools bhi). Workspace `/home/user` safe tha.
+**Recovery:** `bash tools/bootstrap_environment.sh` — apt+pip+yq+crane+node22 ~60s, RSSHub rebuild ~2min (VERIFIED).
+Isliye rule: **/opt ko permanent maan kar mat chalo** — har session start par `python3 tools/self_audit.py` chalao (stamp + services check),
+aur zaroorat par bootstrap.
+
 ## Persisted heavy artifacts (2026-09-23 — workspace lean rakhne ke liye /opt me)
 
 | Path | Size | Kya |

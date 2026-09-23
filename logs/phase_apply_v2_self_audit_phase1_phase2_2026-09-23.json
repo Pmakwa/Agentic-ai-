@@ -1,0 +1,225 @@
+{
+  "applied_at": "2026-09-23 07:24:38",
+  "results": [
+    {
+      "spec": "v2",
+      "title": "UAI-COS V2.0 canonical spec (112 sections)",
+      "spec_file": "00_SYSTEM/00_UAI-COS_V2.0_SPEC.md",
+      "checks": [
+        {
+          "check": "spec v2 import + hash",
+          "ok": true,
+          "detail": "00_SYSTEM/00_UAI-COS_V2.0_SPEC.md OK (hash 4aa1c6a1f872a3f3)",
+          "evidence": "00_SYSTEM/00_UAI-COS_V2.0_SPEC.md"
+        },
+        {
+          "check": "boot payload",
+          "ok": true,
+          "detail": "boot payload 17,982 chars",
+          "evidence": "UAI-COS_BOOT_PROMPT.md"
+        },
+        {
+          "check": "memory OS",
+          "ok": true,
+          "detail": "memory audit 100/100",
+          "evidence": "memory/INDEX.md"
+        },
+        {
+          "check": "provenance",
+          "ok": true,
+          "detail": "PROVENANCE OK — imported spec + raw extraction untouched hain, source traceable hai.",
+          "evidence": "00_SYSTEM/provenance.json"
+        },
+        {
+          "check": "boundary §24 documented",
+          "ok": true,
+          "detail": "boundary §24 (auth/paywall/CAPTCHA bypass NAHI) documented",
+          "evidence": "AGENTS.md"
+        },
+        {
+          "check": "Hindi behaviour rule",
+          "ok": true,
+          "detail": "Hindi rule standing instructions me mila",
+          "evidence": "CONVERSATION/04_STANDING_INSTRUCTIONS.md"
+        }
+      ],
+      "passed": 6,
+      "total": 6,
+      "verdict": "PASS",
+      "env": "e2b.local",
+      "python": "3.13.14",
+      "ts": "2026-09-23 07:24:37"
+    },
+    {
+      "spec": "self_audit",
+      "title": "MASTER SELF-AUDIT blueprint (Phase 1 + Phase 2 original prompt)",
+      "spec_file": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md",
+      "checks": [
+        {
+          "check": "spec self_audit import + hash",
+          "ok": true,
+          "detail": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md OK (hash e8d8620d378adc48)",
+          "evidence": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md"
+        },
+        {
+          "check": "audit deliverables (10 maps/report)",
+          "ok": true,
+          "detail": "6/6 audit deliverables repo me",
+          "evidence": "07_SELF_AUDIT/"
+        },
+        {
+          "check": "boot payload",
+          "ok": true,
+          "detail": "boot payload 17,982 chars",
+          "evidence": "UAI-COS_BOOT_PROMPT.md"
+        },
+        {
+          "check": "env core tools",
+          "ok": true,
+          "detail": "core tools: git, curl, jq, python3",
+          "evidence": null
+        },
+        {
+          "check": "network (tokenless routes)",
+          "ok": true,
+          "detail": "github=200 reader=200",
+          "evidence": null
+        },
+        {
+          "check": "persistence + bootstrap",
+          "ok": true,
+          "detail": "bootstrap script ready",
+          "evidence": "tools/bootstrap_environment.sh"
+        },
+        {
+          "check": "workspace hygiene",
+          "ok": true,
+          "detail": "junk=0 empty=0 dupes=0",
+          "evidence": "logs/"
+        },
+        {
+          "check": "phases engine",
+          "ok": true,
+          "detail": "TOTAL: 24 | active: 1 · done: 20 · next: 1 · waiting_user: 2",
+          "evidence": "PROJECT_BOARD/phases.json"
+        },
+        {
+          "check": "prompt registry",
+          "ok": true,
+          "detail": "SAARE PROMPTS OK",
+          "evidence": "PROMPTS/registry.json"
+        }
+      ],
+      "passed": 9,
+      "total": 9,
+      "verdict": "PASS",
+      "env": "e2b.local",
+      "python": "3.13.14",
+      "ts": "2026-09-23 07:24:38"
+    },
+    {
+      "spec": "phase1",
+      "title": "Phase 1 — self-capability inventory (zero-assumption)",
+      "spec_file": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md",
+      "checks": [
+        {
+          "check": "spec import",
+          "ok": true,
+          "detail": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md OK (hash e8d8620d378adc48)",
+          "evidence": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md"
+        },
+        {
+          "check": "capability map",
+          "ok": true,
+          "detail": "6/6 audit deliverables repo me",
+          "evidence": "07_SELF_AUDIT/"
+        },
+        {
+          "check": "memory OS",
+          "ok": true,
+          "detail": "memory audit 100/100",
+          "evidence": "memory/INDEX.md"
+        },
+        {
+          "check": "provenance",
+          "ok": true,
+          "detail": "PROVENANCE OK — imported spec + raw extraction untouched hain, source traceable hai.",
+          "evidence": "00_SYSTEM/provenance.json"
+        },
+        {
+          "check": "hygiene",
+          "ok": true,
+          "detail": "junk=0 empty=0 dupes=0",
+          "evidence": "logs/"
+        },
+        {
+          "check": "boundary §24 documented",
+          "ok": true,
+          "detail": "boundary §24 (auth/paywall/CAPTCHA bypass NAHI) documented",
+          "evidence": "AGENTS.md"
+        }
+      ],
+      "passed": 6,
+      "total": 6,
+      "verdict": "PASS",
+      "env": "e2b.local",
+      "python": "3.13.14",
+      "ts": "2026-09-23 07:24:38"
+    },
+    {
+      "spec": "phase2",
+      "title": "Phase 2 — access, research methods, fallback routes",
+      "spec_file": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md",
+      "checks": [
+        {
+          "check": "spec import",
+          "ok": true,
+          "detail": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md OK (hash e8d8620d378adc48)",
+          "evidence": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md"
+        },
+        {
+          "check": "audit deliverables",
+          "ok": true,
+          "detail": "6/6 audit deliverables repo me",
+          "evidence": "07_SELF_AUDIT/"
+        },
+        {
+          "check": "network routes",
+          "ok": true,
+          "detail": "github=200 reader=200",
+          "evidence": null
+        },
+        {
+          "check": "social/rsshub route tool",
+          "ok": true,
+          "detail": "tools/social_unlock.py OK (hash bd19000a947895a3)",
+          "evidence": "tools/social_unlock.py"
+        },
+        {
+          "check": "rsshub verify tool",
+          "ok": true,
+          "detail": "tools/rsshub_verify.py OK (hash 1da67238b11f1213)",
+          "evidence": "tools/rsshub_verify.py"
+        },
+        {
+          "check": "monitor tool",
+          "ok": true,
+          "detail": "tools/route_monitor.py OK (hash bde3e0e605c76b90)",
+          "evidence": "tools/route_monitor.py"
+        },
+        {
+          "check": "prompt registry",
+          "ok": true,
+          "detail": "SAARE PROMPTS OK",
+          "evidence": "PROMPTS/registry.json"
+        }
+      ],
+      "passed": 7,
+      "total": 7,
+      "verdict": "PASS",
+      "env": "e2b.local",
+      "python": "3.13.14",
+      "ts": "2026-09-23 07:24:38"
+    }
+  ]
+}

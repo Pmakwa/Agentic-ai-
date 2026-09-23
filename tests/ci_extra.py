@@ -133,6 +133,34 @@ try:
 except Exception as e:  # noqa: BLE001
     bad(f"hygiene check failed: {e}")
 
+# 9. phase specs (v2 + self_audit) hash + deliverables + apply engine
+try:
+    import hashlib as _h
+    def _canon(fp):
+        t = (ROOT / fp).read_text(encoding="utf-8")
+        t = re.sub(r"<!--.*?-->", "", t, flags=re.S)
+        parts = t.split("\n---\n", 1)
+        return _h.sha256(((parts[1].strip() + "\n") if len(parts) == 2 else (t.strip() + "\n")).encode()).hexdigest()[:16]
+    specs = {"00_SYSTEM/00_UAI-COS_V2.0_SPEC.md": "4aa1c6a1f872a3f3",
+             "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md": "e8d8620d378adc48"}
+    for f, want in specs.items():
+        got = _canon(f)
+        if got != want:
+            bad(f"spec hash mismatch {f}: {got} != {want}")
+        else:
+            ok(f"spec OK {f.split('/')[-1]} ({got})")
+    deliver = ["07_SELF_AUDIT/AGENT_CAPABILITY_MAP.json", "07_SELF_AUDIT/RESEARCH_CAPABILITY_MAP.json",
+               "07_SELF_AUDIT/ENVIRONMENT_FALLBACK_MAP.json", "07_SELF_AUDIT/UNKNOWN_CAPABILITY_QUEUE.json",
+               "07_SELF_AUDIT/CAPABILITY_EXPANSION_ROADMAP.md", "07_SELF_AUDIT/00_SELF_AUDIT_MASTER_REPORT.md",
+               "tools/apply_phase.py", "tools/self_audit.py"]
+    miss = [f for f in deliver if not (ROOT / f).exists()]
+    if miss:
+        bad(f"self-audit deliverables missing: {miss}")
+    else:
+        ok(f"self-audit deliverables present ({len(deliver)} files)")
+except Exception as e:  # noqa: BLE001
+    bad(f"phase-spec check failed: {e}")
+
 print()
 if fails:
     print(f"CI EXTRA: {len(fails)} FAIL")
