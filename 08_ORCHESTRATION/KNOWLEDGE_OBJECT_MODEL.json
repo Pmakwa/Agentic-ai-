@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-23",
+  "spec_reference": "00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md \u00a714",
+  "layers": [
+    "RAW INFORMATION",
+    "SOURCE",
+    "EVIDENCE",
+    "VERIFIED FACT",
+    "KNOWLEDGE",
+    "RELATIONSHIP",
+    "HYPOTHESIS",
+    "UNCERTAINTY",
+    "PROJECT MEMORY",
+    "DURABLE KNOWLEDGE",
+    "TEMPORARY CONTEXT",
+    "OBSOLETE KNOWLEDGE"
+  ],
+  "statuses": [
+    "VERIFIED",
+    "PARTIALLY_VERIFIED",
+    "UNVERIFIED",
+    "HYPOTHESIS",
+    "DISPUTED",
+    "OUTDATED",
+    "REJECTED"
+  ],
+  "schema": {
+    "KNOWLEDGE_ID": "string (UUID or semantic slug)",
+    "TITLE": "string",
+    "TYPE": "enum: [core, preference, constraint, procedural, episodic, source, error, project, decision, working, temporal, relational, procedural_state, semantic]",
+    "CLAIM": "string",
+    "SOURCE": "string",
+    "EVIDENCE": "string or array of paths/hashes",
+    "DATE": "ISO-8601 string",
+    "DOMAIN": "string",
+    "CONFIDENCE": "enum: [very_low, low, medium, high, very_high]",
+    "VERIFICATION_STATUS": "enum: [VERIFIED, PARTIALLY_VERIFIED, UNVERIFIED, HYPOTHESIS, DISPUTED, OUTDATED, REJECTED]",
+    "RELATED_KNOWLEDGE": "array of knowledge IDs",
+    "CONTRADICTIONS": "array of strings",
+    "ASSUMPTIONS": "array of strings",
+    "LIMITATIONS": "array of strings",
+    "FRESHNESS": "string",
+    "APPLICABILITY": "string",
+    "LAST_VERIFIED": "ISO-8601 string",
+    "STATUS": "string"
+  }
+}

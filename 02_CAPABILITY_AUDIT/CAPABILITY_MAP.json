@@ -1,5 +1,5 @@
 {
-  "map_version": "2.7",
+  "map_version": "2.8",
   "generated": "2026-09-23",
   "generated_by": "UAI-COS self-audit + PHASE 2 access expansion + repo-hunt unlock (P0-P16) + PHASE-SYSTEM apply (P14 RSSHub routes, P15 monitor, P16 new endpoints)",
   "status_labels": [
@@ -199,7 +199,10 @@
     "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md",
     "PROJECT_BOARD/PHASE_APPLY.md",
     "00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md",
-    "03_ACCESS_EXPANSION/01_PHASE2_BLUEPRINT_APPLY.md"
+    "03_ACCESS_EXPANSION/01_PHASE2_BLUEPRINT_APPLY.md",
+    "00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md",
+    "08_ORCHESTRATION/00_PHASE3_MASTER_ORCHESTRATION_REPORT.md",
+    "tools/orchestrator.py"
   ],
   "next_review": "P21 (repo sweep) ke baad: naye verified tools ka map bump + monitor routes update",
   "changes_from_v1_0": [
@@ -734,5 +737,19 @@
     "engine": "tools/apply_phase.py --spec phase2 (8/8 PASS)",
     "apply_deliverable": "03_ACCESS_EXPANSION/01_PHASE2_BLUEPRINT_APPLY.md",
     "live_probe": "03_ACCESS_EXPANSION/probes/phase2_access_paths.txt (17 public API/dataset routes 200 OK)"
+  },
+  "phase3_orchestration_blueprint": {
+    "status": "VERIFIED (applied)",
+    "spec": "00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md (sha256:4b8a3b3fa3e7766b) — Phase 3 prompt verbatim (53 sections)",
+    "engine": "tools/orchestrator.py + tools/apply_phase.py --spec phase3 (10/10 PASS)",
+    "deliverables": [
+      "08_ORCHESTRATION/00_PHASE3_MASTER_ORCHESTRATION_REPORT.md",
+      "08_ORCHESTRATION/ENVIRONMENT_CAPABILITY_MATRIX.json",
+      "08_ORCHESTRATION/MULTI_AGENT_ROLE_MATRIX.json",
+      "08_ORCHESTRATION/KNOWLEDGE_OBJECT_MODEL.json",
+      "08_ORCHESTRATION/QUALITY_GATE_CHECKLIST.json",
+      "08_ORCHESTRATION/STATE_MACHINE.json",
+      "tools/orchestrator.py"
+    ]
   }
 }

@@ -189,6 +189,20 @@ SPECS: dict[str, dict] = {
                    ("monitor tool", c_spec("tools/route_monitor.py")),
                    ("prompt registry", c_prompts)],
     },
+    "phase3": {
+        "title": "Phase 3 — MULTI-ENVIRONMENT + MULTI-AGENT + ORCHESTRATION MASTER BLUEPRINT",
+        "file": "00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md",
+        "checks": [("spec import + hash", c_spec("00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md", "4b8a3b3fa3e7766b")),
+                   ("master orchestration report", c_spec("08_ORCHESTRATION/00_PHASE3_MASTER_ORCHESTRATION_REPORT.md")),
+                   ("env capability matrix", c_spec("08_ORCHESTRATION/ENVIRONMENT_CAPABILITY_MATRIX.json")),
+                   ("multi-agent role matrix", c_spec("08_ORCHESTRATION/MULTI_AGENT_ROLE_MATRIX.json")),
+                   ("knowledge object model", c_spec("08_ORCHESTRATION/KNOWLEDGE_OBJECT_MODEL.json")),
+                   ("quality gates checklist", c_spec("08_ORCHESTRATION/QUALITY_GATE_CHECKLIST.json")),
+                   ("state machine schema", c_spec("08_ORCHESTRATION/STATE_MACHINE.json")),
+                   ("orchestrator tool", c_spec("tools/orchestrator.py")),
+                   ("orchestrator verification", lambda: (sh(f"{sys.executable} tools/orchestrator.py --verify-all")[0] == 0, "5/5 matrices loaded & gates verified", "08_ORCHESTRATION/")),
+                   ("prompt registry", c_prompts)],
+    },
 }
 
 

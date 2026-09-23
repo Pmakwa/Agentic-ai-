@@ -1,0 +1,119 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-23",
+  "spec_reference": "00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md \u00a74.2",
+  "schema": [
+    "Environment",
+    "Can Read",
+    "Can Search",
+    "Can Execute",
+    "Can Write",
+    "Can Access External Data",
+    "Can Verify"
+  ],
+  "environments": [
+    {
+      "environment": "Current AI Agent (LLM Sandbox Context)",
+      "can_read": true,
+      "can_search": true,
+      "can_execute": true,
+      "can_write": true,
+      "can_access_external_data": true,
+      "can_verify": true,
+      "tools": [
+        "bash",
+        "read_file",
+        "write_file",
+        "edit_file",
+        "web_search",
+        "fetch_page",
+        "start_process",
+        "stop_process",
+        "get_process_output",
+        "present_file",
+        "ask_user"
+      ],
+      "limitations": "Ephemeral process lifetime, context window token budget, no interactive GUI"
+    },
+    {
+      "environment": "Local Linux Sandbox (Debian 13 Root/User)",
+      "can_read": true,
+      "can_search": true,
+      "can_execute": true,
+      "can_write": true,
+      "can_access_external_data": true,
+      "can_verify": true,
+      "tools": [
+        "python3",
+        "bash",
+        "curl",
+        "git",
+        "jq",
+        "pandoc",
+        "ffmpeg",
+        "gallery-dl",
+        "yt-dlp",
+        "node22"
+      ],
+      "limitations": "/home/user persists; /opt requires bootstrap recovery upon full sandbox reset"
+    },
+    {
+      "environment": "Local Daemon Layer (:1200 RSSHub / :8000 Web UI)",
+      "can_read": true,
+      "can_search": true,
+      "can_execute": false,
+      "can_write": false,
+      "can_access_external_data": true,
+      "can_verify": true,
+      "tools": [
+        "curl",
+        "local HTTP GET"
+      ],
+      "limitations": "Upstream website anti-scraping / WAF affects specific routes"
+    },
+    {
+      "environment": "GitHub Cloud Repository (Pmakwa/Agentic-ai-)",
+      "can_read": true,
+      "can_search": true,
+      "can_execute": true,
+      "can_write": true,
+      "can_access_external_data": true,
+      "can_verify": true,
+      "tools": [
+        "git push",
+        "GitHub Actions CI",
+        "GitHub REST API"
+      ],
+      "limitations": "Requires valid active PAT with repo scope; cannot access other private repos"
+    },
+    {
+      "environment": "Public Web / Open Data APIs",
+      "can_read": true,
+      "can_search": true,
+      "can_execute": false,
+      "can_write": false,
+      "can_access_external_data": true,
+      "can_verify": true,
+      "tools": [
+        "fetch_page",
+        "curl",
+        "web_search",
+        "Jina Reader"
+      ],
+      "limitations": "Read-only; subject to rate-limits (e.g. Google Books 429) and paywalls"
+    },
+    {
+      "environment": "External Connected Services (Telegram / Social Auth)",
+      "can_read": false,
+      "can_search": false,
+      "can_execute": false,
+      "can_write": false,
+      "can_access_external_data": false,
+      "can_verify": false,
+      "tools": [
+        "tools/telegram_bot.py (ready)"
+      ],
+      "limitations": "CONDITIONAL \u2014 Requires user to supply runtime API tokens/credentials"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-23",
+  "spec_reference": "00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md \u00a744",
+  "gates": [
+    {
+      "id": "GATE 1",
+      "name": "OBJECTIVE",
+      "question": "Did I answer the actual objective?",
+      "status": "PASS"
+    },
+    {
+      "id": "GATE 2",
+      "name": "COMPLETENESS",
+      "question": "Did I miss a major required component?",
+      "status": "PASS"
+    },
+    {
+      "id": "GATE 3",
+      "name": "ACCESS",
+      "question": "Did I falsely claim access?",
+      "status": "PASS"
+    },
+    {
+      "id": "GATE 4",
+      "name": "SOURCES",
+      "question": "Are important claims supported?",
+      "status": "PASS"
+    },
+    {
+      "id": "GATE 5",
+      "name": "REASONING",
+      "question": "Are conclusions logically supported?",
+      "status": "PASS"
+    },
+    {
+      "id": "GATE 6",
+      "name": "CONTRADICTIONS",
+      "question": "Did I identify meaningful conflicts?",
+      "status": "PASS"
+    },
+    {
+      "id": "GATE 7",
+      "name": "HALLUCINATION",
+      "question": "Did I invent anything?",
+      "status": "PASS"
+    },
+    {
+      "id": "GATE 8",
+      "name": "VERIFICATION",
+      "question": "Was the result adequately checked?",
+      "status": "PASS"
+    },
+    {
+      "id": "GATE 9",
+      "name": "PRACTICALITY",
+      "question": "Can the user actually use the result?",
+      "status": "PASS"
+    },
+    {
+      "id": "GATE 10",
+      "name": "FUTURE VALUE",
+      "question": "Is there knowledge/workflow that should be retained?",
+      "status": "PASS"
+    }
+  ]
+}

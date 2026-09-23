@@ -182,6 +182,7 @@ python3 tools/apply_phase.py --spec self_audit # sirf blueprint (capability/acce
 | `self_audit` | 00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md | e8d8620d378adc48 | MASTER SELF-AUDIT blueprint = **original Phase 1 + Phase 2 prompt** (35 sections) |
 | `phase1` | (same file) | e8d8620d378adc48 | self-capability inventory (zero-assumption) |
 | `phase2` | 00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md | 8a801fdcfc9329e7 | ACCESS PATH & CAPABILITY EXPANSION blueprint (32 sections) |
+| `phase3` | 00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md | 4b8a3b3fa3e7766b | MULTI-ENVIRONMENT + MULTI-AGENT + ORCHESTRATION blueprint (53 sections) |
 Attestation `PROJECT_BOARD/PHASE_APPLY.md` me record hoti hai; deliverables `07_SELF_AUDIT/` me.
 
 ### 4b. STRUCTURED PROMPTS (PROMPTS/registry.json — user ke prompts + kahan apply hue)

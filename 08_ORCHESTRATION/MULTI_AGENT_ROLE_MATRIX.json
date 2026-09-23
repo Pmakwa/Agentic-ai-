@@ -1,0 +1,118 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-23",
+  "spec_reference": "00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md \u00a78",
+  "emulation_note": "In this single-agent runtime, roles are instantiated as discrete modular sub-routines and verified communication contracts (\u00a710, \u00a711)",
+  "roles": [
+    {
+      "role": "ORCHESTRATOR",
+      "responsibility": "Coordinates entire pipeline and activates necessary engines",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "PLANNER",
+      "responsibility": "Breaks objectives into executable subtasks with DAG dependencies",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "RESEARCHER",
+      "responsibility": "Finds relevant information across web, APIs, and datasets",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "SOURCE ANALYST",
+      "responsibility": "Evaluates source quality A-E and methodology transparency",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "DATA RETRIEVER",
+      "responsibility": "Collects structured and raw payloads from verified endpoints",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "DOMAIN SPECIALIST",
+      "responsibility": "Handles technical, financial, or Linux kernel domain analysis",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "CODER",
+      "responsibility": "Writes and tests scripts, parsers, algorithms, and tools",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "TOOL SPECIALIST",
+      "responsibility": "Discovers, evaluates, and tests local/remote CLI tools",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "ENVIRONMENT SPECIALIST",
+      "responsibility": "Determines execution boundaries and environment routing",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "ACCESS ANALYST",
+      "responsibility": "Investigates legitimate alternative routes when direct access fails",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "DATA ANALYST",
+      "responsibility": "Parses CSV, JSON, metrics, and calculates statistical summaries",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "FACT CHECKER",
+      "responsibility": "Verifies factual claims against primary and secondary records",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "CONTRADICTION HUNTER",
+      "responsibility": "Searches for conflicting evidence across multiple sources",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "CRITIC",
+      "responsibility": "Identifies procedural gaps, edge cases, and unwarranted assumptions",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "RED-TEAM AGENT",
+      "responsibility": "Attempts to falsify proposed solutions or security boundaries",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "VERIFIER",
+      "responsibility": "Performs independent hash, syntax, and regression checks",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "SYNTHESIZER",
+      "responsibility": "Combines verified findings into clear, calibrated answers",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "MEMORY MANAGER",
+      "responsibility": "Maintains 14-type memory store and health audits (uai_mem.py)",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "KNOWLEDGE ENGINEER",
+      "responsibility": "Converts verified facts into durable structured knowledge objects",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "FAILURE ANALYST",
+      "responsibility": "Diagnoses root causes of failures (access, tool, data, code)",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "SELF-RESEARCH AGENT",
+      "responsibility": "Detects capability gaps and formulates exploration queries",
+      "status": "ACTIVE"
+    },
+    {
+      "role": "EVOLUTION AGENT",
+      "responsibility": "Updates workflows, registers prompts, and updates capability maps",
+      "status": "ACTIVE"
+    }
+  ]
+}
