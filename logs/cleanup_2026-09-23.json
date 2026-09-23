@@ -1,10 +1,16 @@
 {
-  "ts": "2026-09-23 18:41:41",
+  "ts": "2026-09-23 18:49:18",
   "workspace": "/home/user/uai-cos",
-  "total_before": 14868244,
-  "freed": 0,
-  "apply": false,
-  "junk": [],
+  "total_before": 22655365,
+  "freed": 30346,
+  "apply": true,
+  "junk": [
+    [
+      "tools/__pycache__",
+      "cache-dir",
+      30346
+    ]
+  ],
   "empty": [],
   "duplicates": [
     [
@@ -13,7 +19,17 @@
       121096
     ],
     [
+      "09_QUANT_RESEARCH/DELTA_INTRADAY_ALLRISK/TRADE_LOG_ETH_INR_1h_1pct_1-3.csv",
+      "duplicate-of 09_QUANT_RESEARCH/DELTA_INTRADAY_1PCT/TRADE_LOG_ETH_INR_1h_1-3_1pct.csv",
+      121096
+    ],
+    [
       "09_QUANT_RESEARCH/DELTA_INTRADAY_DOUBLE_ST/RESULT_ETH_INR_1h_8pct.json",
+      "duplicate-of 09_QUANT_RESEARCH/DELTA_INTRADAY_1PCT/RESULT_ETH_INR_1h_1-3_1pct.json",
+      47401
+    ],
+    [
+      "09_QUANT_RESEARCH/DELTA_INTRADAY_ALLRISK/RESULT_ETH_INR_1h_1pct_1-3.json",
       "duplicate-of 09_QUANT_RESEARCH/DELTA_INTRADAY_1PCT/RESULT_ETH_INR_1h_1-3_1pct.json",
       47401
     ],
@@ -46,15 +62,31 @@
       "09_QUANT_RESEARCH/DELTA_INTRADAY_DOUBLE_ST/RESULT_SOL_INR_1h_8pct.json",
       "duplicate-of 09_QUANT_RESEARCH/DELTA_INTRADAY_1PCT/RESULT_SOL_INR_1h_1-3_1pct.json",
       52267
+    ],
+    [
+      "09_QUANT_RESEARCH/DELTA_INTRADAY_ALLRISK/TRADE_LOG_ETH_INR_1h_1pct_1-2.csv",
+      "duplicate-of 09_QUANT_RESEARCH/DELTA_INTRADAY_1PCT/TRADE_LOG_ETH_INR_1h_1-2_1pct.csv",
+      121102
+    ],
+    [
+      "09_QUANT_RESEARCH/DELTA_INTRADAY_ALLRISK/RESULT_ETH_INR_1h_1pct_1-2.json",
+      "duplicate-of 09_QUANT_RESEARCH/DELTA_INTRADAY_1PCT/RESULT_ETH_INR_1h_1-2_1pct.json",
+      47401
     ]
   ],
   "heavy": [],
   "bigdirs": [
     [
       ".git",
-      6474121
+      6926257
     ]
   ],
-  "deleted": [],
+  "deleted": [
+    [
+      "tools/__pycache__",
+      "cache-dir",
+      30346
+    ]
+  ],
   "skipped": []
 }

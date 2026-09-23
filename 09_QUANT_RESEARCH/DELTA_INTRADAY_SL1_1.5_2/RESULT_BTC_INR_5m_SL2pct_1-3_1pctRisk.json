@@ -1,0 +1,91 @@
+{
+  "coin": "BTC/INR",
+  "timeframe": "5m",
+  "params": {
+    "st1": "10x3.0",
+    "st2": "10x4.0",
+    "sl_pct": 0.02,
+    "rr": 3.0
+  },
+  "metrics": {
+    "starting_capital": 10000.0,
+    "ending_capital": 10448.75,
+    "total_net_profit": 448.75,
+    "return_pct": 4.49,
+    "max_drawdown_inr": 142.88,
+    "max_drawdown_pct": 1.35,
+    "max_profit": 299.45,
+    "max_loss": -114.26,
+    "avg_win": 100.76,
+    "avg_loss": -51.94,
+    "largest_win": 299.45,
+    "largest_loss": -114.26,
+    "win_rate": 66.67,
+    "loss_rate": 33.33,
+    "profit_factor": 3.88,
+    "expectancy": 49.86,
+    "num_trades": 9,
+    "winning_trades": 6,
+    "losing_trades": 3,
+    "breakeven_trades": 0,
+    "max_win_streak": 3,
+    "max_loss_streak": 1,
+    "avg_win_streak": 1.5,
+    "avg_loss_streak": 1.0,
+    "recovery_factor": 3.14,
+    "sharpe": 14.24,
+    "sortino": 36.27,
+    "calmar": 995.66,
+    "exposure_pct": 88.99,
+    "avg_duration_hours": 16.09,
+    "max_duration_hours": 23.67,
+    "min_duration_hours": 3.0,
+    "gross_profit": 604.58,
+    "gross_loss": 155.83
+  },
+  "equity_curve": [
+    {
+      "time": "2026-09-17 05:30:00+05:30",
+      "equity": 10000.0
+    },
+    {
+      "time": "2026-09-18 00:00:00+05:30",
+      "equity": 10007.05
+    },
+    {
+      "time": "2026-09-19 00:00:00+05:30",
+      "equity": 10274.39
+    },
+    {
+      "time": "2026-09-20 00:00:00+05:30",
+      "equity": 10285.66
+    },
+    {
+      "time": "2026-09-21 00:00:00+05:30",
+      "equity": 10280.79
+    },
+    {
+      "time": "2026-09-21 20:20:00+05:30",
+      "equity": 10580.24
+    },
+    {
+      "time": "2026-09-22 00:00:00+05:30",
+      "equity": 10543.54
+    },
+    {
+      "time": "2026-09-23 00:00:00+05:30",
+      "equity": 10551.63
+    },
+    {
+      "time": "2026-09-23 19:40:00+05:30",
+      "equity": 10437.36
+    },
+    {
+      "time": "2026-09-24 00:00:00+05:30",
+      "equity": 10448.75
+    }
+  ],
+  "bars": 1954,
+  "data_start": "2026-09-17 05:30:00+05:30",
+  "data_end": "2026-09-24 00:15:00+05:30"
+}

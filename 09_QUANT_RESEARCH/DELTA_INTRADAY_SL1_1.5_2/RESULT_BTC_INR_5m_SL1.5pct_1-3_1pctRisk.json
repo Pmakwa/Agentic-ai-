@@ -1,0 +1,95 @@
+{
+  "coin": "BTC/INR",
+  "timeframe": "5m",
+  "params": {
+    "st1": "10x3.0",
+    "st2": "10x4.0",
+    "sl_pct": 0.015,
+    "rr": 3.0
+  },
+  "metrics": {
+    "starting_capital": 10000.0,
+    "ending_capital": 10719.74,
+    "total_net_profit": 719.74,
+    "return_pct": 7.2,
+    "max_drawdown_inr": 119.39,
+    "max_drawdown_pct": 1.11,
+    "max_profit": 298.5,
+    "max_loss": -119.39,
+    "avg_win": 105.71,
+    "avg_loss": -62.96,
+    "largest_win": 298.5,
+    "largest_loss": -119.39,
+    "win_rate": 80.0,
+    "loss_rate": 20.0,
+    "profit_factor": 6.72,
+    "expectancy": 71.97,
+    "num_trades": 10,
+    "winning_trades": 8,
+    "losing_trades": 2,
+    "breakeven_trades": 0,
+    "max_win_streak": 4,
+    "max_loss_streak": 1,
+    "avg_win_streak": 2.67,
+    "avg_loss_streak": 1.0,
+    "recovery_factor": 6.03,
+    "sharpe": 21.53,
+    "sortino": 36.98,
+    "calmar": 6083.31,
+    "exposure_pct": 89.09,
+    "avg_duration_hours": 14.5,
+    "max_duration_hours": 23.67,
+    "min_duration_hours": 4.42,
+    "gross_profit": 845.66,
+    "gross_loss": 125.92
+  },
+  "equity_curve": [
+    {
+      "time": "2026-09-17 05:30:00+05:30",
+      "equity": 10000.0
+    },
+    {
+      "time": "2026-09-18 00:00:00+05:30",
+      "equity": 10009.4
+    },
+    {
+      "time": "2026-09-18 19:20:00+05:30",
+      "equity": 10298.15
+    },
+    {
+      "time": "2026-09-19 00:00:00+05:30",
+      "equity": 10338.92
+    },
+    {
+      "time": "2026-09-20 00:00:00+05:30",
+      "equity": 10354.04
+    },
+    {
+      "time": "2026-09-21 00:00:00+05:30",
+      "equity": 10347.51
+    },
+    {
+      "time": "2026-09-21 15:05:00+05:30",
+      "equity": 10646.01
+    },
+    {
+      "time": "2026-09-22 00:00:00+05:30",
+      "equity": 10735.98
+    },
+    {
+      "time": "2026-09-23 00:00:00+05:30",
+      "equity": 10746.95
+    },
+    {
+      "time": "2026-09-23 17:45:00+05:30",
+      "equity": 10627.56
+    },
+    {
+      "time": "2026-09-24 00:00:00+05:30",
+      "equity": 10719.74
+    }
+  ],
+  "bars": 1954,
+  "data_start": "2026-09-17 05:30:00+05:30",
+  "data_end": "2026-09-24 00:15:00+05:30"
+}
