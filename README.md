@@ -1,5 +1,15 @@
 # UAI-COS v2.0 — Universal AI Cognitive Operating System (live workspace)
 
+> ### 🧭 V2 AUR PHASE 1 SE 3 KAHA HAIN? (QUICK NAVIGATION)
+> | Phase / Prompt | Canonical Spec | Applied Folder | Live Tool / Engine | Status |
+> |---|---|---|---|---|
+> | **V2 (112 sections)** | `00_SYSTEM/00_UAI-COS_V2.0_SPEC.md` | `AGENTS.md`, `02_CAPABILITY_AUDIT/` | `tools/agent_boot.py`, `tools/uai_mem.py` | ✅ **PASS (6/6)** |
+> | **PHASE 1 (Self-Audit)** | `00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md` | `07_SELF_AUDIT/` (`PHASE_1_APPLIED/`) | `tools/self_audit.py`, `tools/bootstrap_environment.sh` | ✅ **PASS (6/6)** |
+> | **PHASE 2 (Access Path)** | `00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md` | `03_ACCESS_EXPANSION/` (`PHASE_2_APPLIED/`) | `tools/social_unlock.py`, `tools/access_routes.py` | ✅ **PASS (8/8)** |
+> | **PHASE 3 (Orchestration)** | `00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md` | `08_ORCHESTRATION/` (`PHASE_3_APPLIED/`) | `tools/orchestrator.py` | ✅ **PASS (10/10)** |
+>
+> 📌 Poora visual dashboard dekhein: [`V2_AND_PHASE_1_2_3_APPLIED_DASHBOARD.md`](V2_AND_PHASE_1_2_3_APPLIED_DASHBOARD.md)
+
 > 🚀 **Naya agent? pehle [`AGENTS.md`](AGENTS.md) padho, phir [`START_HERE.md`](START_HERE.md).**
 > Poori baat-cheet ka A-to-Z record [`CONVERSATION/`](CONVERSATION/00_A_TO_Z_LOG.md) me · chalane ke commands [`RUNBOOK.md`](RUNBOOK.md) ·
 > environment ki haqeeqat [`ENVIRONMENT.md`](ENVIRONMENT.md) · machine-readable truth [`CAPABILITY_MAP.json`](02_CAPABILITY_AUDIT/CAPABILITY_MAP.json) (v2.8).
