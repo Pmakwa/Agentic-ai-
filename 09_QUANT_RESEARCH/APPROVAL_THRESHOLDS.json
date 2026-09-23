@@ -1,0 +1,45 @@
+{
+  "version": "2.0",
+  "updated": "2026-09-23",
+  "thresholds": {
+    "out_of_sample_sharpe": {
+      "minimum": 1.5,
+      "unit": "ratio",
+      "status": "REQUIRED"
+    },
+    "profit_factor": {
+      "minimum": 1.65,
+      "unit": "ratio",
+      "status": "REQUIRED"
+    },
+    "maximum_drawdown": {
+      "maximum": 20.0,
+      "unit": "pct",
+      "status": "REQUIRED"
+    },
+    "trade_count": {
+      "minimum": 250,
+      "unit": "trades across at least 2 regimes",
+      "status": "REQUIRED"
+    },
+    "parameter_perturbation_resilience": {
+      "max_performance_decay_pct": 15.0,
+      "neighborhood": "+/- 20% parameter range",
+      "status": "REQUIRED"
+    },
+    "monte_carlo_ruin_probability": {
+      "maximum": 5.0,
+      "unit": "pct at 95% confidence",
+      "status": "REQUIRED"
+    },
+    "cost_shock_survival": {
+      "multiplier": 3.0,
+      "requirement": "Must retain positive net expectancy under 3x spread and commissions",
+      "status": "REQUIRED"
+    },
+    "data_leakage_audit": {
+      "requirement": "Zero lookahead bias and survivorship bias verified by adversarial agent",
+      "status": "REQUIRED"
+    }
+  }
+}

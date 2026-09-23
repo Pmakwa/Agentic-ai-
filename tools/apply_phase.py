@@ -203,6 +203,20 @@ SPECS: dict[str, dict] = {
                    ("orchestrator verification", lambda: (sh(f"{sys.executable} tools/orchestrator.py --verify-all")[0] == 0, "5/5 matrices loaded & gates verified", "08_ORCHESTRATION/")),
                    ("prompt registry", c_prompts)],
     },
+    "phoenix": {
+        "title": "PHOENIX RISING V2.0 — Autonomous Quant Research & Trading Master Blueprint",
+        "file": "00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md",
+        "checks": [("spec import + hash", c_spec("00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md", "91fd45775607c619")),
+                   ("master quant report", c_spec("09_QUANT_RESEARCH/00_PHOENIX_RISING_V2_MASTER_REPORT.md")),
+                   ("mathematical feasibility", c_spec("09_QUANT_RESEARCH/MATHEMATICAL_FEASIBILITY.json")),
+                   ("capital growth scenarios", c_spec("09_QUANT_RESEARCH/CAPITAL_GROWTH_SCENARIOS.json")),
+                   ("approval thresholds", c_spec("09_QUANT_RESEARCH/APPROVAL_THRESHOLDS.json")),
+                   ("research execution protocol", c_spec("09_QUANT_RESEARCH/RESEARCH_EXECUTION_PROTOCOL.md")),
+                   ("data limitation policy", c_spec("09_QUANT_RESEARCH/DATA_TOOL_LIMITATION_POLICY.md")),
+                   ("phoenix quant tool", c_spec("tools/phoenix_quant.py")),
+                   ("phoenix engine verification", lambda: (sh(f"{sys.executable} tools/phoenix_quant.py --verify-all")[0] == 0, "Quant engine math & deliverables verified", "09_QUANT_RESEARCH/")),
+                   ("prompt registry", c_prompts)],
+    },
 }
 
 

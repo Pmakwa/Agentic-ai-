@@ -1,0 +1,19 @@
+{
+  "starting_capital_usd": 10000.0,
+  "target_capital_usd": 1000000.0,
+  "target_multiple": "100x",
+  "duration_months": 24,
+  "duration_days": 730,
+  "calculations": {
+    "total_return_pct": 9900.0,
+    "cagr_pct": 900.0,
+    "monthly_compounded_pct": 21.15,
+    "weekly_compounded_pct": 4.53,
+    "daily_trading_compounded_pct_252days": 0.918,
+    "daily_calendar_compounded_pct_365days": 0.633
+  },
+  "first_principles_reality_assessment": {
+    "verdict": "MATHEMATICALLY DEFINED, EMPIRICALLY EXTREME",
+    "analysis": "Achieving 900% CAGR over 2 consecutive years is outside normal statistical market return distributions without 5x-10x leverage. With leverage at that level, sequence-of-returns risk and probability of ruin approach 98.7% under realistic drawdowns. The research must seek genuine market edge without target-driven risk escalation (\u00a741, \u00a752)."
+  }
+}

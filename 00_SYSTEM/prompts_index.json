@@ -52,6 +52,17 @@
       "imported": "2026-09-23",
       "note": "PHASE 3 master blueprint — Central Meta-Orchestrator, Multi-Environment Matrix, Dynamic Multi-Agent delegation, 10 Quality Gates, Knowledge Object Model, Continuous Evolution (53 sections)",
       "raw": "00_SYSTEM/_raw/prompt_phase_3_raw.md"
+    },
+    {
+      "name": "PHOENIX_RISING_V2",
+      "file": "00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md",
+      "source": "user message (Arena chat) 2026-09-23 — direct paste",
+      "method": "direct paste (no proxy)",
+      "chars": 23500,
+      "body_sha256_16": "91fd45775607c619",
+      "imported": "2026-09-23",
+      "note": "PHOENIX RISING V2.0 master quant prompt: mathematical feasibility ($10k->$1M), multi-agent quant team, walk-forward, Monte Carlo, adversarial verification (53 sections + 3 extensions)",
+      "raw": "00_SYSTEM/_raw/prompt_phoenix_rising_v2_raw.md"
     }
   ],
   "note": "Har imported prompt ka canonical body hash. Naya prompt: tools/import_prompt.py"

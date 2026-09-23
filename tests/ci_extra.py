@@ -144,7 +144,8 @@ try:
     specs = {"00_SYSTEM/00_UAI-COS_V2.0_SPEC.md": "4aa1c6a1f872a3f3",
              "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md": "e8d8620d378adc48",
              "00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md": "8a801fdcfc9329e7",
-             "00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md": "4b8a3b3fa3e7766b"}
+             "00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md": "4b8a3b3fa3e7766b",
+             "00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md": "91fd45775607c619"}
     for f, want in specs.items():
         got = _canon(f)
         if got != want:
@@ -158,7 +159,10 @@ try:
                "08_ORCHESTRATION/00_PHASE3_MASTER_ORCHESTRATION_REPORT.md",
                "08_ORCHESTRATION/ENVIRONMENT_CAPABILITY_MATRIX.json",
                "08_ORCHESTRATION/MULTI_AGENT_ROLE_MATRIX.json",
-               "tools/orchestrator.py"]
+               "tools/orchestrator.py",
+               "09_QUANT_RESEARCH/00_PHOENIX_RISING_V2_MASTER_REPORT.md",
+               "09_QUANT_RESEARCH/MATHEMATICAL_FEASIBILITY.json",
+               "tools/phoenix_quant.py"]
     miss = [f for f in deliver if not (ROOT / f).exists()]
     if miss:
         bad(f"self-audit deliverables missing: {miss}")

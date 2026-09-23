@@ -1,5 +1,5 @@
 {
-  "map_version": "2.8",
+  "map_version": "2.9",
   "generated": "2026-09-23",
   "generated_by": "UAI-COS self-audit + PHASE 2 access expansion + repo-hunt unlock (P0-P16) + PHASE-SYSTEM apply (P14 RSSHub routes, P15 monitor, P16 new endpoints)",
   "status_labels": [
@@ -202,7 +202,10 @@
     "03_ACCESS_EXPANSION/01_PHASE2_BLUEPRINT_APPLY.md",
     "00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md",
     "08_ORCHESTRATION/00_PHASE3_MASTER_ORCHESTRATION_REPORT.md",
-    "tools/orchestrator.py"
+    "tools/orchestrator.py",
+    "00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md",
+    "09_QUANT_RESEARCH/00_PHOENIX_RISING_V2_MASTER_REPORT.md",
+    "tools/phoenix_quant.py"
   ],
   "next_review": "P21 (repo sweep) ke baad: naye verified tools ka map bump + monitor routes update",
   "changes_from_v1_0": [
@@ -750,6 +753,20 @@
       "08_ORCHESTRATION/QUALITY_GATE_CHECKLIST.json",
       "08_ORCHESTRATION/STATE_MACHINE.json",
       "tools/orchestrator.py"
+    ]
+  },
+  "phoenix_rising_v2_quant": {
+    "status": "VERIFIED (applied)",
+    "spec": "00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md (sha256:91fd45775607c619) — Phoenix Rising V2.0 prompt verbatim",
+    "engine": "tools/phoenix_quant.py + tools/apply_phase.py --spec phoenix (10/10 PASS)",
+    "deliverables": [
+      "09_QUANT_RESEARCH/00_PHOENIX_RISING_V2_MASTER_REPORT.md",
+      "09_QUANT_RESEARCH/MATHEMATICAL_FEASIBILITY.json",
+      "09_QUANT_RESEARCH/CAPITAL_GROWTH_SCENARIOS.json",
+      "09_QUANT_RESEARCH/APPROVAL_THRESHOLDS.json",
+      "09_QUANT_RESEARCH/RESEARCH_EXECUTION_PROTOCOL.md",
+      "09_QUANT_RESEARCH/DATA_TOOL_LIMITATION_POLICY.md",
+      "tools/phoenix_quant.py"
     ]
   }
 }

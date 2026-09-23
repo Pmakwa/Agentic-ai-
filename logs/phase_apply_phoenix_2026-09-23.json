@@ -1,0 +1,78 @@
+{
+  "applied_at": "2026-09-23 08:39:51",
+  "results": [
+    {
+      "spec": "phoenix",
+      "title": "PHOENIX RISING V2.0 — Autonomous Quant Research & Trading Master Blueprint",
+      "spec_file": "00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md",
+      "checks": [
+        {
+          "check": "spec import + hash",
+          "ok": true,
+          "detail": "00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md OK (hash 91fd45775607c619)",
+          "evidence": "00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md"
+        },
+        {
+          "check": "master quant report",
+          "ok": true,
+          "detail": "09_QUANT_RESEARCH/00_PHOENIX_RISING_V2_MASTER_REPORT.md OK (hash 5f2016122633ff9b)",
+          "evidence": "09_QUANT_RESEARCH/00_PHOENIX_RISING_V2_MASTER_REPORT.md"
+        },
+        {
+          "check": "mathematical feasibility",
+          "ok": true,
+          "detail": "09_QUANT_RESEARCH/MATHEMATICAL_FEASIBILITY.json OK (hash 1579eb1be33b1062)",
+          "evidence": "09_QUANT_RESEARCH/MATHEMATICAL_FEASIBILITY.json"
+        },
+        {
+          "check": "capital growth scenarios",
+          "ok": true,
+          "detail": "09_QUANT_RESEARCH/CAPITAL_GROWTH_SCENARIOS.json OK (hash bbbe76e9189796b4)",
+          "evidence": "09_QUANT_RESEARCH/CAPITAL_GROWTH_SCENARIOS.json"
+        },
+        {
+          "check": "approval thresholds",
+          "ok": true,
+          "detail": "09_QUANT_RESEARCH/APPROVAL_THRESHOLDS.json OK (hash bff153ac34ab1043)",
+          "evidence": "09_QUANT_RESEARCH/APPROVAL_THRESHOLDS.json"
+        },
+        {
+          "check": "research execution protocol",
+          "ok": true,
+          "detail": "09_QUANT_RESEARCH/RESEARCH_EXECUTION_PROTOCOL.md OK (hash feaff9f00d70b9ab)",
+          "evidence": "09_QUANT_RESEARCH/RESEARCH_EXECUTION_PROTOCOL.md"
+        },
+        {
+          "check": "data limitation policy",
+          "ok": true,
+          "detail": "09_QUANT_RESEARCH/DATA_TOOL_LIMITATION_POLICY.md OK (hash 644756fab4d8e96c)",
+          "evidence": "09_QUANT_RESEARCH/DATA_TOOL_LIMITATION_POLICY.md"
+        },
+        {
+          "check": "phoenix quant tool",
+          "ok": true,
+          "detail": "tools/phoenix_quant.py OK (hash 36edbf3778596420)",
+          "evidence": "tools/phoenix_quant.py"
+        },
+        {
+          "check": "phoenix engine verification",
+          "ok": true,
+          "detail": "Quant engine math & deliverables verified",
+          "evidence": "09_QUANT_RESEARCH/"
+        },
+        {
+          "check": "prompt registry",
+          "ok": true,
+          "detail": "SAARE PROMPTS OK",
+          "evidence": "PROMPTS/registry.json"
+        }
+      ],
+      "passed": 10,
+      "total": 10,
+      "verdict": "PASS",
+      "env": "e2b.local",
+      "python": "3.13.14",
+      "ts": "2026-09-23 08:39:51"
+    }
+  ]
+}
