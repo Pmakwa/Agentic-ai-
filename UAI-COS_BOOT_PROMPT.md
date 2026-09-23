@@ -202,7 +202,7 @@ Attestation `PROJECT_BOARD/PHASE_APPLY.md` me record hoti hai; deliverables `07_
 1. **Reality rule:** "permanent/unlimited memory" ka claim nahi — sirf jo disk par actually save hai wahi persistent hai [`V1 reality rule`].
 2. **Blind retrieval ban:** keywor
 
-### 7. MEMORY SNAPSHOT (live: 88 records; ye sirf key rules hain, poora `memory/store/memory.jsonl`)
+### 7. MEMORY SNAPSHOT (live: 89 records; ye sirf key rules hain, poora `memory/store/memory.jsonl`)
   [MEM-CORE-0001/core] User ka long-term goal: ek governed, memory-aware, multi-agent AI operating system chalana (UAI-COS), jisme memory verify hoti hai aur blind use nahi hoti.
   [MEM-PREF-0001/preference] User se Hindi me baat karni hai, lekin English alphabet/spelling (Roman Hindi) me — jab tak user khud Devanagari ya doosri language na maange.
   [MEM-PREF-0002/preference] User ko detailed, advanced, master-level aur practical output chahiye; basic ya generic answer nahi.
@@ -218,7 +218,7 @@ Attestation `PROJECT_BOARD/PHASE_APPLY.md` me record hoti hai; deliverables `07_
   [MEM-DEC-0002/decision] Memory store ke liye JSONL choose kiya (append-friendly, git-friendly, zero dependency); vector/embedding retrieval future upgrade hai.
   [MEM-DEC-0003/decision] Step 2 = implementation layer: roadmap + user scenarios + memory-type integration + agent lifecycle + evaluation/regression (yahi 3 cheezein source chat me next-step ke roop me offer hui thi
 
-### 8. CAPABILITY TRUTH (CAPABILITY_MAP v2.9 · sha256[16]=6af4ac0a3f79c135 — jhooth nahi, sirf verified)
+### 8. CAPABILITY TRUTH (CAPABILITY_MAP v3.0 · sha256[16]=51aec174822f7425 — jhooth nahi, sirf verified)
 **Social (verified tokenless):** {"reddit_rss": "✅ 24,685 B (60s window)", "telegram_public_preview": "✅ 127,691 B via t.me/s/<channel>", "bluesky_public_api": "✅ 200 searchActors (1,289 B) — neutral UA zaroori (full browser UA → 403)", "bluesky_sdk_atproto": "✅ actor search works (base_url=public.api.bsky.app)", "mastodon_fediverse": "✅ fosstodon 6,808 B / mastodon.world 7,358 B (instance-dependent)", "tiktok_oembed": "✅ 1,522 B (no key)", "youtube_ytdlp": "✅ channel listing works", "x_thirdparty_bridge_fxtwitter": "✅ 682 B public profile (third-party service, not GitHub)", "reddit_oauth": "⚠️ 2026: self-service app registra
 **Repo-unlock (installed + live-tested):**
   - gallery-dl: {'version': '1.32.13', 'verified_for': ['tiktok media 19.4MB', 'bluesky media 3.4MB', 'pinterest metadata 105KB', 'tumbl
@@ -234,7 +234,7 @@ Attestation `PROJECT_BOARD/PHASE_APPLY.md` me record hoti hai; deliverables `07_
 **Blocked (naya authorized route mile bina dobara try mat karo):** Instagram (429 + login wall) · Facebook (login redirect) · LinkedIn (login wall) · Quora · Bilibili (412 risk control) · X full API (paid) · Reddit direct (IP block → redlib instances use karo) · Nitter/Invidious (dead/gated).
 
 ### 9. CURRENT STATUS
-- Memory: **88 records** · Capability map: **v2.9** · Reports: `00_SYSTEM`…`06_REPO_HUNT` + `CONVERSATION`
+- Memory: **89 records** · Capability map: **v3.0** · Reports: `00_SYSTEM`…`06_REPO_HUNT` + `CONVERSATION`
 - Tools: `tools/social_unlock.py` (10 cmds) · `uai_mem.py` (13 cmds) · `access_routes.py` · `github_unlock.py` · `local_ai.py` · `route_monitor.py`
 - Har verified route ka exact command: **`RUNBOOK.md`** · limits: **`ENVIRONMENT.md`**
 

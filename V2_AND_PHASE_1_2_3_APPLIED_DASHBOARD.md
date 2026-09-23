@@ -8,11 +8,11 @@ Ye document workspace me **V2, Phase 1, Phase 2, aur Phase 3** ka exact live pro
 
 | Prompt / Phase | Canonical Spec (Original Prompt) | Workspace Folder (Applied Deliverables) | Live Tool / Engine | Live Status |
 |---|---|---|---|---|
-| **PHOENIX RISING V2.0** | `00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md`<br>*(hash `91fd45775607c619`)* | `09_QUANT_RESEARCH/`<br>*(ya `PHOENIX_QUANT_APPLIED/`)* | `tools/phoenix_quant.py` | ✅ **PASS (10/10)** |
+| **PHOENIX RISING V2.0** | `00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md`<br>*(hash `91fd45775607c619`)* | `09_QUANT_RESEARCH/`<br>*(ya `PHOENIX_QUANT_APPLIED/`)* | `tools/phoenix_strategy_engine.py`<br>`tools/phoenix_quant.py` | ✅ **PASS (14/14)** |
 | **V2 (112 sections)** | `00_SYSTEM/00_UAI-COS_V2.0_SPEC.md`<br>*(hash `4aa1c6a1f872a3f3`)* | `AGENTS.md`<br>`02_CAPABILITY_AUDIT/`<br>`UAI-COS_BOOT_PROMPT.md` | `tools/agent_boot.py`<br>`tools/uai_mem.py` | ✅ **PASS (6/6)** |
 | **PHASE 1 (Self-Audit)** | `00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md`<br>*(hash `e8d8620d378adc48`)* | `07_SELF_AUDIT/`<br>*(ya `PHASE_1_APPLIED/`)* | `tools/self_audit.py`<br>`tools/bootstrap_environment.sh` | ✅ **PASS (6/6)** |
 | **PHASE 2 (Access Path)** | `00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md`<br>*(hash `8a801fdcfc9329e7`)* | `03_ACCESS_EXPANSION/`<br>*(ya `PHASE_2_APPLIED/`)* | `tools/social_unlock.py`<br>`tools/access_routes.py` | ✅ **PASS (8/8)** |
-| **PHASE 3 (Orchestration)** | `00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md`<br>*(hash `4b8a3b3fa3e7766b`)* | `08_ORCHESTRATION/`<br>*(ya `PHASE_3_APPLIED/`)* | `tools/orchestrator.py` | ✅ **PASS (10/10)** |
+| **PHASE 3 (Orchestration)** | `00_SYSTEM/04_UAI-COS_PHASE_3_ORCHESTRATION_SPEC.md`<br>*(hash `4b8a3b3fa3e7766b`)* | `08_ORCHESTRATION/`<br>*(ya `PHASE_3_APPLIED/`)* | `tools/orchestrator.py` | ✅ **PASS (14/14)** |
 
 ---
 
@@ -97,7 +97,7 @@ Ye document workspace me **V2, Phase 1, Phase 2, aur Phase 3** ka exact live pro
   4. `09_QUANT_RESEARCH/APPROVAL_THRESHOLDS.json`: Strict evidence-based approval criteria.
   5. `09_QUANT_RESEARCH/RESEARCH_EXECUTION_PROTOCOL.md`: 7-stage research standard.
   6. `09_QUANT_RESEARCH/DATA_TOOL_LIMITATION_POLICY.md`: Real-world execution and broker data boundaries.
-- **Live Tool:** `tools/phoenix_quant.py`
+- **Live Tool:** `tools/phoenix_strategy_engine.py`<br>`tools/phoenix_quant.py`
   - `python3 tools/phoenix_quant.py --math` (Calculations from first principles)
   - `python3 tools/phoenix_quant.py --monte-carlo` (5,000 trade order & slippage simulations)
   - `python3 tools/phoenix_quant.py --adversarial` (Adversarial red-team auditor)

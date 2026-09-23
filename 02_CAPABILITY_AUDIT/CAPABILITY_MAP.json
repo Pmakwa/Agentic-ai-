@@ -1,5 +1,5 @@
 {
-  "map_version": "2.9",
+  "map_version": "3.0",
   "generated": "2026-09-23",
   "generated_by": "UAI-COS self-audit + PHASE 2 access expansion + repo-hunt unlock (P0-P16) + PHASE-SYSTEM apply (P14 RSSHub routes, P15 monitor, P16 new endpoints)",
   "status_labels": [
@@ -205,7 +205,10 @@
     "tools/orchestrator.py",
     "00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md",
     "09_QUANT_RESEARCH/00_PHOENIX_RISING_V2_MASTER_REPORT.md",
-    "tools/phoenix_quant.py"
+    "tools/phoenix_quant.py",
+    "09_QUANT_RESEARCH/PRODUCTION_STRATEGY_SPEC.md",
+    "09_QUANT_RESEARCH/TRADE_LOG.csv",
+    "tools/phoenix_strategy_engine.py"
   ],
   "next_review": "P21 (repo sweep) ke baad: naye verified tools ka map bump + monitor routes update",
   "changes_from_v1_0": [
@@ -767,6 +770,27 @@
       "09_QUANT_RESEARCH/RESEARCH_EXECUTION_PROTOCOL.md",
       "09_QUANT_RESEARCH/DATA_TOOL_LIMITATION_POLICY.md",
       "tools/phoenix_quant.py"
+    ]
+  },
+  "phoenix_strategy_complete": {
+    "status": "COMPLETED & BACKTESTED (MRAV-V2)",
+    "strategy_name": "Multi-Asset Momentum Rotation & ATR Volatility Breakout (MRAV-V2)",
+    "engine": "tools/phoenix_strategy_engine.py",
+    "empirical_results": {
+      "full_sample_return": "+29.53%",
+      "cagr": "12.56%",
+      "max_drawdown": "6.72%",
+      "profit_factor": 2.38,
+      "sharpe": 1.2,
+      "sortino": 1.51,
+      "trades_executed": 51,
+      "monte_carlo_ruin_prob": "0.0%"
+    },
+    "deliverables": [
+      "09_QUANT_RESEARCH/PRODUCTION_STRATEGY_SPEC.md",
+      "09_QUANT_RESEARCH/TRADE_LOG.csv",
+      "09_QUANT_RESEARCH/BACKTEST_RESULTS.json",
+      "tools/phoenix_strategy_engine.py"
     ]
   }
 }

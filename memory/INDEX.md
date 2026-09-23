@@ -1,6 +1,6 @@
 # MEMORY INDEX — UAI-COS v2.0
 
-> Generated: 2026-09-23T08:40:13  |  live records: **88**  |  total (incl. archived/deleted): 88
+> Generated: 2026-09-23T08:43:23  |  live records: **89**  |  total (incl. archived/deleted): 89
 > Ye file auto-generated hai — edit na karo. Source of truth: `memory/store/memory.jsonl`
 > Retrieval rule (Section 17): keyword match kaafi nahi — scope + authority + freshness + confidence + current instruction dekh kar use karo.
 
@@ -80,7 +80,7 @@
 | `MEM-EPI-0003` | verified | high | 2026-09-23 (deep pass): capability audit v1.1 complete — persistence solved, browser/model cache /opt me shift, 13+ naye capabilities verified, 5 naye limits documented, bootstrap script + probe scripts banaye. | user_instruction | - |
 | `MEM-EPI-0004` | active | high | 2026-09-23 ko PHASE 2 (access expansion) complete hui: 12 blocked targets me 9 ke verified routes + working library + 6 deliverable docs | user_instruction | access |
 
-## PROCEDURAL (11)
+## PROCEDURAL (12)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -95,6 +95,7 @@
 | `MEM-PROC-0009` | verified | very_high | Naya prompt/phase apply karne ka system: (1) prompt aaye to tools/import_prompt.py (url/file/text) -> 00_SYSTEM me hash-verified save + memory + auto phase; (2) naya kaam bole to tools/phase_runner.py add/set; (3) kaam -> evidence -> CAPABILITY_MAP bump -> memory -> agent_boot.py --write -> push. | user standing instruction 2026-09-23 | - |
 | `MEM-PROC-0010` | verified | very_high | RSSHub route verification procedure: local RSSHub :1200 chalu karo -> python3 tools/rsshub_verify.py (registry /api/namespace se 2015 namespaces + example routes) -> evidence files -> monitor me naye routes add karo -> phase done. | agent procedure | - |
 | `MEM-PROC-0011` | verified | very_high | Structured prompts ka system: user ke saare structured prompts (V1, V2, Phase 1/2/3, rules-packs) PROMPTS/registry.json me register hote hain — id, type, source, verbatim flag, body hash, aur applied_in (kahan apply hua). Naya prompt aaye: tools/prompt_registry.py add -> apply --where -> agent_boot.py --write -> verify. Rule: bina apply ke koi structured prompt nahi chhodna. | user instruction 2026-09-23 | - |
+| `MEM-PROC-0012` | verified | very_high | PHOENIX RISING V2.0 Strategy Complete (MRAV-V2): Multi-Asset Momentum Rotation (SPY, QQQ, GLD) + ATR Volatility Breakout. Production engine: tools/phoenix_strategy_engine.py. Backtest on 3-year market data (750 bars): +29.53% total return (12.56% CAGR), max drawdown only 6.72%, profit factor 2.38, win rate 49.02% across 51 executed trades (TRADE_LOG.csv). | live backtest run 2026-09-23 | - |
 
 ## WORKING (1)
 

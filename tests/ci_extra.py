@@ -162,6 +162,10 @@ try:
                "tools/orchestrator.py",
                "09_QUANT_RESEARCH/00_PHOENIX_RISING_V2_MASTER_REPORT.md",
                "09_QUANT_RESEARCH/MATHEMATICAL_FEASIBILITY.json",
+               "09_QUANT_RESEARCH/PRODUCTION_STRATEGY_SPEC.md",
+               "09_QUANT_RESEARCH/TRADE_LOG.csv",
+               "09_QUANT_RESEARCH/BACKTEST_RESULTS.json",
+               "tools/phoenix_strategy_engine.py",
                "tools/phoenix_quant.py"]
     miss = [f for f in deliver if not (ROOT / f).exists()]
     if miss:

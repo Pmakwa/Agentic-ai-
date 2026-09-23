@@ -24,9 +24,11 @@
 
 | 11 | 2026-09-23 08:38 | (auto) | **PHOENIX RISING V2.0 Quant Spec applied**: `00_SYSTEM/05_PHOENIX_RISING_V2_QUANT_SPEC.md` (Phoenix Rising V2.0 prompt verbatim, hash `91fd45775607c619`) · `09_QUANT_RESEARCH/` (Master Report, Mathematical Feasibility, Scenarios, Thresholds, Protocol, Policy) · `tools/phoenix_quant.py` (Math, 5k Monte Carlo, Adversarial Audit) · `apply_phase.py --spec phoenix` (10/10 PASS) · SP-012 added · Map v2.9 | ⏳ check |
 
+| 12 | 2026-09-23 08:45 | (auto) | **PHOENIX RISING V2.0 Strategy Complete**: `MRAV-V2` implemented & backtested (`tools/phoenix_strategy_engine.py`) · 3-year market data (750 bars): +29.53% return, 6.72% max DD, 2.38 profit factor · 51 trades (`TRADE_LOG.csv`) · 5,000-run Monte Carlo 0.0% ruin · Live signal `ALLOCATE LONG GLD` · Map v3.0 | ⏳ check |
+
 ## Snapshot (latest verified)
 
-- Memory records: **88** · Capability map: **v2.4** (`aef4a0c1a7bd36e9`) · Spec: `4aa1c6a1f872a3f3`
+- Memory records: **89** · Capability map: **v2.4** (`aef4a0c1a7bd36e9`) · Spec: `4aa1c6a1f872a3f3`
 - Health: provenance 4/4 · audit 100/100 · tests 28/28
 - Live routes (snapshot 06:27 UTC): redlib safereddit 200 (47,180 B) · redlib artemislena 200 (47,161 B) · fxtwitter 200 · vxtwitter 200 · bsky 200 · tiktok oEmbed 200
 - Servers: control-center `:8000` 200 · RSSHub `:1200` sandbox restart par band (RUNBOOK §3 se start)
