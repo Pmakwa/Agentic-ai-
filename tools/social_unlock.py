@@ -14,6 +14,9 @@ Subcommands (all tokenless):
   comments    <video-id|url> [--n N]           youtube-comment-downloader
   x           <user|tweet-url>                 fxtwitter / vxtwitter public bridge
   bsky        <actor> [--query Q]              public.api.bsky.app (keyless)
+  invite      <discord-invite-code|url>        discord.com/api/v9/invites (public invite metadata)
+  spotify     <open.spotify.com url|uri>       open.spotify.com/oembed (title/type/embed)
+  pullpush    <r/x | sub:x | id:x | q text>    api.pullpush.io (Reddit data mirror — reddit.com blocked nahi)
   status                                       which routes are currently live
 """
 from __future__ import annotations
@@ -223,6 +226,101 @@ def cmd_bsky(a) -> int:
 
 
 # ---------------------------------------------------------------- status
+# ---------------------------------------------------------------- discord invite
+def cmd_invite(a) -> int:
+    code = a.code.strip().rstrip("/").split("/")[-1]
+    st, body = _get(f"https://discord.com/api/v9/invites/{code}?with_counts=true&with_expiration=true",
+                    accept="application/json")
+    if st != 200:
+        print(json.dumps({"ok": False, "http": st, "error": body[:200]}, ensure_ascii=False)); return 1
+    d = json.loads(body)
+    g = d.get("guild") or {}
+    out = {"ok": True, "invite": d.get("code"), "guild": g.get("name"), "guild_id": g.get("id"),
+           "channel": (d.get("channel") or {}).get("name"), "members_total": d.get("approximate_member_count"),
+           "members_online": d.get("approximate_presence_count"), "expires_at": d.get("expires_at"),
+           "description": (g.get("description") or "")[:200]}
+    print(json.dumps(out, indent=2, ensure_ascii=False)); return 0
+
+
+# ---------------------------------------------------------------- spotify oembed
+def cmd_spotify(a) -> int:
+    url = a.url
+    if url.startswith("spotify:"):                     # spotify:track:ID
+        parts = url.split(":")
+        url = f"https://open.spotify.com/{parts[1]}/{parts[2]}" if len(parts) >= 3 else url
+    st, body = _get("https://open.spotify.com/oembed?url=" + urllib.parse.quote(url, safe=""),
+                    accept="application/json")
+    if st != 200:
+        print(json.dumps({"ok": False, "http": st, "error": body[:200]}, ensure_ascii=False)); return 1
+    d = json.loads(body)
+    embed = re.search(r'src="([^"]+)"', d.get("html", "") or "")
+    out = {"ok": True, "title": d.get("title"), "type": d.get("type"), "provider": d.get("provider_name"),
+           "thumbnail": d.get("thumbnail_url"), "embed_url": embed.group(1) if embed else None}
+    print(json.dumps(out, indent=2, ensure_ascii=False)); return 0
+
+
+# ---------------------------------------------------------------- pullpush (reddit mirror)
+def cmd_pullpush(a) -> int:
+    """Reddit data via api.pullpush.io — reddit.com hamare IP ko block karta hai, ye mirror nahi karta."""
+    t = a.target.strip()
+    kind = a.kind
+    params = {"size": a.n}
+    if t.startswith("r/"):
+        params["subreddit"] = t[2:]
+    elif t.startswith("sub:"):
+        params["subreddit"] = t[4:]
+    elif t.startswith("id:"):
+        params["ids"] = t[3:]
+    elif t.startswith("author:"):
+        params["author"] = t[7:]
+    elif t.startswith("link:"):
+        params["link_id"] = t[5:] if t[5:].startswith("t3_") else "t3_" + t[5:]
+    else:
+        params["q"] = t
+    if a.sort:
+        params["sort"] = a.sort
+    url = f"https://api.pullpush.io/reddit/search/{kind}/?" + urllib.parse.urlencode(params)
+    st, body, fallback = 0, "", None
+    for attempt in range(3):                            # 429 par backoff (mirror rate-limits)
+        st, body = _get(url, timeout=45, accept="application/json")
+        if st != 429:
+            break
+        time.sleep(4 * (attempt + 1))
+    # FINDING (2026-09-23): subreddit listing param ab paywalled/rate-limited hai ("does not provide free
+    # scraping resources for agents"). Query-search (q=) free hai -> subreddit naam ko query bana kar fallback.
+    if st == 429 and "subreddit" in params:
+        fallback = f"q={params['subreddit']} (subreddit listing rate-limited/paywalled — query search use kiya)"
+        q = {"q": params["subreddit"], "size": a.n}
+        url = f"https://api.pullpush.io/reddit/search/{kind}/?" + urllib.parse.urlencode(q)
+        for attempt in range(3):
+            st, body = _get(url, timeout=45, accept="application/json")
+            if st != 429:
+                break
+            time.sleep(4 * (attempt + 1))
+        if st == 200:
+            params = q
+    if st != 200:
+        print(json.dumps({"ok": False, "http": st, "url": url, "error": body[:200]}, ensure_ascii=False)); return 1
+    data = json.loads(body).get("data", [])
+    rows = []
+    for d in data:
+        rows.append({
+            "title": d.get("title") or (d.get("body") or "")[:100],
+            "subreddit": d.get("subreddit"),
+            "author": d.get("author"),
+            "score": d.get("score"),
+            "num_comments": d.get("num_comments"),
+            "date_utc": time.strftime("%Y-%m-%d", time.gmtime(int(d.get("created_utc") or 0))),
+            "permalink": "https://reddit.com" + d["permalink"] if d.get("permalink") else None,
+            "body": (d.get("body") or "")[:200] or None,
+        })
+    out = {"ok": True, "route": "pullpush", "kind": kind, "params": params, "count": len(rows), "items": rows}
+    if fallback:
+        out["fallback"] = fallback
+    print(json.dumps(out, indent=2, ensure_ascii=False))
+    return 0
+
+
 def cmd_status(a) -> int:
     checks = {}
     # rsshub
@@ -241,7 +339,12 @@ def cmd_status(a) -> int:
                       ("redlib_artemislena", "https://red.artemislena.eu/r/programming"),
                       ("fxtwitter", "https://api.fxtwitter.com/jack"), ("vxtwitter", "https://api.vxtwitter.com/jack"),
                       ("bsky_public", "https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile?actor=bsky.app"),
-                      ("tiktok_oembed", "https://www.tiktok.com/oembed?url=https://www.tiktok.com/@tiktok/video/7686945827008433439")]:
+                      ("tiktok_oembed", "https://www.tiktok.com/oembed?url=https://www.tiktok.com/@tiktok/video/7686945827008433439"),
+                      ("discord_invite", "https://discord.com/api/v9/invites/python?with_counts=true"),
+                      ("spotify_oembed", "https://open.spotify.com/oembed?url=https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT"),
+                      ("pullpush_reddit", "https://api.pullpush.io/reddit/search/submission/?q=rss&size=1"),
+                      ("rsshub_thehindu", f"{RSSHUB}/thehindu/topic/rains"),
+                      ("rsshub_weibo_hot", f"{RSSHUB}/weibo/search/hot")]:
         st, body = _get(url, timeout=25)
         checks[name] = {"http": st, "bytes": len(body)}
         time.sleep(0.6)
@@ -279,6 +382,17 @@ def main() -> int:
 
     b = sub.add_parser("bsky"); b.add_argument("actor"); b.add_argument("--query"); b.add_argument("-n", type=int, default=5)
     b.set_defaults(f=cmd_bsky)
+
+    i = sub.add_parser("invite"); i.add_argument("code"); i.set_defaults(f=cmd_invite)
+
+    sp = sub.add_parser("spotify"); sp.add_argument("url"); sp.set_defaults(f=cmd_spotify)
+
+    pp = sub.add_parser("pullpush")
+    pp.add_argument("target", help="r/<sub> | sub:<sub> | id:<id> | link:<id> | author:<u> | <query text>")
+    pp.add_argument("--kind", choices=["submission", "comment"], default="submission")
+    pp.add_argument("--sort", default=None, help="new | desc | asc (subreddit search ke liye)")
+    pp.add_argument("-n", type=int, default=10)
+    pp.set_defaults(f=cmd_pullpush)
 
     s = sub.add_parser("status"); s.set_defaults(f=cmd_status)
 

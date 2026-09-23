@@ -1,7 +1,7 @@
 {
-  "map_version": "2.4",
+  "map_version": "2.5",
   "generated": "2026-09-23",
-  "generated_by": "UAI-COS self-audit (Phase 1) + PHASE 2 ACCESS EXPANSION sweep (probes + live route tests)",
+  "generated_by": "UAI-COS self-audit + PHASE 2 access expansion + repo-hunt unlock (P0-P16) + PHASE-SYSTEM apply (P14 RSSHub routes, P15 monitor, P16 new endpoints)",
   "status_labels": [
     "VERIFIED",
     "STRONGLY_SUPPORTED",
@@ -167,9 +167,26 @@
     "06_REPO_HUNT/00_REPO_UNLOCK_REPORT.md",
     "tools/social_unlock.py",
     "06_REPO_HUNT/probes/repo_tool_smoke.txt",
-    "06_REPO_HUNT/probes/redlib_working.txt"
+    "06_REPO_HUNT/probes/redlib_working.txt",
+    "06_REPO_HUNT/01_PHASE_APPLY_RESULTS.md",
+    "06_REPO_HUNT/probes/rsshub_routes_test2.txt",
+    "logs/rsshub_routes_verified.json",
+    "logs/route_health.txt",
+    "tools/rsshub_verify.py",
+    "PHASE_PROTOCOL.md",
+    "00_SYSTEM/prompts_index.json",
+    "PROJECT_BOARD/phases.json",
+    "PROJECT_BOARD/PHASES.md",
+    "tests/ci_extra.py",
+    "CLAUDE.md",
+    "GEMINI.md",
+    ".windsurfrules",
+    ".cursor/rules/uai-cos.mdc",
+    ".github/copilot-instructions.md",
+    "06_REPO_HUNT/probes/rsshub_routes_sweep.txt",
+    "logs/rsshub_routes_sweep.json"
   ],
-  "next_review": "2026-09-24 (GH token mile to code search + 5000/hr verify karo; IA scholar; systemd monitor history)",
+  "next_review": "P21 (repo sweep) ke baad: naye verified tools ka map bump + monitor routes update",
   "changes_from_v1_0": [
     "PERSISTENCE RESOLVED: /home/user files + /usr installs survive; .cache/node_modules/.venv/out GONE; processes die",
     "FIX applied: browser -> /opt/ms-playwright, model cache -> /opt/uai-cache (sudo+chown)",
@@ -561,5 +578,92 @@
       "06_REPO_HUNT/probes/redlib_working.txt"
     ],
     "boundary": "no login-wall / CAPTCHA / paywall / anti-bot bypass; cookie/identity-pool repos excluded"
+  },
+  "phase_system": {
+    "status": "VERIFIED",
+    "evidence": [
+      "PROJECT_BOARD/phases.json (22 phases)",
+      "tools/phase_runner.py",
+      "tools/import_prompt.py",
+      "PHASE_PROTOCOL.md",
+      "tests/ci_extra.py",
+      "00_SYSTEM/prompts_index.json",
+      "CLAUDE.md",
+      "GEMINI.md",
+      ".windsurfrules",
+      ".cursor/rules/uai-cos.mdc",
+      ".github/copilot-instructions.md"
+    ],
+    "note": "Naya phase/prompt aane par apne-aap apply hone ka system: import_prompt -> phases.json -> boot payload -> push. CI me phases validity, PHASES.md sync, boot prompt freshness, prompt-body hash verify hote hain.",
+    "commands": [
+      "python3 tools/phase_runner.py status|next|add|set|md",
+      "python3 tools/import_prompt.py --url|--file|--text --name X",
+      "python3 tests/ci_extra.py"
+    ]
+  },
+  "apply_results_p14_p16": {
+    "status": "VERIFIED",
+    "rsshub_routes_working": 28,
+    "rsshub_route_tool": "tools/rsshub_verify.py (registry: /api/namespace = 2015 namespaces)",
+    "highlights": [
+      "/weibo/search/hot (Weibo direct 403 tha)",
+      "/threads/zuck",
+      "/thehindu/topic/rains",
+      "/zhihu/hot",
+      "/bilibili/...",
+      "/nasa/apod",
+      "/deepmind/blog",
+      "/anthropic/engineering",
+      "/huggingface/activity/...",
+      "/substack/...",
+      "/bandcamp/weekly",
+      "/gitlab/explore/active",
+      "/wikipedia/current-events",
+      "/dnaindia/headlines",
+      "/telegram/channel/...",
+      "/mastodon/acct/..."
+    ],
+    "boundary_blocked": [
+      "twitter/* (cookies)",
+      "instagram/* (login)",
+      "bsky/keyword (login route)",
+      "linkedin/*",
+      "notion/*",
+      "spotify/artist/* (API token)",
+      "vimeo/* (datacenter IP)",
+      "openai/* (CF)",
+      "espn/* (CF)",
+      "producthunt/* (CF)",
+      "douyin/* (IP block)"
+    ],
+    "monitor": "tools/route_monitor.py -> 11/11 PASS (local_rsshub, rsshub_thehindu, discord_invite, spotify_oembed, pullpush_reddit add kiye)",
+    "new_endpoints": {
+      "discord_invite": "https://discord.com/api/v9/invites/<code>?with_counts=true (VERIFIED 200)",
+      "spotify_oembed": "https://open.spotify.com/oembed?url=... (VERIFIED 200)",
+      "pullpush_reddit": "https://api.pullpush.io/reddit/search/{submission,comment} (q=/ids=/link_id= VERIFIED; subreddit= rate-limited/paywalled -> q fallback)"
+    },
+    "evidence": [
+      "06_REPO_HUNT/01_PHASE_APPLY_RESULTS.md",
+      "06_REPO_HUNT/probes/rsshub_routes_test2.txt",
+      "logs/rsshub_routes_verified.json",
+      "logs/route_health.txt",
+      "logs/route_health.jsonl"
+    ],
+    "rsshub_sweep": {
+      "cmd": "python3 tools/rsshub_verify.py --all --limit 250 --workers 5",
+      "result": "120/250 namespaces WORKING (48%) in 584s",
+      "evidence": [
+        "06_REPO_HUNT/probes/rsshub_routes_sweep.txt",
+        "logs/rsshub_routes_sweep.json"
+      ],
+      "top": [
+        "/ai-bot/daily-ai-news (436)",
+        "/bilibili/app/android (491)",
+        "/aiaa/journal/aiaaj (205)",
+        "/4chan/g/catalog (151)",
+        "/android/pixel-update-bulletin (107)",
+        "/amazon/awsblogs (50)"
+      ]
+    }
   }
 }

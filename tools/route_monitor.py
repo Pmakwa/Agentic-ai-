@@ -10,7 +10,8 @@ Ye script har run par verified routes ka health check karta hai aur JSONL log li
     logs/route_health.jsonl   -> har check ka record (machine-readable history)
     logs/route_health.txt     -> latest summary (human-readable)
 
-Rate-limit discipline: sirf 6 halke checks, 30 min ka gap (systemd timer se) — koi target spam nahi.
+Rate-limit discipline: 11 halke checks, 30 min ka gap (systemd timer se) — koi target spam nahi.
+'local_rsshub'/'rsshub_thehindu' sirf tab OK honge jab RSSHub :1200 par chal raha ho (RUNBOOK §3).
 """
 from __future__ import annotations
 import json, os, subprocess, sys, time
@@ -27,6 +28,12 @@ CHECKS = [
     ("wsj_rss",           "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",                  "XML"),
     ("wayback_cdx",       "https://web.archive.org/cdx/search/cdx?url=example.com&output=json&limit=1", "JSON"),
     ("reader_proxy",      "https://r.jina.ai/https://example.com",                          "TEXT"),
+    # ---- P15 (2026-09-23): naye live-verified routes (06_REPO_HUNT/probes/rsshub_routes_test2.txt)
+    ("local_rsshub",      "http://127.0.0.1:1200/hackernews/best",                          "XML"),
+    ("rsshub_thehindu",   "http://127.0.0.1:1200/thehindu/topic/rains",                     "XML"),
+    ("discord_invite",    "https://discord.com/api/v9/invites/python?with_counts=true",     "JSON"),
+    ("spotify_oembed",    "https://open.spotify.com/oembed?url=https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT", "JSON"),
+    ("pullpush_reddit",   "https://api.pullpush.io/reddit/search/submission/?q=rss&size=1",  "JSON"),
 ]
 
 

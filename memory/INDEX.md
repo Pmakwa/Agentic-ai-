@@ -1,6 +1,6 @@
 # MEMORY INDEX — UAI-COS v2.0
 
-> Generated: 2026-09-23T06:33:24  |  live records: **74**  |  total (incl. archived/deleted): 74
+> Generated: 2026-09-23T06:46:38  |  live records: **79**  |  total (incl. archived/deleted): 79
 > Ye file auto-generated hai — edit na karo. Source of truth: `memory/store/memory.jsonl`
 > Retrieval rule (Section 17): keyword match kaafi nahi — scope + authority + freshness + confidence + current instruction dekh kar use karo.
 
@@ -31,7 +31,7 @@
 | `MEM-CONS-0003` | verified | high | High-risk ya irreversible action (delete, publish, payment, external send) se pehle user confirmation lena compulsory hai. | user_instruction | - |
 | `MEM-CONS-0004` | verified | high | Capability claims sirf evidence ke saath: 'full internet' ya 'sab access' jaisa dava nahi; paywall/login/CAPTCHA bypass kabhi nahi; RESTRICTED sites (reddit, SO direct, medium, quora, Bloomberg, WSJ, ScienceDirect, TripAdvisor, NSE, Instagram/LinkedIn login walls) ko blocked hi maana jaayega. | tool_result | - |
 
-## SEMANTIC (30)
+## SEMANTIC (33)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -65,6 +65,9 @@
 | `MEM-SEM-0028` | verified | high | Instagram/Facebook/Pinterest personal access bina login/app ke possible nahi; X reads 2026 me pay-per-use; Reddit API approval-based ho gayi | social-probe-2026-09-23 | access |
 | `MEM-SEM-0029` | verified | very_high | Repo-hunt verified 7 tokenless platform routes via installed GitHub repos: Reddit via redlib instances (safereddit.com, red.artemislena.eu), TikTok/Bluesky/Pinterest/Tumblr media via gallery-dl 1.32.13, Pinterest search/board via pinterest-dl 1.3.0, Threads+Weibo+Telegram+Mastodon+YouTube+Pinterest feeds via self-hosted RSSHub (:1200), YouTube transcripts/comments via youtube-transcript-api+youtube-comment-downloader, X public data via fxtwitter/vxtwitter bridges. | live tests 2026-09-23 | capability_access |
 | `MEM-SEM-0030` | verified | very_high | Repo-hunt blockers (honest, not bypassable without user credentials): Instagram (gallery-dl 429 + instaloader login wall + all IG viewers dead), Facebook (login.php redirect proved via mbasic/m; scraper 0 posts), LinkedIn (RSSHub route empty), Bilibili (upstream 412 risk control), Douyin (playwright nav failed), X full API (paid). Public front-ends mostly dead: teddit 000, xeddit parking, quetre 410, proxitok 000, neuters 502, nitter archived, invidious gated/disabled. Cookie/identity-pool repos excluded per boundary §24. | live tests 2026-09-23 | capability_access |
+| `MEM-SEM-0031` | verified | very_high | api.pullpush.io = Reddit data ka asli route jab reddit.com IP-block kare: submission/comment endpoints ka q= (keyword) aur ids=/link_id= free hai (aaj ke posts milte hain), lekin subreddit= listing param rate-limited/paywalled ('does not provide free scraping resources for agents'). social_unlock.py pullpush me r/<sub> par automatic q=<sub> fallback lagta hai. | live test 2026-09-23 | - |
+| `MEM-SEM-0032` | verified | high | Discord invite API (discord.com/api/v9/invites/<code>?with_counts=true) aur Spotify oEmbed (open.spotify.com/oembed?url=) tokenless public metadata dete hain — guild member counts (Python: 431,757 members / 29,845 online) aur track title/thumbnail/embed URL. | live test 2026-09-23 | - |
+| `MEM-SEM-0033` | verified | very_high | RSSHub sweep (250 namespaces, automated): 120 WORKING (48%) — top routes /bilibili/app/android (491 items), /ai-bot/daily-ai-news (436), /aiaa/journal/aiaaj (205), /4chan/g/catalog (151), /android/pixel-update-bulletin (107), /amazon/awsblogs (50). Fail hone ka pattern: upstream IP block, login/cookie (boundary), ya china-only geo-block. | live sweep 2026-09-23 | - |
 
 ## EPISODIC (4)
 
@@ -75,7 +78,7 @@
 | `MEM-EPI-0003` | verified | high | 2026-09-23 (deep pass): capability audit v1.1 complete — persistence solved, browser/model cache /opt me shift, 13+ naye capabilities verified, 5 naye limits documented, bootstrap script + probe scripts banaye. | user_instruction | - |
 | `MEM-EPI-0004` | active | high | 2026-09-23 ko PHASE 2 (access expansion) complete hui: 12 blocked targets me 9 ke verified routes + working library + 6 deliverable docs | user_instruction | access |
 
-## PROCEDURAL (9)
+## PROCEDURAL (10)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -88,6 +91,7 @@
 | `MEM-PROC-0007` | active | high | Blocked resource milne par ye order follow karo: direct test -> official API/feed -> reader-proxy -> Wayback -> user-provided file | user_instruction | access |
 | `MEM-PROC-0008` | verified | very_high | Agent boot procedure (V2 apply karna): (1) python3 tools/agent_boot.py — poora system ek payload me (identity+rules+spec map+protocol+memory snapshot+capability truth+open threads+attestation), (2) health check (provenance 4/4, audit 100/100, tests 28/28), (3) BOOT ATTESTATION bharna (tests/boot_attestation.md, 12 points + scoring) — iske bina kaam shuru nahi karna. | user feedback 2026-09-23: 'pehle V2 prompt uske environment me apply karna chahiye, test kiya wo ye nahi kar raha' | - |
 | `MEM-PROC-0009` | verified | very_high | Naya prompt/phase apply karne ka system: (1) prompt aaye to tools/import_prompt.py (url/file/text) -> 00_SYSTEM me hash-verified save + memory + auto phase; (2) naya kaam bole to tools/phase_runner.py add/set; (3) kaam -> evidence -> CAPABILITY_MAP bump -> memory -> agent_boot.py --write -> push. | user standing instruction 2026-09-23 | - |
+| `MEM-PROC-0010` | verified | very_high | RSSHub route verification procedure: local RSSHub :1200 chalu karo -> python3 tools/rsshub_verify.py (registry /api/namespace se 2015 namespaces + example routes) -> evidence files -> monitor me naye routes add karo -> phase done. | agent procedure | - |
 
 ## WORKING (1)
 
@@ -123,11 +127,12 @@
 | `MEM-ERR-0004` | verified | high | Devanagari rendering trap: matplotlib complex-script shaping sahi nahi karta ('सदासुहागिन' -> galat matra order), aur Devanagari font me Latin glyphs nahi hote (boxes aa jate hain). Fix: image me Hindi text PIL (Raqm=True) se likho; matplotlib me font.family=['Noto Sans Devanagari','DejaVu Sans'] fallback lagao. | tool_result | - |
 | `MEM-ERR-0005` | verified | high | Shell safety: 'pkill -f <pattern>' khud ki shell bhi maar sakta hai (pattern self-match) — pehle pattern verify karo ya PID se kill karo. | tool_result | - |
 
-## SOURCE (1)
+## SOURCE (2)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
 | `MEM-SRC-0001` | verified | high | UAI-COS V1 (22.7k chars) aur V2 (44.3k chars, 112 sections) ka original source: shared ChatGPT chat 'System Dekho Dhyan Se'. | url | - |
+| `MEM-SRC-0002` | verified | very_high | RSSHub (local :1200, 2015 namespaces) se 28 routes live-verified: Weibo hot search, Threads, Bilibili, Zhihu hot, GitHub activity, YouTube community, The Hindu, DNA India, NASA APOD, DeepMind/Anthropic blog, HuggingFace, arXiv, MIT OCW, Steam, Bandcamp, SoundCloud, GitLab, Substack, Medium, Pinterest, TikTok live, Wikipedia, HN threads, DockerHub, npm, EZTV, Telegram, Mastodon. Twitter/Instagram/Bluesky-keyword/Spotify/LinkedIn/Notion cookies ya token maangte hain -> boundary. | live test 2026-09-23 | - |
 
 ## TEMPORAL (2)
 

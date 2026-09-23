@@ -21,13 +21,14 @@
 | P11 | **GitHub handover + push (repo live, CI green)** | ✅ DONE | agent | Pmakwa/Agentic-ai- · PUSH_LOG.md | - |
 | P12 | **Boot mechanism: V2 apply karna (agent_boot.py + attestation)** | ✅ DONE | agent | tools/agent_boot.py, UAI-COS_BOOT_PROMPT.md, tests/boot_attestation.md | - |
 | P13 | **Sync + standing rules (har baat-cheet repo me)** | 🟢 ACTIVE | agent | tools/sync_to_github.sh, CONVERSATION/04_STANDING_INSTRUCTIONS.md | har kaam ke baad push + PUSH_LOG entry |
-| P14 | **RSSHub route expansion (baaki namespaces verify)** | 🟡 NEXT | agent | target: 06_REPO_HUNT/probes/rsshub_routes_test2.txt | RSSHub start karo (RUNBOOK §3) -> /vimeo, /spotify, /hackernews, regional test -> report + push |
-| P15 | **Monitoring integration (naye verified routes 30-min cycle me)** | 🟡 NEXT | agent | tools/route_monitor.py | P14 ke verified routes add karo -> manual run -> logs |
-| P16 | **Naye public endpoints (Discord invite, Spotify oEmbed, pullpush)** | 🟡 NEXT | agent | target: 06_REPO_HUNT/probes/endpoints2.txt | test -> evidence -> social_unlock.py me subcommand |
+| P14 | **RSSHub route expansion (baaki namespaces verify)** | ✅ DONE | agent | tools/rsshub_verify.py: 28 curated routes + 120/250 namespace sweep (rsshub_routes_test2.txt + rsshub_routes_sweep.txt) | RSSHub start karo (RUNBOOK §3) -> /vimeo, /spotify, /hackernews, regional test -> report + push |
+| P15 | **Monitoring integration (naye verified routes 30-min cycle me)** | ✅ DONE | agent | route_monitor.py 11/11 PASS (logs/route_health.txt, logs/route_health.jsonl) | P14 ke verified routes add karo -> manual run -> logs |
+| P16 | **Naye public endpoints (Discord invite, Spotify oEmbed, pullpush)** | ✅ DONE | agent | discord invite + spotify oembed + pullpush reddit (social_unlock.py invite|spotify|pullpush) | test -> evidence -> social_unlock.py me subcommand |
 | P17 | **Keyed APIs (Reddit OAuth, YouTube Data, Telegram bot, Meta app)** | ⏸ WAITING | user+agent | target: .env (gitignored) + live tests | user creds de -> live test -> map update |
 | P18 | **Project board cards paste karna** | ⏸ WAITING | user | PROJECT_BOARD/CARDS.md | GitHub Project -> Add item -> paste |
-| P19 | **Prompt intake system (naya V2-type prompt aaye to apply karna)** | ✅ DONE | agent | tools/import_prompt.py, PHASE_PROTOCOL.md | user naya prompt de -> import_prompt.py -> phase auto-add -> apply -> push |
-| P20 | **Multi-platform agent pointers (sab agents same system apply karein)** | ✅ DONE | agent | CLAUDE.md, GEMINI.md, .github/copilot-instructions.md, .cursor/rules/ | - |
+| P19 | **Prompt intake system (naya V2-type prompt aaye to apply karna)** | ✅ DONE | agent | tools/import_prompt.py + 00_SYSTEM/prompts_index.json | user naya prompt de -> import_prompt.py -> phase auto-add -> apply -> push |
+| P20 | **Multi-platform agent pointers (sab agents same system apply karein)** | ✅ DONE | agent | CLAUDE.md, GEMINI.md, .windsurfrules, .cursor/rules/uai-cos.mdc, .github/copilot-instructions.md | - |
+| P21 | **Repo unlock sweep (30+ starred repos) — test karo, verified tools lock karo** | 🟡 NEXT | agent | target: 06_REPO_HUNT/probes/repo_sweep_starred.txt + CAPABILITY_MAP bump + social_unlock subcommands | kaam shuru karo + evidence add karo |
 <!-- PHASES:END -->
 
 **Total:** 21 phases · **Updated:** 2026-09-23

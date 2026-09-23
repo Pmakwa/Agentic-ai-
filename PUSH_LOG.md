@@ -12,9 +12,11 @@
 
 | 5 | 2026-09-23 06:33 | (auto) | **Phase system + prompt intake + multi-platform pointers**: `PROJECT_BOARD/phases.json` (21 phases), `tools/phase_runner.py`, `tools/import_prompt.py`, `PHASE_PROTOCOL.md`, `tests/ci_extra.py` (CI: phases/boot-freshness/prompt-hash), pointer files: `CLAUDE.md`, `GEMINI.md`, `.windsurfrules`, `.cursor/rules/uai-cos.mdc`, `.github/copilot-instructions.md`, `00_SYSTEM/prompts_index.json` | ⏳ check |
 
+| 6 | 2026-09-23 07:05 | (auto) | **P14–P16 apply**: `tools/rsshub_verify.py` (28 curated routes + **120/250 namespace sweep**) · `06_REPO_HUNT/01_PHASE_APPLY_RESULTS.md` · monitor 11/11 · naye endpoints (Discord invite, Spotify oEmbed, **pullpush Reddit**) + `social_unlock.py invite/spotify/pullpush` · CAPABILITY_MAP **v2.5** · phases: P14/P15/P16/P19/P20 done, P21 add | ⏳ check |
+
 ## Snapshot (latest verified)
 
-- Memory records: **74** · Capability map: **v2.4** (`aef4a0c1a7bd36e9`) · Spec: `4aa1c6a1f872a3f3`
+- Memory records: **79** · Capability map: **v2.4** (`aef4a0c1a7bd36e9`) · Spec: `4aa1c6a1f872a3f3`
 - Health: provenance 4/4 · audit 100/100 · tests 28/28
 - Live routes (snapshot 06:27 UTC): redlib safereddit 200 (47,180 B) · redlib artemislena 200 (47,161 B) · fxtwitter 200 · vxtwitter 200 · bsky 200 · tiktok oEmbed 200
 - Servers: control-center `:8000` 200 · RSSHub `:1200` sandbox restart par band (RUNBOOK §3 se start)
