@@ -1,6 +1,6 @@
 # MEMORY INDEX — UAI-COS v2.0
 
-> Generated: 2026-09-23T05:34:19  |  live records: **71**  |  total (incl. archived/deleted): 71
+> Generated: 2026-09-23T06:24:05  |  live records: **73**  |  total (incl. archived/deleted): 73
 > Ye file auto-generated hai — edit na karo. Source of truth: `memory/store/memory.jsonl`
 > Retrieval rule (Section 17): keyword match kaafi nahi — scope + authority + freshness + confidence + current instruction dekh kar use karo.
 
@@ -75,7 +75,7 @@
 | `MEM-EPI-0003` | verified | high | 2026-09-23 (deep pass): capability audit v1.1 complete — persistence solved, browser/model cache /opt me shift, 13+ naye capabilities verified, 5 naye limits documented, bootstrap script + probe scripts banaye. | user_instruction | - |
 | `MEM-EPI-0004` | active | high | 2026-09-23 ko PHASE 2 (access expansion) complete hui: 12 blocked targets me 9 ke verified routes + working library + 6 deliverable docs | user_instruction | access |
 
-## PROCEDURAL (7)
+## PROCEDURAL (8)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -86,6 +86,7 @@
 | `MEM-PROC-0005` | verified | high | PERSISTENCE RULE (verified): /home/user files + /usr (apt/pip installs) cross-turn survive karte hain; /home/user/.cache, node_modules, .venv, out WIPE ho jaate hain; running processes aur ports mar jaate hain. | tool_result | - |
 | `MEM-PROC-0006` | verified | high | SESSION START PROTOCOL: pehle 'bash tools/bootstrap_environment.sh' chalao (browser + model cache + missing packages), phir 'bash tests/test_memory_os.sh' aur 'python3 tools/uai_mem.py audit --log'. | tool_result | - |
 | `MEM-PROC-0007` | active | high | Blocked resource milne par ye order follow karo: direct test -> official API/feed -> reader-proxy -> Wayback -> user-provided file | user_instruction | access |
+| `MEM-PROC-0008` | verified | very_high | Agent boot procedure (V2 apply karna): (1) python3 tools/agent_boot.py — poora system ek payload me (identity+rules+spec map+protocol+memory snapshot+capability truth+open threads+attestation), (2) health check (provenance 4/4, audit 100/100, tests 28/28), (3) BOOT ATTESTATION bharna (tests/boot_attestation.md, 12 points + scoring) — iske bina kaam shuru nahi karna. | user feedback 2026-09-23: 'pehle V2 prompt uske environment me apply karna chahiye, test kiya wo ye nahi kar raha' | - |
 
 ## WORKING (1)
 
@@ -100,7 +101,7 @@
 | `MEM-PROJ-0001` | active | high | Project UAI-COS-WORKSPACE v2.0: spec + file-backed memory OS + agent registry + step-2 implementation docs is workspace me live hain. | user_instruction | ai-systems |
 | `MEM-PROJ-0002` | active | high | Capability Audit v1.0 complete: 6 documents + machine-readable CAPABILITY_MAP.json + rerunnable probe scripts (env + site matrix) — 02_CAPABILITY_AUDIT/ me. | user_instruction | environment |
 
-## DECISION (5)
+## DECISION (6)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -109,6 +110,7 @@
 | `MEM-DEC-0003` | active | high | Step 2 = implementation layer: roadmap + user scenarios + memory-type integration + agent lifecycle + evaluation/regression (yahi 3 cheezein source chat me next-step ke roop me offer hui thi). | agent_inference | - |
 | `MEM-DEC-0004` | active | medium | Step 3 ke 3 candidates (priority order): (1) real task par end-to-end test karke memory behaviour ko live dekho (Phase 1/5), (2) Telegram bot ko token ke saath live karo (Phase 6), (3) semantic retrieval/embeddings add karo (Phase 2). | agent_inference | - |
 | `MEM-DEC-0005` | active | high | Self-audit ko versioned rakha jaayega (v1.0 -> v1.x): environment/tools/permissions badalne par map + memory + probe evidence update honge — blueprint Part 22 ke according. | user_instruction | - |
+| `MEM-DEC-0006` | verified | very_high | Decision: koi bhi agent kaam se pehle V2 system me boot hoga — proof dena padega (attestation). Boot fail = kaam nahi shuru, pehle boot karaya jayega (booot prompt/system paste). | user instruction 2026-09-23 | - |
 
 ## ERROR (5)
 

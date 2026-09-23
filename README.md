@@ -25,7 +25,7 @@ uai-cos/
 │   └── UAI-COS_SYSTEM_PROMPT_{compact,standard,full}.md   ✅ paste-anywhere compiled prompts (live memory inline)
 │
 ├── memory/                                 ← MEMORY OS (live data)
-│   ├── store/memory.jsonl                  ✅ 71 records — Section-13 schema par
+│   ├── store/memory.jsonl                  ✅ 73 records — Section-13 schema par
 │   ├── INDEX.md                            ✅ auto-generated retrieval index (boot-read)
 │   └── store/archive.jsonl                 ✅ archive (delete nahi, retire)
 │
@@ -66,6 +66,9 @@ uai-cos/
 │
 ├── tools/github_unlock.py                  ✅ GitHub toolkit (12 commands, bina token)
 ├── tools/social_unlock.py                  ✅ repo-verified platform layer (10 commands, smoke-tested)
+├── tools/agent_boot.py                     ✅ V2 boot payload generator (agent isse boot hota hai)
+├── UAI-COS_BOOT_PROMPT.md                  ✅ paste-ready boot prompt (chat-only agents ke liye, 14 KB)
+├── tests/boot_attestation.md               ✅ 12-sawal boot test + scoring (booted / partial / not booted)
 ├── tools/rsshub/                           ✅ self-hosted RSSHub (2015 namespaces, :1200, 13 routes live)
 ├── tools/bin/{yq,crane}                    ✅ GitHub release se aaye binaries (persist)
 ├── tools/access_routes.py                  ✅ WORKING route library (fetch/rss/so/papers/nse/wayback + demo)
@@ -94,7 +97,7 @@ uai-cos/
 
 | Metric | Value | Command |
 |---|---|---|
-| Live memory records | **71** | `python3 tools/uai_mem.py stats` |
+| Live memory records | **73** | `python3 tools/uai_mem.py stats` |
 | Memory health score | **100/100** | `python3 tools/uai_mem.py audit` |
 | Golden tests | **28/28 pass** | `bash tests/test_memory_os.sh` |
 | Open conflicts | 0 | audit |

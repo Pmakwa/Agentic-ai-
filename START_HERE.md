@@ -15,16 +15,44 @@ Isme sab kuch hai jo hamari pooori baat-cheet me bana:
 
 ---
 
-## Kisi bhi agent ke saath GitHub connect karke kya karna hai?
+## 🔴 SABSE PEHLE — agent ko "boot" karana zaroori hai (ye hi asli problem hai)
 
-### Option 1 — Sabse aasan (recommended)
-Agent ko ye ek line bolo:
+Agent ke paas do cheezein alag hoti hain: **files padhna** (knowledge) aur **system me boot hona** (behaviour).
+Sirf files padhne se agent normal assistant ki tarah jawab de deta hai — Hindi rule, boundary rule, evidence rule,
+"kaam beech me nahi rokna" — kuch apply nahi hota. Isliye **boot karna zaroori hai**:
 
-> **"Is repo ko padho — `AGENTS.md` se shuru karo, phir `CONVERSATION/00_A_TO_Z_LOG.md` padho, boot-check chalao aur wahin se aage kaam continue karo."**
+### Tareeka A — Terminal/Repo access wale agent ke liye (best)
+Agent ko bas ye bolo:
+> **"`python3 tools/agent_boot.py` chalao — wo poora UAI-COS system boot payload dega. Phir health check chalao
+> (`verify_provenance.py`, `uai_mem.py audit`, `tests/test_memory_os.sh`) aur BOOT ATTESTATION bhar ke dikhao.
+> Uske baad `AGENTS.md` §5 se agla kaam continue karo."**
 
-Bas. Agent khud: AGENTS.md padhega → spec + protocol + memory INDEX padhega → health check chalayega
-(provenance 4/4, audit 100/100, tests 28/28, routes status) → phir `AGENTS.md` §5 me likhe **open threads**
-se agla kaam khud utha ke karne lagega.
+`agent_boot.py` ek hi output me de deta hai: identity + rules + spec map (42k chars ka index, hash ke saath) +
+14-rule protocol + memory snapshot (71 records) + capability truth (kya verified, kya blocked) + current status +
+open threads + attestation template. Agent ko alag-alag 10 files padhne ki zaroorat nahi.
+
+### Tareeka B — Sirf chat wale agent ke liye (ChatGPT/Claude/Gemini web)
+`UAI-COS_BOOT_PROMPT.md` file ka **poora content** agent ko pehle message me paste karo (14 KB), saath me ye line:
+> **"Tum ab UAI-COS v2.0 ho. System padho, BOOT ATTESTATION bharo, uske baad hi kaam karo."**
+
+*(Paste-ready template `tests/boot_attestation.md` ke end me bhi hai.)*
+
+### Boot hua ya nahi — CHECK kaise karo
+`tests/boot_attestation.md` me **12 sawaal + scoring** hai. Agent se wo sawaal poocho:
+- **10–12 sahi** → ✅ boot ho gaya, kaam karwao
+- **6–9 sahi** → ⚠️ partial — `agent_boot.py` chala ke dobara bolo
+- **0–5 sahi** → ❌ boot nahi hua — `UAI-COS_BOOT_PROMPT.md` paste karo
+
+### Boot ke baad agent khud kya karega
+Health check (provenance 4/4, audit 100/100, tests 28/28) → `AGENTS.md` §5 ke open threads se agla kaam
+uthayega → aur har naya finding evidence + capability map + memory me daalega.
+
+---
+
+## Baaki (boot ke baad ke options)
+
+### Option 1 — Sabse aasan
+Agent ko ye line bolo: **"`AGENTS.md` se shuru karo, phir `CONVERSATION/00_A_TO_Z_LOG.md` padho aur aage kaam continue karo."**
 
 ### Option 2 — Bina kuch bole
 Bahut se agent platforms (Codex, Cursor, Claude Code, Windsurf, Devin-type) repo khulte hi **`AGENTS.md` / `README.md` khud padhte hain**.

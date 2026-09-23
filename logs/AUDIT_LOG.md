@@ -117,3 +117,7 @@ Section 61 (Decision Audit Trail) aur Section 51 (Observability) ka backing log.
 | 2026-09-23T05:34:17 | memory.add | MEM-SEM-0030 (semantic/verified) 'Repo-hunt blockers (honest, not bypassable without user credentials): ' |
 | 2026-09-23T05:34:19 | memory.index | 71 live records indexed |
 | 2026-09-23T05:34:19 | memory.dash | dashboard generated (71 rows) |
+| 2026-09-23T06:24:05 | memory.add | MEM-PROC-0008 (procedural/verified) 'Agent boot procedure (V2 apply karna): (1) python3 tools/agent_boot.py' |
+| 2026-09-23T06:24:05 | memory.add | MEM-DEC-0006 (decision/verified) 'Decision: koi bhi agent kaam se pehle V2 system me boot hoga — proof d' |
+| 2026-09-23T06:24:05 | memory.index | 73 live records indexed |
+| 2026-09-23T06:24:05 | memory.dash | dashboard generated (73 rows) |
