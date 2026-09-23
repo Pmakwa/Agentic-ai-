@@ -1,0 +1,43 @@
+=== [1] BLUESKY (AT Protocol) — public API, koi key nahi ===
+  HTTP 403, 2334 B
+<html><head><title>403 Forbidden</title><link href='//fonts.bunny.net/css?family=Rubik:300,400,500' rel='stylesheet' type='text/css'><style>html, body { width: 100%; margin: 0; padding: 0; text-align: center; font-family
+=== [2] MASTODON (fediverse) — public timeline ===
+  HTTP 422, 54 B
+{"error":"This method requires an authenticated user"}
+=== [3] TELEGRAM — public channel web preview (t.me/s/) ===
+  HTTP 200, 127691 B
+tgme_widget_message_text js-message_text" dir="auto">
+=== [4] YOUTUBE — official channel RSS feed ===
+  channelId mila: UC2Xd-TjJByJyK2w1zNwY0zQ
+  RSS: HTTP 404, 1613 B
+  - Error 404 (Not Found)!!1
+=== [5] REDDIT — RSS (60s window ke andar ek fetch) ===
+  HTTP 200, 24685 B
+  - programming
+  - C3 0.8.4: Parameter Reflection, Stack Protection, iOS Support—and One Last Renaming
+=== [6] X / TWITTER — koi public route? ===
+  fxtwitter api: HTTP 301, 0 B
+  nitter.net: HTTP 000
+  nitter.poast.org: HTTP 000
+  lightbrd.com: HTTP 403
+=== [7] INSTAGRAM ===
+  homepage: HTTP 200, 634154 B
+  web_profile_info (bina auth): HTTP 400, 48 B
+=== [8] FACEBOOK ===
+  homepage: HTTP 400, 1542 B
+  Graph API (bina token): HTTP 403, 167 B
+{
+   "error": {
+      "message": "(#200) Provide valid app ID",
+      "type": "OAuthException",
+      "code": 200,
+      "fbtrace_id": "AfJjB3kVykCT6i
+=== [9] PINTEREST ===
+  homepage: HTTP 200, 1035529 B
+  UserResource (bina auth): HTTP 403, 24 B
+=== [10] TIKTOK — public oEmbed ===
+  oembed: HTTP 200, 1522 B
+{"version":"1.0","type":"video","title":"how many frogs did you find? 🐸 check out tiktok’s #Minecraft community today! @Gorillo","author_url":"ht
+=== [11] RSSHUB public instance (GitHub-backed bridge) ===
+  /github/trending/daily: HTTP 403, 5549 B
+  /youtube/user/@Fireship: HTTP 403, 5552 B

@@ -1,0 +1,82 @@
+=========== ENVIRONMENT PROBE — 2026-09-23T04:21:39+00:00 ===========
+
+--- identity / os ---
+uid=1000(user) gid=1000(user) groups=1000(user),27(sudo),100(users)
+Linux 6.1.158+ x86_64 GNU/Linux
+Debian GNU/Linux 13 (trixie)
+
+--- compute ---
+vCPU: 2
+               total        used        free      shared  buff/cache   available
+Mem:            1984         499         258          14        1425        1485
+/dev/root        25G  5.0G   19G  21% /
+tmpfs           993M   14M  980M   2% /tmp
+
+--- runtimes ---
+python3   Python 3.13.14
+pip3      pip 26.1.2 from /usr/local/lib/python3.13/site-packages/pip (python 3.13)
+node      v20.20.2
+npm       10.8.2
+deno      NOT FOUND
+bun       NOT FOUND
+go        NOT FOUND
+rustc     NOT FOUND
+java      openjdk 11 2018-09-25
+gcc       gcc (Debian 14.2.0-19) 14.2.0
+g++       g++ (Debian 14.2.0-19) 14.2.0
+make      GNU Make 4.4.1
+
+--- cli tools ---
+git           OK
+curl          OK
+wget          OK
+jq            OK
+sqlite3       OK
+pandoc        NOT FOUND
+ffmpeg        NOT FOUND
+convert       OK
+magick        OK
+tesseract     OK
+libreoffice   NOT FOUND
+soffice       NOT FOUND
+zip           OK
+unzip         OK
+ssh           OK
+scp           OK
+rsync         NOT FOUND
+pdftotext     NOT FOUND
+qpdf          NOT FOUND
+playwright    OK
+gh            NOT FOUND
+docker        NOT FOUND
+systemctl     OK
+crontab       NOT FOUND
+
+--- sudo ---
+uid=0(root) gid=0(root) groups=0(root)
+
+--- python libs (import check) ---
+present: requests, httpx, aiohttp, bs4, lxml, pandas, numpy, matplotlib, scipy, openpyxl, docx, PIL, cv2, sklearn, yaml, jsonschema, rich, tqdm, sqlite3, playwright
+missing: pypdf, pytesseract, torch, cryptography, duckdb
+
+--- network egress (spot check) ---
+https://example.com                HTTP:200
+https://pypi.org                   HTTP:200
+https://api.github.com/zen         HTTP:200
+https://en.wikipedia.org           HTTP:301
+
+--- secrets present? (names only) ---
+  absent  OPENAI_API_KEY
+  absent  ANTHROPIC_API_KEY
+  absent  GEMINI_API_KEY
+  absent  TELEGRAM_BOT_TOKEN
+  absent  GITHUB_TOKEN
+  absent  AWS_ACCESS_KEY_ID
+
+--- running processes (background services) ---
+    475 python3.13
+    490 node
+    504 node
+   2004 python3
+
+=========== PROBE COMPLETE ===========

@@ -1,0 +1,22 @@
+== OSM / WIKIDATA retry (corrected) ==
+osm-overpass-v2                        406  371      <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><head> <title
+wikidata-entity                        200  321005   {"entities":{"Q42":{"pageid":138,"ns":0,"title":"Q42","lastrevid":2547848680,"modified":"2026-09-20T02:17:41Z"
+wikipedia-rest                         200  3471     {"type":"standard","title":"Transformer (deep learning)","displaytitle":"<span lang=\"en\" dir=\"ltr\"><span c
+
+== JINA PROXY on DATA endpoints (NSE fix test) ==
+jina nse-bhavcopy                      200  213330   Title: URL Source: https://archives.nseindia.com/products/content/sec_bhavdata_full.csv Published Time: Tue
+jina reddit-thread                     200  489      Title: URL Source: https://www.reddit.com/r/programming/comments/1fq7k9q/ Warning: Target URL returned erro
+jina medium-article                    200  15724    Title: The most insightful stories about Programming - Medium URL Source: https://medium.com/tag/programming 
+jina scidir-article                    200  112998   Title: Just a moment... URL Source: https://www.sciencedirect.com/science/article/pii/S0167739X23000804 Mark
+
+== WAYBACK on blocked pages ==
+wayback reddit-thread                  404  4677     <!DOCTYPE html> <html lang="en"> <head> <title>Wayback Machine</title> <script> /* @licstart
+wayback so-answer                      200  1175589   <!DOCTYPE html> <html itemscope itemtype="https://schema.org/QAPage" class="html__responsive " lang="en
+wayback wsj-article                    200  1024304  <!DOCTYPE html><html lang="en-US" data-theme="WSJ_00-Base"><head><script type="text/javascript" src="https://w
+
+== ALT MIRRORS / ARCHIVES ==
+timetravel                             000000 1024304  <!DOCTYPE html><html lang="en-US" data-theme="WSJ_00-Base"><head><script type="text/javascript" src="https://w
+openalex-cited-by                      200  26105    {"meta": {"count": 1255, "db_response_time_ms": 32, "page": 1, "per_page": 1, "groups_count": null, "x_query":
+europepmc-fulltext                     200  1262     {"version":"6.9","hitCount":54547,"nextCursorMark":"AoIIQFlsvig1NjQxNzY2Nw==","nextPageUrl":"https://www.ebi.a
+crossref-doi                           200  13646    {"status":"ok","message-type":"work","message-version":"1.0.0","message":{"indexed":{"date-parts":[[2026,9,22]
+arxiv-pdf-direct                       200  2215244  %PDF-1.5 % 137 0 obj << /Filter /FlateDecode /Length 4011 >> stream xÚµZK“ä¶‘¾ëWô‘ÑÅ%^|hc’C+{#4á°zOã>°«ÐUô°

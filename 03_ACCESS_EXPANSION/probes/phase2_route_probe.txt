@@ -1,0 +1,31 @@
+== READER-PROXY ROUTE (r.jina.ai) — blocked sites ==
+r.jina reddit                        200  472      Title: URL Source: https://www.reddit.com/r/programming/ Warning: Target URL returned error 403: Forbidden 
+r.jina stackoverflow                 200  154      Title: Just a moment... URL Source: https://stackoverflow.com/questions/11227809/ Warning: Target URL return
+r.jina medium                        200  361      Title: Medium: Read and write stories. URL Source: https://medium.com/ Warning: This page maybe requiring CA
+r.jina bloomberg                     200  101688   Title: Bloomberg - Business News, Stock Markets, Finance, Breaking & World News URL Source: https://www.bloom
+r.jina wsj                           200  171      Title: wsj.com URL Source: https://www.wsj.com/ Warning: This page maybe requiring CAPTCHA, please make sure
+r.jina sciencedirect                 200  19790    Title: Science, health and medical journals, full text articles and books. URL Source: https://www.sciencedir
+r.jina nseindia                      200  54853    Title: NSE - National Stock Exchange of India Ltd URL Source: https://www.nseindia.com/ Markdown Content: []
+r.jina x.com                         403  535      {"data":null,"code":403,"name":"AbuseAlleviationError","status":40305,"message":"Anonymous access to domain x.
+
+== RSS / FEED ROUTES ==
+bbc-rss                              200  24686    <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://p
+google-news-rss                      200  165443   <?xml version="1.0" encoding="UTF-8" standalone="yes"?><rss version="2.0" xmlns:media="http://search.yahoo.com
+wsj-rss                              200  12752    <?xml version="1.0" encoding="UTF-8"?> 		<rss xmlns:wsj="http://dowjones.net/rss/" xmlns:dj="http://dowjones.n
+bloomberg-rss                        200  14843    <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://p
+medium-rss-tag                       200  17476    <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://p
+scribe-rip                           404  0        
+hn-rss                               200  17517    <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><chann
+reddit-rss                           200  24685    <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yah
+github-blog-rss                      200  741733   <?xml version="1.0" encoding="UTF-8"?><rss version="2.0" 	xmlns:content="http://purl.org/rss/1.0/modules/conte
+
+== FINANCE / DATA ALTERNATIVES ==
+yahoo-chart-api                      429  19       Too Many Requests 
+nse-bhavcopy                         403  433      <HTML><HEAD> <TITLE>Access Denied</TITLE> </HEAD><BODY> <H1>Access Denied</H1> You don't have permission to 
+nse-api-alt                          403  390      <HTML><HEAD> <TITLE>Access Denied</TITLE> </HEAD><BODY> <H1>Access Denied</H1> You don't have permission to 
+worldbank                            200  296      [{"page":1,"pages":66,"per_page":1,"total":66,"sourceid":"2","lastupdated":"2026-07-13"},[{"indicator":{"id":"
+osm-overpass                         000  296      [{"page":1,"pages":66,"per_page":1,"total":66,"sourceid":"2","lastupdated":"2026-07-13"},[{"indicator":{"id":"
+wikidata-sparql                      400  6991     SPARQL-QUERY: queryStr=SELECT ?item WHERE ?item wdt:P31 wd:Q5 LIMIT 1 java.util.concurrent.ExecutionException:
+openlibrary                          200  616      {"numFound":76865,"start":0,"numFoundExact":true,"num_found":76865,"documentation_url":"https://openlibrary.or
+coingecko                            200  34       {"gecko_says":"(V3) To the Moon!"}
+exchangerate                         200  2970     {"result":"success","provider":"https://www.exchangerate-api.com","documentation":"https://www.exchangerate-ap

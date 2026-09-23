@@ -1,0 +1,24 @@
+== OSM overpass (proper UA) + CDX API ==
+osm-overpass-ua                    200  744       { "version": 0.6, "generator": "Overpass API 0.7.62.11 87bfad18", "osm3s": { "timestamp_os
+wayback-cdx                        000000 744       { "version": 0.6, "generator": "Overpass API 0.7.62.11 87bfad18", "osm3s": { "timestamp_os
+wayback-cdx-reddit                 200  585       [["urlkey","timestamp","original","mimetype","statuscode","digest","length"], ["com,reddit)/r/progra
+
+== REDDIT alternate route tests ==
+reddit-rss-sub                     403  1522      <!doctype html> <html> <head> <title>Blocked</title> <style> body { f
+reddit-rss-user                    403  1522      <!doctype html> <html> <head> <title>Blocked</title> <style> body { f
+teddit-ish                         000000 1522      <!doctype html> <html> <head> <title>Blocked</title> <style> body { f
+pullpush-retry                     429  191       {"error":"Rate limit exceeded. This website does not provide free scraping resources for agents. Ple
+
+== SO / dev Q&A alternate routes ==
+so-api-answers                     200  87856     {"items":[{"owner":{"account_id":559988,"reputation":473493,"user_id":922184,"user_type":"registered
+so-api-search                      200  890       {"items":[{"tags":["java","c++","performance","cpu-architecture","branch-prediction"],"owner":{"acco
+_probe4.sh: line 7: warning: command substitution: ignored null byte in input
+so-data-dump                       200000 518148096 7z¼¯'Ã$Ô ƒ\Z×­qâÚìÀ]w®Óã£ùï¶3°a`µÌîÇfÀú¼'D…$”©"8ÈS.éDı.w¶T0Y¶V=:X‘Ì‰MÖ~›õ
+
+== NEWS/Q&A via wayback for other blocked sites ==
+wayback-medium                     200  404038    <!DOCTYPE html><html lang="en"><head><script type="text/javascript" src="https://web-static.archive.
+wayback-quora                      403  141907    <!DOCTYPE html> <html lang="en"> <head> <title>Wayback Machine</title> <script> /* 
+wayback-tripadvisor                200  388703    <!DOCTYPE html><html lang="en-US"><head><script type="text/javascript" src="https://web-static.archi
+
+== npm -g fix test ==
+npm -g with sudo: OK

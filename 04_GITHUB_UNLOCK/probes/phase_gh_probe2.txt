@@ -1,0 +1,37 @@
+=== [16] RELEASE ASSET DOWNLOAD + EXECUTE (yq linux binary) ===
+  asset: https://github.com/mikefarah/yq/releases/download/v4.53.6/yq_linux_amd64.tar.gz
+  download: HTTP 200, 5729058 B
+=== [17] PIP INSTALL FROM GIT (GitHub se seedha package) ===
+[notice] To update, run: pip install --upgrade pip
+  blessings installed from GitHub: ['site-packages', 'blessings', '__init__.py']
+=== [18] GH ARCHIVE (public event data) — download + verify ===
+  downloaded: 18219405 B
+  events parsed (pehle 5000): 5000 | top types: [('PushEvent', 4010), ('CreateEvent', 491), ('DeleteEvent', 146), ('PullRequestEvent', 139)]
+=== [19] CODE SEARCH ALTERNATIVES (bina token) ===
+  grep.app: HTTP 429, 33938 B
+<!DOCTYPE html><html lang="en" data-astro-cid-4wdtffzm><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"
+  searchcode.com: HTTP 404, 19 B
+404 page not found
+
+=== [20] GITHUB ADVISORIES (public security DB) ===
+  GHSA-wx4m-69m9-gx3m | critical | Home Assistant: XSS in Statistics Graph Card
+  GHSA-4ghv-53cq-7wp3 |   medium | Home Assistant: mDNS Server-Side Request Forgery
+  GHSA-8fcf-v89g-xpg6 |   medium | Traefik: BasicAuth singleflight coalescing reintroduces
+=== [21] TRENDING (python parse) ===
+  top trending: []
+=== [22] GHCR (container registry) — bina docker access ===
+  token: djE6YXN0cmFsLXNoL3V2...
+  manifest: HTTP 200, 2196 B
+{
+  "schemaVersion": 2,
+  "mediaType": "application/vnd.oci.image.index.v1+json",
+  "manifests": [
+    {
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "digest": "sha256:345326
+=== [23] WIKI CLONE ===
+  wiki file: Home.textile
+=== [24] RAW DATA FILE (dataset repo se CSV) ===
+  raw csv: HTTP 200, 5512931 B
+  Date,Country,Confirmed,Recovered,Deaths
+  2020-01-22,Afghanistan,0,0,0
