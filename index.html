@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UAI-COS v2.0 — Control Center</title>
+<style>
+  :root{--bg:#0b1020;--panel:#131a2f;--line:#243050;--fg:#e8ecf7;--mut:#93a0c0;--acc:#6ea8fe;--ok:#39d98a;--warn:#ffc857}
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 20% -10%,#16224a,#0b1020 60%);color:var(--fg);
+       font:15px/1.6 "Segoe UI",system-ui,-apple-system,"Noto Sans",Arial,sans-serif;padding:30px 22px 60px}
+  .wrap{max-width:1080px;margin:auto}
+  h1{font-size:26px;margin:0 0 6px}
+  h1 span{color:var(--acc)}
+  .sub{color:var(--mut);font-size:13.5px;margin-bottom:24px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:26px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .card .k{color:var(--mut);font-size:11.5px;text-transform:uppercase;letter-spacing:.07em}
+  .card .v{font-size:23px;font-weight:700;margin-top:5px}
+  .v.ok{color:var(--ok)} .v.warn{color:var(--warn)}
+  h2{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.09em;margin:26px 0 12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+  a.tile{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 16px;
+         text-decoration:none;color:var(--fg);transition:.15s}
+  a.tile:hover{border-color:var(--acc);transform:translateY(-2px)}
+  a.tile b{display:block;font-size:15px;margin-bottom:4px}
+  a.tile i{font-style:normal;color:var(--mut);font-size:12.5px}
+  .tag{display:inline-block;font-size:10.5px;border:1px solid var(--line);border-radius:99px;padding:1px 8px;
+       color:var(--mut);margin-left:8px;vertical-align:1px}
+  .tag.live{color:var(--ok);border-color:#26563f}
+  code{background:#0e152a;border:1px solid var(--line);padding:2px 7px;border-radius:7px;font-size:12.5px}
+  footer{color:var(--mut);font-size:12.5px;margin-top:34px;border-top:1px solid var(--line);padding-top:16px}
+</style>
+</head>
+<body><div class="wrap">
+  <h1>UAI-COS <span>v2.0</span> — Universal AI Cognitive Operating System</h1>
+  <div class="sub">
+    Universal AI Mind-Map · Memory Management · Multi-Agent Operating Architecture — is workspace me <b>live</b>.
+    Language rule: Roman Hindi (English alphabet). Reality rule: sirf jo disk par save hai wahi persistent hai.
+  </div>
+
+  <div class="cards">
+    <div class="card"><div class="k">Live memories</div><div class="v">71</div></div>
+    <div class="card"><div class="k">Memory health</div><div class="v ok">100/100</div></div>
+    <div class="card"><div class="k">Golden tests</div><div class="v ok">28/28</div></div>
+    <div class="card"><div class="k">Open conflicts</div><div class="v ok">0</div></div>
+    <div class="card"><div class="k">Spec sections mapped</div><div class="v">112</div></div>
+    <div class="card"><div class="k">Provenance check</div><div class="v ok">4/4 PASS</div></div>
+    <div class="card"><div class="k">Capability map</div><div class="v ok">v2.4</div></div>
+    <div class="card"><div class="k">Verified capabilities</div><div class="v">60+</div></div>
+  </div>
+
+  <h2>Live data</h2>
+  <div class="grid">
+    <a class="tile" href="DASHBOARD.html"><b>Memory Dashboard <span class="tag live">live</span></b>
+      <i>28 records — type/status/confidence breakdown + poori table</i></a>
+    <a class="tile" href="memory/INDEX.md"><b>Retrieval Index</b>
+      <i>Boot par yahi padha jaata hai — sirf relevant memory</i></a>
+    <a class="tile" href="logs/AUDIT_LOG.md"><b>Audit Trail</b>
+      <i>Har memory operation ka log (Section #61)</i></a>
+  </div>
+
+  <h2>Spec layer (Step 1)</h2>
+  <div class="grid">
+    <a class="tile" href="00_SYSTEM/00_UAI-COS_V2.0_SPEC.md"><b>V2.0 Spec — poora, uncut</b>
+      <i>112 sections · 42,743 chars · sha256:4aa1c6a1… </i></a>
+    <a class="tile" href="00_SYSTEM/01_UAI-COS_V1.0_SPEC.md"><b>V1.0 Base Spec</b>
+      <i>Part 1–15 · intent disambiguation ke liye</i></a>
+    <a class="tile" href="00_SYSTEM/IMPORT_LOG.md"><b>Import Log / Provenance</b>
+      <i>403 → reader proxy, hashes, original intro/outro</i></a>
+    <a class="tile" href="00_SYSTEM/OPERATIONAL_PROTOCOL.md"><b>Operational Protocol</b>
+      <i>14 always-on rules (turn start / during / end)</i></a>
+    <a class="tile" href="00_SYSTEM/UAI-COS_SYSTEM_PROMPT_standard.md"><b>Compiled System Prompt</b>
+      <i>Spec + live memory inline — paste-anywhere</i></a>
+  </div>
+
+  <h2>Step 2 — implementation layer</h2>
+  <div class="grid">
+    <a class="tile" href="01_STEP2/00_STEP2_MASTER_PLAN.md"><b>Step 2 Master Plan</b><i>Deliverables map</i></a>
+    <a class="tile" href="01_STEP2/01_IMPLEMENTATION_ROADMAP.md"><b>Implementation Roadmap</b><i>6 phases, honest status</i></a>
+    <a class="tile" href="01_STEP2/02_USER_SCENARIOS.md"><b>User Scenarios</b><i>9 end-to-end walkthroughs</i></a>
+    <a class="tile" href="01_STEP2/03_MEMORY_TYPES_INTEGRATION.md"><b>Memory Types Integration</b><i>15 types, lifecycle, ACL</i></a>
+    <a class="tile" href="01_STEP2/04_AGENT_LIFECYCLE.md"><b>Agent Lifecycle</b><i>11 states, autonomy A0–A5</i></a>
+    <a class="tile" href="01_STEP2/05_EVALUATION_AND_GOLDEN_TESTS.md"><b>Evaluation & Golden Tests</b><i>Metrics + scorecard</i></a>
+    <a class="tile" href="01_STEP2/06_EXTERNAL_INTEGRATION.md"><b>External Integration</b><i>Telegram bot + prompt compiler</i></a>
+    <a class="tile" href="agents/AGENT_REGISTRY.md"><b>Agent Registry</b><i>40+ agents + handoff protocol</i></a>
+  </div>
+
+  <h2>Self-audit (Capability Map v1.0)</h2>
+  <div class="grid">
+    <a class="tile" href="02_CAPABILITY_AUDIT/00_EXECUTIVE_SUMMARY.md"><b>Executive Summary <span class="tag live">new</span></b>
+      <i>Asli discovery — sudo/root, browser, OCR, fallbacks + hard limits (evidence ke saath)</i></a>
+    <a class="tile" href="02_CAPABILITY_AUDIT/01_CAPABILITY_AND_ACCESS_MAP.md"><b>Capability & Access Map</b><i>Tools, environments, access + permission matrices</i></a>
+    <a class="tile" href="02_CAPABILITY_AUDIT/02_RESEARCH_CAPABILITY_MAP.md"><b>Research Capability Map</b><i>Site matrix + 25 research methods + source rubric</i></a>
+    <a class="tile" href="02_CAPABILITY_AUDIT/03_FALLBACK_ROUTE_GRAPH.md"><b>Fallback Routes</b><i>"Nahi ho sakta" → 10 sawal → alternate route</i></a>
+    <a class="tile" href="02_CAPABILITY_AUDIT/04_UNKNOWN_QUEUE_AND_TESTS.md"><b>Unknown Queue</b><i>U1–U14 + safe test commands</i></a>
+    <a class="tile" href="02_CAPABILITY_AUDIT/05_EXPANSION_ROADMAP_AND_MAINTENANCE.md"><b>Expansion Roadmap</b><i>Capability kaise badhegi + versioning protocol</i></a>
+    <a class="tile" href="02_CAPABILITY_AUDIT/06_DEEP_EXPLORATION_v2.1.md"><b>Deep Exploration v2.1 <span class="tag live">new</span></b>
+      <i>2nd pass: persistence ka asli pattern, /opt fix, local embeddings, ffmpeg, fonts, Hindi OCR, naye limits</i></a>
+    <a class="tile" href="02_CAPABILITY_AUDIT/_tests/devanagari_render_test.png"><b>Devanagari Render Proof</b><i>Hindi text image me perfect render (PIL/Raqm)</i></a>
+    <a class="tile" href="02_CAPABILITY_AUDIT/CAPABILITY_MAP.json"><b>CAPABILITY_MAP.json</b><i>Machine-readable v1.0</i></a>
+    <a class="tile" href="02_CAPABILITY_AUDIT/probes/site_matrix.csv"><b>Site Matrix (raw)</b><i>29 sites ka live HTTP evidence</i></a>
+  </div>
+
+  <h2>PHASE 2 — ACCESS EXPANSION <span class="tag live">live</span></h2>
+  <div class="tiles">
+    <a class="tile" href="06_REPO_HUNT/00_REPO_UNLOCK_REPORT.md"><b>Repo Unlock <span class="tag live">new</span></b><i>15 GitHub repos test — Reddit/TikTok/Pinterest/Threads/Weibo khule</i></a>
+    <a class="tile" href="tools/social_unlock.py"><b>social_unlock.py</b><i>10 verified commands (smoke-tested)</i></a>
+    <a class="tile" href="http://127.0.0.1:1200"><b>RSSHub (live :1200)</b><i>2015 namespaces, 13 routes verified</i></a>
+    <a class="tile" href="05_SOCIAL_UNLOCK/00_SOCIAL_PLATFORM_UNLOCK_REPORT.md"><b>Social Unlock <span class="tag live">new</span></b><i>Reddit/Telegram/Bluesky/TikTok — verified matrix</i></a>
+    <a class="tile" href="04_GITHUB_UNLOCK/00_GITHUB_CAPABILITY_REPORT.md"><b>GitHub Unlock <span class="tag live">new</span></b><i>binaries, containers, GH data — bina token</i></a>
+    <a class="tile" href="tools/github_unlock.py"><b>github_unlock.py</b><i>12 commands (verified)</i></a>
+    <a class="tile" href="03_ACCESS_EXPANSION/00_PHASE2_MASTER_REPORT.md"><b>Phase-2 Master Report</b><i>12 blocked targets → 9 verified routes</i></a>
+    <a class="tile" href="03_ACCESS_EXPANSION/01_VERIFIED_ROUTES_MATRIX.md"><b>Verified Routes Matrix</b><i>har route ka status + evidence (living)</i></a>
+    <a class="tile" href="03_ACCESS_EXPANSION/02_BLOCKER_ANALYSIS_REGISTER.md"><b>Blocker Analysis Register</b><i>§22 format, 14 targets</i></a>
+    <a class="tile" href="03_ACCESS_EXPANSION/03_ACCESS_PLAYBOOK.md"><b>Access Playbook</b><i>working recipes + rate limits</i></a>
+    <a class="tile" href="03_ACCESS_EXPANSION/04_ACCESS_UNKNOWN_QUEUE_AND_HARD_LIMITS.md"><b>Unknown Queue + Hard Limits</b><i>AQ-01..15, HL-01..10</i></a>
+    <a class="tile" href="03_ACCESS_EXPANSION/05_EXPANSION_GRAPH_AND_USER_ACTIONS.md"><b>Expansion Graph + User Actions</b><i>8 actions → conditional → direct</i></a>
+    <a class="tile" href="tools/local_ai.py"><b>local_ai.py</b><i>local LLM + Hindi TTS + STT (bina key)</i></a>
+    <a class="tile" href="02_CAPABILITY_AUDIT/07_SELF_SWEEP_v2.md"><b>Self-Sweep v2</b><i>17 nayi capabilities + systemd correction</i></a>
+    <a class="tile" href="tools/access_routes.py"><b>access_routes.py</b><i>working verified-route library</i></a>
+  </div>
+  <h2>Commands</h2>
+  <div class="grid">
+    <div class="tile"><b>Memory OS</b><i><code>python3 tools/uai_mem.py list --status active --status verified</code></i></div>
+    <div class="tile"><b>Health audit</b><i><code>python3 tools/uai_mem.py audit --log</code></i></div>
+    <div class="tile"><b>Regression suite</b><i><code>bash tests/test_memory_os.sh</code></i></div>
+    <div class="tile"><b>Prompt compiler</b><i><code>python3 tools/build_system_prompt.py -m standard</code></i></div>
+  </div>
+
+  <footer>
+    Retrieval rule (Spec #17–21): keyword match kaafi nahi — scope + authority + freshness + confidence + current instruction dekh kar memory use hoti hai.<br>
+    Delete kabhi nahi — supersede. High-risk action se pehle user approval. Permanent memory ka jhootha claim nahi.
+  </footer>
+</div></body>
+</html>

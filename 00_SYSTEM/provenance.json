@@ -1,0 +1,33 @@
+{
+  "canonical": {
+    "v2": {
+      "file": "00_SYSTEM/00_UAI-COS_V2.0_SPEC.md",
+      "sections": 112,
+      "chars": 42743,
+      "body_sha256_16": "4aa1c6a1f872a3f3"
+    },
+    "v1": {
+      "file": "00_SYSTEM/01_UAI-COS_V1.0_SPEC.md",
+      "parts": "Part 1-15",
+      "chars": 21302,
+      "body_sha256_16": "456102f91c061b6e"
+    }
+  },
+  "raw_extraction": {
+    "v2": {
+      "file": "00_SYSTEM/_raw/v2_extraction_raw.md",
+      "chars": 44339,
+      "sha256_16": "bf2f6a947357012c"
+    },
+    "v1": {
+      "file": "00_SYSTEM/_raw/v1_extraction_raw.md",
+      "chars": 22734,
+      "sha256_16": "0504898f18d2eaef"
+    }
+  },
+  "source": {
+    "url": "https://chatgpt.com/share/6ab02379-e58c-83ee-b573-63caedeca943",
+    "imported_on": "2026-09-23",
+    "import_method": "r.jina.ai reader proxy (direct fetch = HTTP 403 Cloudflare)"
+  }
+}
