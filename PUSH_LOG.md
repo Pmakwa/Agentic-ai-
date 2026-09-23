@@ -28,9 +28,11 @@
 
 | 13 | 2026-09-23 08:55 | (auto) | **PHOENIX INTRADAY Constraint Applied**: User rule 'tumhe sirf intraday hi allowed hai' enforced · Zero overnight holding · `tools/phoenix_intraday_engine.py` · Tested on 2 years (3,487 hourly bars) on QQQ/SPY/GLD · Complete proof & operational manual `PHOENIX_INTRADAY_MASTER_MANUAL.md` · 314 intraday trades logged (`INTRADAY_TRADE_LOG.csv`) · Live execution plan command · Map v3.1 | ⏳ check |
 
+| 14 | 2026-09-23 18:10 | (auto) | **CRYPTO SUPERTREND ₹10k INR — 1,092 configs**: Single/Double/Triple × BTC/ETH/SOL × 1h/4h × RR1:2/1:3 · Honest 24.5% profitable median -1178 PF0.84 · Best robust SOL 1h P14x3.0 1:3 ₹13135 (+31% PF1.31 DD9.67% 119tr) OOS PASS · Triple hurts (-2186 mean) · 4h beats 1h · 11-part reports + 20 trade logs + 5 equity curves · Engine numba-optimized | ⏳ check |
+
 ## Snapshot (latest verified)
 
-- Memory records: **90** · Capability map: **v2.4** (`aef4a0c1a7bd36e9`) · Spec: `4aa1c6a1f872a3f3`
+- Memory records: **91** · Capability map: **v2.4** (`aef4a0c1a7bd36e9`) · Spec: `4aa1c6a1f872a3f3`
 - Health: provenance 4/4 · audit 100/100 · tests 28/28
 - Live routes (snapshot 06:27 UTC): redlib safereddit 200 (47,180 B) · redlib artemislena 200 (47,161 B) · fxtwitter 200 · vxtwitter 200 · bsky 200 · tiktok oEmbed 200
 - Servers: control-center `:8000` 200 · RSSHub `:1200` sandbox restart par band (RUNBOOK §3 se start)

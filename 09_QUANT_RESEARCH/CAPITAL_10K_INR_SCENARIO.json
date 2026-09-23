@@ -1,0 +1,61 @@
+{
+  "capital_currency": "INR",
+  "capital_initial": 10000,
+  "exchange_rate_reference": "83.50 INR per USD (Sep 2026 approx - only for US ETF context)",
+  "note": "Percentages (ROI, DD, PF, CAGR) are currency-agnostic. Absolute INR values = 10000 * percentage.",
+  "intraday_strategy": {
+    "name": "Phoenix Intraday ORB-Volatility (QQQ) - STRICT INTRADAY 15:30 squareoff",
+    "tested_on": "QQQ 1-hour bars 2 years 3487 bars (yfinance NASDAQ)",
+    "capital_initial_inr": 10000,
+    "capital_ending_inr": 8408.59,
+    "net_pnl_inr": -1591.41,
+    "total_return_pct": -15.91,
+    "cagr_pct": -8.3,
+    "max_drawdown_pct": 18.48,
+    "max_drawdown_inr": 1848.0,
+    "lowest_equity_during_dd_inr": 8152.0,
+    "profit_factor": 0.78,
+    "win_rate_pct": 42.99,
+    "total_trades": 314,
+    "gross_profit_inr": 5810.17,
+    "gross_loss_inr": 7401.61,
+    "avg_win_inr": 43.04,
+    "avg_loss_inr": -41.35,
+    "exit_breakdown": {
+      "STOP_LOSS": 120,
+      "MANDATORY_EOD_SQUAREOFF": 117,
+      "TARGET_HIT": 77
+    },
+    "practical_issue": "10k INR = $120 USD. QQQ 1 share ~$500 = 41,750 INR. Fractional 0.78 shares chahiye. Zerodha US investing me fractional nahi milta, pura 1 share bhi afford nahi."
+  },
+  "swing_strategy": {
+    "name": "MRAV-V2 (SPY/QQQ/GLD) - comparison",
+    "tested_on": "SPY/QQQ/GLD Daily 551 bars Jul24-Sep26",
+    "capital_initial_inr": 10000,
+    "capital_ending_inr": 12953.24,
+    "net_pnl_inr": 2953.24,
+    "total_return_pct": 29.53,
+    "cagr_pct": 12.56,
+    "max_drawdown_pct": 6.72,
+    "max_drawdown_inr": 672.0,
+    "lowest_equity_during_dd_inr": 9328.0,
+    "profit_factor": 2.38,
+    "win_rate_pct": 49.02,
+    "total_trades": 51,
+    "gross_profit_inr": 5096.54,
+    "gross_loss_inr": 2143.32,
+    "avg_win_inr": 203.86,
+    "avg_loss_inr": -82.44,
+    "monte_carlo_5000": {
+      "p5_inr": 10115.45,
+      "median_inr": 11102.64,
+      "p95_inr": 12396.58,
+      "ruin_pct": 0.0
+    }
+  },
+  "indian_adaptation_for_10k_inr": {
+    "recommended": "NIFTYBEES + GOLDBEES (NSE) par same logic lagao",
+    "example": "Capital 10000 INR, Risk 1.5% = 150 INR. NIFTYBEES price ~265 ATR 4.5 => Shares = 150/(0.8*4.5)=41 shares. Investment 41*265=10865 (Intraday 5x margin pe ~2173 margin). Stop = Entry-3.6, Target=Entry+4.5. Brokerage India: 20 Rs/order",
+    "next_step": "NSE data pe backtest ke liye ticker NIFTYBEES.NS use karo"
+  }
+}

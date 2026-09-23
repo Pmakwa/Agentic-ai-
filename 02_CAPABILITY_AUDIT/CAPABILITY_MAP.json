@@ -1,5 +1,5 @@
 {
-  "map_version": "3.1",
+  "map_version": "3.2",
   "generated": "2026-09-23",
   "generated_by": "UAI-COS self-audit + PHASE 2 access expansion + repo-hunt unlock (P0-P16) + PHASE-SYSTEM apply (P14 RSSHub routes, P15 monitor, P16 new endpoints)",
   "status_labels": [
@@ -211,7 +211,10 @@
     "tools/phoenix_strategy_engine.py",
     "09_QUANT_RESEARCH/PHOENIX_INTRADAY_MASTER_MANUAL.md",
     "09_QUANT_RESEARCH/INTRADAY_TRADE_LOG.csv",
-    "tools/phoenix_intraday_engine.py"
+    "tools/phoenix_intraday_engine.py",
+    "09_QUANT_RESEARCH/CRYPTO_SUPERTREND/MASTER_REPORT.md",
+    "tools/crypto_supertrend_engine.py",
+    "09_QUANT_RESEARCH/CRYPTO_SUPERTREND/MASTER_COMPARISON_MATRIX.csv"
   ],
   "next_review": "P21 (repo sweep) ke baad: naye verified tools ka map bump + monitor routes update",
   "changes_from_v1_0": [
@@ -806,6 +809,21 @@
       "09_QUANT_RESEARCH/INTRADAY_TRADE_LOG.csv",
       "09_QUANT_RESEARCH/INTRADAY_BACKTEST_RESULTS.json",
       "tools/phoenix_intraday_engine.py"
+    ]
+  },
+  "crypto_supertrend_research": {
+    "status": "COMPLETE — 1092 configs, 44-point protocol",
+    "capital": "₹10,000 INR",
+    "engine": "tools/crypto_supertrend_engine.py (numba, 1.1k backtests)",
+    "data": "Yahoo BTC-USD/ETH-USD/SOL-USD 2y 1h 17331 bars + 4h 4337 bars",
+    "results": "24.5% profitable (268/1092), median -1178 INR, PF 0.84 — SOL only robust (+31.35% best)",
+    "best_robust": "SOL 1h SINGLE P14x3.0 RR1:3 ₹13135 PF1.31 DD9.67% 119 trades OOS PASS",
+    "deliverables": [
+      "09_QUANT_RESEARCH/CRYPTO_SUPERTREND/MASTER_REPORT.md",
+      "09_QUANT_RESEARCH/CRYPTO_SUPERTREND/PART1-11_*.md (11 parts)",
+      "09_QUANT_RESEARCH/CRYPTO_SUPERTREND/MASTER_COMPARISON_MATRIX.csv (1092 rows)",
+      "09_QUANT_RESEARCH/CRYPTO_SUPERTREND/TRADE_LOG_*.csv (20 logs)",
+      "09_QUANT_RESEARCH/CRYPTO_SUPERTREND/EQUITY_*.png (5 curves)"
     ]
   }
 }
