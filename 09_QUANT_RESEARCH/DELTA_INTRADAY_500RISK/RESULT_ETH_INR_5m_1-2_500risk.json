@@ -1,0 +1,83 @@
+{
+  "coin": "ETH/INR",
+  "timeframe": "5m",
+  "params": {
+    "st1": "10x3.0",
+    "st2": "10x4.0",
+    "sl_pct": 0.08,
+    "rr": 2.0
+  },
+  "metrics": {
+    "starting_capital": 10000.0,
+    "ending_capital": 9622.63,
+    "total_net_profit": -377.37,
+    "return_pct": -3.77,
+    "max_drawdown_inr": 422.82,
+    "max_drawdown_pct": 4.21,
+    "max_profit": 277.5,
+    "max_loss": -422.82,
+    "avg_win": 115.78,
+    "avg_loss": -181.18,
+    "largest_win": 277.5,
+    "largest_loss": -422.82,
+    "win_rate": 42.86,
+    "loss_rate": 57.14,
+    "profit_factor": 0.48,
+    "expectancy": -53.91,
+    "num_trades": 7,
+    "winning_trades": 3,
+    "losing_trades": 4,
+    "breakeven_trades": 0,
+    "max_win_streak": 1,
+    "max_loss_streak": 2,
+    "avg_win_streak": 1.0,
+    "avg_loss_streak": 1.33,
+    "recovery_factor": -0.89,
+    "sharpe": -9.03,
+    "sortino": -10.72,
+    "calmar": -21.44,
+    "exposure_pct": 94.31,
+    "avg_duration_hours": 21.89,
+    "max_duration_hours": 23.67,
+    "min_duration_hours": 13.08,
+    "gross_profit": 347.35,
+    "gross_loss": 724.73
+  },
+  "equity_curve": [
+    {
+      "time": "2026-09-17 05:30:00+05:30",
+      "equity": 10000.0
+    },
+    {
+      "time": "2026-09-18 00:00:00+05:30",
+      "equity": 10032.12
+    },
+    {
+      "time": "2026-09-19 00:00:00+05:30",
+      "equity": 9609.3
+    },
+    {
+      "time": "2026-09-20 00:00:00+05:30",
+      "equity": 9647.03
+    },
+    {
+      "time": "2026-09-21 00:00:00+05:30",
+      "equity": 9623.42
+    },
+    {
+      "time": "2026-09-22 00:00:00+05:30",
+      "equity": 9900.92
+    },
+    {
+      "time": "2026-09-23 00:00:00+05:30",
+      "equity": 9868.82
+    },
+    {
+      "time": "2026-09-24 00:00:00+05:30",
+      "equity": 9622.63
+    }
+  ],
+  "bars": 1951,
+  "data_start": "2026-09-17 05:30:00+05:30",
+  "data_end": "2026-09-24 00:00:00+05:30"
+}

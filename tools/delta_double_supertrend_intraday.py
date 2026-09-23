@@ -127,7 +127,7 @@ def download_delta_data(yf_ticker:str, interval:str, period:str)->pd.DataFrame:
     df.index = df.index.tz_convert("Asia/Kolkata")
     return df
 
-def backtest_double_st_intraday(df: pd.DataFrame, coin:str, timeframe:str, st_p1:int=10, st_m1:float=3.0, st_p2:int=10, st_m2:float=4.0, sl_pct:float=0.08, rr:float=3.0, risk_pct:float=0.01, intraday_squareoff:bool=True):
+def backtest_double_st_intraday(df: pd.DataFrame, coin:str, timeframe:str, st_p1:int=10, st_m1:float=3.0, st_p2:int=10, st_m2:float=4.0, sl_pct:float=0.08, rr:float=3.0, risk_pct:float=0.01, intraday_squareoff:bool=True, risk_fixed:float=None):
     """
     Implements exact YouTube Double Supertrend intraday logic
     Returns metrics + trades + equity_curve
@@ -307,7 +307,7 @@ def backtest_double_st_intraday(df: pd.DataFrame, coin:str, timeframe:str, st_p1
                     stop_price = entry_price_exec * (1 - sl_pct)
                     target_price = entry_price_exec * (1 + sl_pct*rr)
                     # Position sizing
-                    risk_amt = equity * risk_pct
+                    risk_amt = risk_fixed if risk_fixed is not None else equity * risk_pct
                     stop_dist = entry_price_exec - stop_price
                     if stop_dist <=0:
                         i+=1
@@ -368,7 +368,7 @@ def backtest_double_st_intraday(df: pd.DataFrame, coin:str, timeframe:str, st_p1
                         entry_price_exec = entry_price_exec * (1-SLIPPAGE_PCT)
                     stop_price = entry_price_exec * (1 + sl_pct)
                     target_price = entry_price_exec * (1 - sl_pct*rr)
-                    risk_amt=equity*risk_pct
+                    risk_amt=risk_fixed if risk_fixed is not None else equity*risk_pct
                     stop_dist=stop_price - entry_price_exec
                     if stop_dist<=0:
                         i+=1
