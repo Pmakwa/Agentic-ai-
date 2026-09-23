@@ -1,16 +1,10 @@
 {
-  "ts": "2026-09-23 18:49:18",
+  "ts": "2026-09-23 18:58:47",
   "workspace": "/home/user/uai-cos",
-  "total_before": 22655365,
-  "freed": 30346,
+  "total_before": 22719910,
+  "freed": 0,
   "apply": true,
-  "junk": [
-    [
-      "tools/__pycache__",
-      "cache-dir",
-      30346
-    ]
-  ],
+  "junk": [],
   "empty": [],
   "duplicates": [
     [
@@ -72,21 +66,20 @@
       "09_QUANT_RESEARCH/DELTA_INTRADAY_ALLRISK/RESULT_ETH_INR_1h_1pct_1-2.json",
       "duplicate-of 09_QUANT_RESEARCH/DELTA_INTRADAY_1PCT/RESULT_ETH_INR_1h_1-2_1pct.json",
       47401
+    ],
+    [
+      "09_QUANT_RESEARCH/DELTA_INTRADAY_SL1_1.5_2/MASTER_SL1_1.5_2_RR12_13_72.csv",
+      "duplicate-of 09_QUANT_RESEARCH/DELTA_INTRADAY_SL1_1.5_2/MASTER_SORTED_CLEAN.csv",
+      18481
     ]
   ],
   "heavy": [],
   "bigdirs": [
     [
       ".git",
-      6926257
+      9152320
     ]
   ],
-  "deleted": [
-    [
-      "tools/__pycache__",
-      "cache-dir",
-      30346
-    ]
-  ],
+  "deleted": [],
   "skipped": []
 }
