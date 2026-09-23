@@ -1,6 +1,6 @@
 # MEMORY INDEX — UAI-COS v2.0
 
-> Generated: 2026-09-23T18:09:18  |  live records: **91**  |  total (incl. archived/deleted): 91
+> Generated: 2026-09-23T18:33:55  |  live records: **92**  |  total (incl. archived/deleted): 92
 > Ye file auto-generated hai — edit na karo. Source of truth: `memory/store/memory.jsonl`
 > Retrieval rule (Section 17): keyword match kaafi nahi — scope + authority + freshness + confidence + current instruction dekh kar use karo.
 
@@ -80,7 +80,7 @@
 | `MEM-EPI-0003` | verified | high | 2026-09-23 (deep pass): capability audit v1.1 complete — persistence solved, browser/model cache /opt me shift, 13+ naye capabilities verified, 5 naye limits documented, bootstrap script + probe scripts banaye. | user_instruction | - |
 | `MEM-EPI-0004` | active | high | 2026-09-23 ko PHASE 2 (access expansion) complete hui: 12 blocked targets me 9 ke verified routes + working library + 6 deliverable docs | user_instruction | access |
 
-## PROCEDURAL (14)
+## PROCEDURAL (15)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -98,6 +98,7 @@
 | `MEM-PROC-0012` | verified | very_high | PHOENIX RISING V2.0 Strategy Complete (MRAV-V2): Multi-Asset Momentum Rotation (SPY, QQQ, GLD) + ATR Volatility Breakout. Production engine: tools/phoenix_strategy_engine.py. Backtest on 3-year market data (750 bars): +29.53% total return (12.56% CAGR), max drawdown only 6.72%, profit factor 2.38, win rate 49.02% across 51 executed trades (TRADE_LOG.csv). | live backtest run 2026-09-23 | - |
 | `MEM-PROC-0013` | verified | very_high | PHOENIX INTRADAY Constraint Implemented (Strict 100% Intraday): User rule 'tumhe sirf intraday hi allowed hai' enforced. Zero overnight carry, mandatory 15:30 EOD auto-squareoff. Engine: tools/phoenix_intraday_engine.py. Tested on 2 years of 1h intraday bars (3,487 candles, 501 sessions) across QQQ, SPY, GLD. | user constraint & empirical intraday backtest 2026-09-23 | - |
 | `MEM-PROC-0014` | verified | very_high | CRYPTO SUPERTREND MASTER RESEARCH ₹10K INR: 1092 configs tested (Single 25×Double 36×Triple 30 ×2RR×2TF×3coins) on BTC/ETH/SOL Yahoo 2y 1h/4h (17k/4k bars) with 0.30% round-trip fees+slippage, 1% risk, RR 1:2 vs 1:3. Honest result: 24.5% profitable (268/1092), median -1178 INR, PF 0.84. SOL only robust coin (37% profitable), BTC 12% profitable. Best robust: SOL 1h SINGLE P14×3.0 RR1:3 ₹10000→₹13135 (+31.35% PF1.31 DD9.67% 119 trades) survives OOS Train+2771/OOS+1110. Triple hurts (mean -2186). 4h beats 1h (median -283 vs -2826). All 11-part reports + 20 trade logs + 5 equity curves in 09_QUANT_RESEARCH/CRYPTO_SUPERTREND. | user master prompt 2026-09-23 + empirical backtest | - |
+| `MEM-PROC-0015` | verified | very_high | DELTA INDIA DOUBLE SUPERTREND INTRADAY BACKTEST — YouTube https://youtu.be/kSU11mJ19lY (Trade With Sidh 10×3+10×4 Weekly) converted to intraday 5m/15m/30m/1h on Delta Exchange India BTC/ETH/SOL INR perpetuals. 12 backtests 1951-17331 bars, capital ₹10k, SL 8% RR1:3, risk 1%, fees Delta taker 0.059%+GST. Results HONEST LOSS: 1h 2y BTC -12.9% PF0.77 611tr, ETH -18% PF0.77 577tr, SOL -14.6% PF0.85 637tr. 15m 60d: BTC -0.94% PF0.83, ETH +0.85% PF1.17, SOL +0.40% PF1.05. 5m 7d insufficient (7 trades). Scaled SL 1.5-2% also marginal (+5% best). Proves weekly swing 8% SL intraday fails due to 24% target never hit before 23:55 square-off (38% trades forced square-off). | https://youtu.be/kSU11mJ19lY + Delta India fees research | - |
 
 ## WORKING (1)
 

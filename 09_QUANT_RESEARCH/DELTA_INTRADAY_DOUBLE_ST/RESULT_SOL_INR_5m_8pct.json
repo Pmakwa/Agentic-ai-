@@ -1,0 +1,87 @@
+{
+  "coin": "SOL/INR",
+  "timeframe": "5m",
+  "params": {
+    "st1": "10x3.0",
+    "st2": "10x4.0",
+    "sl_pct": 0.08,
+    "rr": 3.0
+  },
+  "metrics": {
+    "starting_capital": 10000.0,
+    "ending_capital": 9956.11,
+    "total_net_profit": -43.89,
+    "return_pct": -0.44,
+    "max_drawdown_inr": 102.33,
+    "max_drawdown_pct": 1.02,
+    "max_profit": 83.76,
+    "max_loss": -102.33,
+    "avg_win": 35.18,
+    "avg_loss": -46.16,
+    "largest_win": 83.76,
+    "largest_loss": -102.33,
+    "win_rate": 50.0,
+    "loss_rate": 50.0,
+    "profit_factor": 0.76,
+    "expectancy": -5.48,
+    "num_trades": 8,
+    "winning_trades": 4,
+    "losing_trades": 4,
+    "breakeven_trades": 0,
+    "max_win_streak": 2,
+    "max_loss_streak": 2,
+    "avg_win_streak": 1.33,
+    "avg_loss_streak": 1.33,
+    "recovery_factor": -0.43,
+    "sharpe": -3.7,
+    "sortino": -5.1,
+    "calmar": -22.97,
+    "exposure_pct": 91.64,
+    "avg_duration_hours": 18.61,
+    "max_duration_hours": 23.75,
+    "min_duration_hours": 4.25,
+    "gross_profit": 140.74,
+    "gross_loss": 184.62
+  },
+  "equity_curve": [
+    {
+      "time": "2026-09-17 05:30:00+05:30",
+      "equity": 10000.0
+    },
+    {
+      "time": "2026-09-18 00:00:00+05:30",
+      "equity": 10011.87
+    },
+    {
+      "time": "2026-09-18 19:20:00+05:30",
+      "equity": 9909.54
+    },
+    {
+      "time": "2026-09-19 00:00:00+05:30",
+      "equity": 9949.73
+    },
+    {
+      "time": "2026-09-20 00:00:00+05:30",
+      "equity": 9926.55
+    },
+    {
+      "time": "2026-09-21 00:00:00+05:30",
+      "equity": 9931.46
+    },
+    {
+      "time": "2026-09-22 00:00:00+05:30",
+      "equity": 10015.22
+    },
+    {
+      "time": "2026-09-23 00:00:00+05:30",
+      "equity": 10005.53
+    },
+    {
+      "time": "2026-09-24 00:00:00+05:30",
+      "equity": 9956.11
+    }
+  ],
+  "bars": 1951,
+  "data_start": "2026-09-17 05:30:00+05:30",
+  "data_end": "2026-09-24 00:00:00+05:30"
+}
