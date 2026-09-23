@@ -1,5 +1,5 @@
 {
-  "map_version": "2.5",
+  "map_version": "2.6",
   "generated": "2026-09-23",
   "generated_by": "UAI-COS self-audit + PHASE 2 access expansion + repo-hunt unlock (P0-P16) + PHASE-SYSTEM apply (P14 RSSHub routes, P15 monitor, P16 new endpoints)",
   "status_labels": [
@@ -184,7 +184,13 @@
     ".cursor/rules/uai-cos.mdc",
     ".github/copilot-instructions.md",
     "06_REPO_HUNT/probes/rsshub_routes_sweep.txt",
-    "logs/rsshub_routes_sweep.json"
+    "logs/rsshub_routes_sweep.json",
+    "logs/cleanup_2026-09-23.md",
+    "PROMPTS/registry.json",
+    "PROMPTS/REGISTRY.md",
+    "tools/prompt_registry.py",
+    "tools/cleanup_workspace.py",
+    "CONVERSATION/04_STANDING_INSTRUCTIONS.md"
   ],
   "next_review": "P21 (repo sweep) ke baad: naye verified tools ka map bump + monitor routes update",
   "changes_from_v1_0": [
@@ -665,5 +671,32 @@
         "/amazon/awsblogs (50)"
       ]
     }
+  },
+  "workspace_hygiene": {
+    "status": "VERIFIED",
+    "tool": "tools/cleanup_workspace.py (report | --apply | --apply --dedupe | --check)",
+    "result": "Workspace 1.1 GB -> 8.1 MB (heavy artifacts /opt/uai-cache me shift); 0 junk / 0 empty / 0 duplicates",
+    "incident": "2026-09-23: pehle version ne node_modules+lib ke andar duplicates delete kiye (7959 files) -> RSSHub toota; fix: HEAVY_SKIP protection + dedupe opt-in flag + 500-delete cap (--force)",
+    "recovery": "/opt/uai-cache/rsshub = fresh clone + pnpm install (22.7s) + pnpm build (16.4s); 4 routes 200 (hackernews 30, thehindu 24, weibo 53, github activity 30)",
+    "cadence": "har 3-5 turn / push se pehle (PHASE_PROTOCOL §7, AGENTS §12)",
+    "evidence": [
+      "logs/cleanup_2026-09-23.md",
+      "logs/cleanup_2026-09-23.json",
+      "tools/cleanup_workspace.py",
+      "ENVIRONMENT.md"
+    ]
+  },
+  "structured_prompt_registry": {
+    "status": "VERIFIED",
+    "engine": "tools/prompt_registry.py (seed|list|add|apply|verify|md)",
+    "index": "PROMPTS/registry.json + PROMPTS/REGISTRY.md",
+    "entries": 10,
+    "rule": "user ka har structured prompt register + apply hota hai (applied_in likha jata hai); boot payload section 4b list karta hai",
+    "evidence": [
+      "PROMPTS/registry.json",
+      "PROMPTS/REGISTRY.md",
+      "AGENTS.md §13",
+      "PHASE_PROTOCOL.md §8"
+    ]
   }
 }

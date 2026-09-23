@@ -68,3 +68,15 @@ Oneshot ka `inactive (dead)` = **success**, failure nahi.
 - No credentials → keyed APIs/push blocked
 - IPv6 blocked, kuch hosts egress-IP block karte hain
 - CAPTCHA/login-wall/paywall bypass **allowed nahi** (spec §24) — chahe tool available ho
+
+## Persisted heavy artifacts (2026-09-23 — workspace lean rakhne ke liye /opt me)
+
+| Path | Size | Kya |
+|---|---|---|
+| `/opt/uai-cache/rsshub` | ~996 MB | RSSHub self-host (2015 namespaces) — clone + `pnpm install` + `pnpm build`; chalao: `cd /opt/uai-cache/rsshub && PATH=/opt/uai-cache/node22/bin:$PATH NODE_ENV=production PORT=1200 node dist/index.mjs` |
+| `/opt/uai-cache/bin` | 25 MB | `yq` + `crane` (tools/fetch_binaries.sh) — `export PATH=/opt/uai-cache/bin:$PATH` |
+| `/opt/uai-cache/node22` | 200 MB | Node 22 (RSSHub ke liye) |
+| `/opt/uai-cache/models_qwen05b.gguf` | 469 MB | local_ai.py (Qwen2.5-0.5B) |
+| `/opt/ms-playwright` | — | Playwright browsers (`PLAYWRIGHT_BROWSERS_PATH`) |
+
+**Rule:** `node_modules`/`.pnpm`/`dist` type cheezein workspace ke andar nahi rakhte (snapshot 128 MB cap + hygiene).

@@ -133,7 +133,7 @@ python3 tools/social_unlock.py bsky bsky.app
 2. **X** full API needs paid credits ($0.005/post read class pricing, 2026); public **bridges** (fxtwitter/vxtwitter) cover individual tweets/profiles tokenless.
 3. **Reddit** redlib instances are third-party volunteers — they can rate-limit (catsarch 429) or die; the tool falls back between the two verified instances automatically.
 4. **RSSHub** is running locally; if the sandbox restarts, restart with:
-   `cd tools/rsshub && PATH=/opt/uai-cache/node22/bin:$PATH PLAYWRIGHT_BROWSERS_PATH=/opt/ms-playwright NODE_ENV=production PORT=1200 node dist/index.mjs`
+   `cd /opt/uai-cache/rsshub && PATH=/opt/uai-cache/node22/bin:$PATH PLAYWRIGHT_BROWSERS_PATH=/opt/ms-playwright NODE_ENV=production PORT=1200 node dist/index.mjs`
 5. **Unknown-route queue:** Douyin browser mode, VK media extraction, Threads without RSSHub, Weibo long-term stability (visitor-cookie cooldowns), Instaloader with anonymous session ids.
 
 *Stop condition (§34): this is the maximum repo-level unlock achievable within the currently observable and authorized environment.*

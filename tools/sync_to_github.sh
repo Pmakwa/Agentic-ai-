@@ -24,7 +24,7 @@ if git grep -InE "(ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0
   if [ -t 0 ]; then read -r -p "Continue? [y/N] " a; [ "$a" = "y" ] || exit 1; else echo "-> non-interactive: scan ke matches sirf patterns hain (verified), aage badh raha hoon."; fi
 fi
 echo "-> bade files check (5MB+):"
-find . -type f -size +5M -not -path "./.git/*" -not -path "./tools/rsshub/*" -not -path "./tools/douyin_api/*" | head -5 || true
+find . -type f -size +5M -not -path "./.git/*" | head -5 || true
 
 # ---- 2. commit
 git add -A

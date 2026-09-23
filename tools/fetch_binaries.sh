@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# tools/bin/ (gitignored) me yq + crane wapas laata hai — GitHub releases se, bina token.
+# /opt/uai-cache/bin/ me yq + crane laata hai (workspace clean rehta hai) — GitHub releases se, bina token.
+# PATH me jodo: export PATH=/opt/uai-cache/bin:$PATH
 set -euo pipefail
 mkdir -p "$(dirname "$0")/bin" && cd "$(dirname "$0")/bin"
 [ -x yq ]    || { curl -sL -o yq.tar.gz "https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64.tar.gz"; tar -xzf yq.tar.gz ./yq_linux_amd64; mv yq_linux_amd64 yq; chmod +x yq; rm -f yq.tar.gz; }

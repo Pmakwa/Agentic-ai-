@@ -45,7 +45,7 @@
 
 ### 3a. Software source — "GitHub = duniya ka software store"
 Release assets se **static binaries** seedha mil jaate hain, chahiye sirf download + chmod.
-Verified: `yq` (JSON/YAML processor, 5.7 MB) aur `crane` (container tool, 16.5 MB) — **dono workspace me `tools/bin/` me persist ho gaye**.
+Verified: `yq` (JSON/YAML processor, 5.7 MB) aur `crane` (container tool, 16.5 MB) — dono persist hote hain; **2026-09-23 se `/opt/uai-cache/bin/` me** (workspace clean rakhne ke liye).
 Matlab: koi bhi tool jiska GitHub release hai (ffmpeg static, bat, fzf, delta, hugo, duckdb CLI…) bina package manager install ho sakta hai.
 
 ### 3b. Source code — research + reuse ke liye

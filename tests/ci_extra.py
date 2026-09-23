@@ -96,6 +96,43 @@ try:
 except Exception as e:  # noqa: BLE001
     bad(f"boot payload check failed: {e}")
 
+# 6. structured prompt registry
+try:
+    out = subprocess.run([sys.executable, str(ROOT / "tools" / "prompt_registry.py"), "verify"],
+                         capture_output=True, text=True).stdout
+    pend = [l for l in out.splitlines() if "applied_in khaali" in l]
+    if "FAIL" in out:
+        bad("prompt registry verify FAIL — `python3 tools/prompt_registry.py verify` dekho")
+    elif pend:
+        bad(f"{len(pend)} structured prompt applied nahi hain (applied_in khaali)")
+    else:
+        ok(f"prompt registry OK ({out.count('[PASS]')} prompts verified + applied)")
+except Exception as e:  # noqa: BLE001
+    bad(f"prompt registry check failed: {e}")
+
+# 7. cleanup tool safety (heavy dirs protected + dedupe opt-in)
+try:
+    t = (ROOT / "tools" / "cleanup_workspace.py").read_text(encoding="utf-8")
+    need = ["HEAVY_SKIP", "node_modules", "--dedupe", "DELETE_CAP"]
+    miss = [n for n in need if n not in t]
+    if miss:
+        bad(f"cleanup_workspace.py safety missing: {miss} — protections hataana mana hai (RSSHub incident 2026-09-23)")
+    else:
+        ok("cleanup tool safety intact (heavy dirs protected, dedupe opt-in, delete cap)")
+except Exception as e:  # noqa: BLE001
+    bad(f"cleanup safety check failed: {e}")
+
+# 8. repo me junk na ho
+try:
+    r = subprocess.run([sys.executable, str(ROOT / "tools" / "cleanup_workspace.py"), "--check", "--json"],
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        bad(f"workspace junk mila: {r.stdout.strip()[:200]} — `python3 tools/cleanup_workspace.py --apply` chalao")
+    else:
+        ok("workspace hygiene clean (0 junk / 0 empty / 0 duplicates)")
+except Exception as e:  # noqa: BLE001
+    bad(f"hygiene check failed: {e}")
+
 print()
 if fails:
     print(f"CI EXTRA: {len(fails)} FAIL")

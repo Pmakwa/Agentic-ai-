@@ -69,9 +69,22 @@ def check(name: str, url: str, expect: str) -> dict:
     return rec
 
 
+def hygiene() -> dict:
+    """Workspace hygiene record — cleanup tool ka summary (delete nahi karta, sirf report)."""
+    try:
+        out = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "cleanup_workspace.py"), "--json"],
+                             capture_output=True, text=True, timeout=180).stdout.strip()
+        d = json.loads(out.splitlines()[-1])
+        ok = (d["junk"] == 0 and d["empty"] == 0 and d["dupes"] == 0)
+        return {"check": "workspace_hygiene", "http": 200, "bytes": d["total_before"], "ok": ok,
+                "ms": 0, "detail": {k: d[k] for k in ("junk", "empty", "dupes", "bigdirs")}}
+    except Exception as e:  # noqa: BLE001
+        return {"check": "workspace_hygiene", "http": 0, "bytes": 0, "ok": False, "ms": 0, "error": str(e)}
+
+
 def main() -> int:
     os.makedirs(LOGS, exist_ok=True)
-    results = [check(*c) for c in CHECKS]
+    results = [check(*c) for c in CHECKS] + [hygiene()]
     ts = datetime.now(timezone.utc).isoformat(timespec="seconds")
     failed = [r["check"] for r in results if not r["ok"]]
     rec = {"ts": ts, "total": len(results), "passed": len(results) - len(failed),
@@ -84,7 +97,11 @@ def main() -> int:
              f"passed {rec['passed']}/{rec['total']}" + (f"  | FAILED: {', '.join(failed)}" if failed else "  | sab routes theek"),
              ""]
     for r in results:
-        lines.append(f"  {'OK ' if r['ok'] else 'FAIL'}  {r['check']:18} HTTP {r['http']:<4} {r['bytes']:>8,} B  {r['ms']:>5} ms")
+        extra = ""
+        if r["check"] == "workspace_hygiene" and isinstance(r.get("detail"), dict):
+            d = r["detail"]
+            extra = f"  junk={d['junk']} empty={d['empty']} dupes={d['dupes']}"
+        lines.append(f"  {'OK ' if r['ok'] else 'FAIL'}  {r['check']:18} HTTP {r['http']:<4} {r['bytes']:>8,} B  {r['ms']:>5} ms{extra}")
     out = "\n".join(lines) + "\n"
     with open(os.path.join(LOGS, "route_health.txt"), "w", encoding="utf-8") as f:
         f.write(out)

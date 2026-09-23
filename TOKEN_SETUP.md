@@ -36,7 +36,7 @@ Aapka repo confirm ho gaya: **`Pmakwa/Agentic-ai-`** ✅ (public, khaali, defaul
 Repo:  https://github.com/Pmakwa/Agentic-ai-.git
 Token: github_pat_xxxxxxxxxxxxxxxx
 ```
-Main turant push kar dunga (`tools/push_to_github.sh` ready hai) aur result bata dunga.
+Main turant push kar dunga (`tools/sync_to_github.sh` ready hai) aur result bata dunga.
 
 ---
 

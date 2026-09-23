@@ -93,6 +93,16 @@ def build_payload(attest_only: bool = False) -> str:
         verified_block = "\n".join(f"  - {k}: {str(v)[:120]}" for k, v in ru["repos_installed_and_verified"].items())
     social_a = social.get("verified_no_credentials", {})
     social_block = json.dumps(social_a, ensure_ascii=False)[:600] if social_a else "(see CAPABILITY_MAP.json social_unlock)"
+    _reg = ROOT / "PROMPTS" / "registry.json"
+    if _reg.exists():
+        _r = json.loads(_reg.read_text(encoding="utf-8"))
+        _lines = [f"- {p['id']} [{p['type']}] {p['title']}" + ("  ✅ applied: " + ", ".join(p.get("applied_in") or [])[:90] if p.get("applied") else "  ⏳ NOT APPLIED")
+                  for p in _r["prompts"]]
+        prompts_block = (f"({len(_r['prompts'])} structured prompts registered — engine: tools/prompt_registry.py)\n"
+                         + "\n".join(_lines)
+                         + "\n- Naya structured prompt aaye -> `prompt_registry.py add ...` + apply In likho + `agent_boot.py --write`")
+    else:
+        prompts_block = "(PROMPTS/registry.json nahi mila — `python3 tools/prompt_registry.py seed` chalao)"
 
     attestation = """### BOOT ATTESTATION — agent ko ye bharke dikhana hai (iské bina = boot nahi hua)
 
@@ -155,6 +165,9 @@ UAI-COS BOOT ATTESTATION
 - Evidence ke bina "ho gaya" nahi; blocked → kya block kiya, kyun, alternative kya.
 - Task ke end me: **Hindi summary + options (a/b/c)**.
 - Naya capability = install → **live test** → evidence `probes/` me → report → CAPABILITY_MAP bump → memory record → README/index sync.
+
+### 4b. STRUCTURED PROMPTS (PROMPTS/registry.json — user ke prompts + kahan apply hue)
+{prompts_block}
 
 ### 5. SPEC MAP (42,743 chars ka index — poora spec `00_SYSTEM/00_UAI-COS_V2.0_SPEC.md` me, sha256[16]={spec_hash})
 {spec_map()}

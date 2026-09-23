@@ -40,10 +40,10 @@ Repo:  https://github.com/Pmakwa/Agentic-AI.git
 Token: github_pat_xxxxxxxxxxxxxxxx
 ```
 
-Main ye chalaunga (script already ready hai `tools/push_to_github.sh`):
+Main ye chalaunga (script ready hai `tools/sync_to_github.sh` — ek command me secret-scan + commit + push):
 ```bash
 GITHUB_REPO="https://github.com/Pmakwa/Agentic-AI.git" \
-GITHUB_TOKEN="github_pat_..." bash tools/push_to_github.sh
+GITHUB_TOKEN="github_pat_..." bash tools/sync_to_github.sh "message"
 ```
 → 150 files, 3 commits, 2.5 MB — **30 seconds me push ho jayega**.
 Phir main aapko bata dunga: GitHub par **Actions** tab me "UAI-COS smoke checks" green aaya ya nahi.

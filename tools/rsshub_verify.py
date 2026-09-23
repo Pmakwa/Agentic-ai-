@@ -40,7 +40,7 @@ def get(url: str, timeout: int = 35, max_bytes: int = 400_000) -> tuple[int, str
 def registry(base: str) -> dict:
     code, body = get(f"{base}/api/namespace", 90, max_bytes=12_000_000)
     if code != 200:
-        sys.exit(f"registry fetch fail ({code}) — RSSHub chal raha hai? `cd tools/rsshub && PORT=1200 node dist/index.mjs`")
+        sys.exit(f"registry fetch fail ({code}) — RSSHub chal raha hai? `cd /opt/uai-cache/rsshub && PORT=1200 node dist/index.mjs`")
     return json.loads(body)
 
 

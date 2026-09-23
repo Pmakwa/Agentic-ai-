@@ -103,7 +103,24 @@ Har phase `done` karne se pehle:
 
 ---
 
-## 7. Sync rule (user ka standing instruction)
+## 7. Recurring kaam (time-to-time — har agent, har kuch turn me)
+
+| Kaam | Command | Cadence |
+|---|---|---|
+| Workspace hygiene | `python3 tools/cleanup_workspace.py` → `--apply` | har 3–5 turn / push se pehle |
+| Structured prompt check | `python3 tools/prompt_registry.py verify` | jab bhi prompt aaye + push se pehle |
+| Phase tracker sync | `python3 tools/phase_runner.py md` | phase status badle to |
+| Boot prompt refresh | `python3 tools/agent_boot.py --write` | rules/boot content badle to (CI freshness check karta hai) |
+| Route health | `python3 tools/route_monitor.py` (systemd 30-min timer) | automatic |
+| Counts sync | README/index ko memory count + map version se milao | memory/map badle to |
+
+Rules:
+1. **Heavy deps workspace me nahi** — `node_modules`/`.pnpm`/`dist` type cheezein `/opt/uai-cache/` me (RSSHub wahi hai).
+2. **Cleanup tool ki protections hataana mana** (node_modules dedupe ne 2026-09-23 ko RSSHub toda tha).
+3. Delete karne se pehle report padho; har deletion ka reason `logs/cleanup_*.md` me.
+4. User ka sawaal/jawab, phase, prompt — sab repo me (sync rule).
+
+## 8. Sync rule (user ka standing instruction)
 
 Har baat-cheet/kaam repo me jaata hai →
 `GITHUB_TOKEN=<token> bash tools/sync_to_github.sh "message"` → CI green → `PUSH_LOG.md` me entry.

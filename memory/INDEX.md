@@ -1,6 +1,6 @@
 # MEMORY INDEX — UAI-COS v2.0
 
-> Generated: 2026-09-23T06:46:38  |  live records: **79**  |  total (incl. archived/deleted): 79
+> Generated: 2026-09-23T06:54:46  |  live records: **82**  |  total (incl. archived/deleted): 82
 > Ye file auto-generated hai — edit na karo. Source of truth: `memory/store/memory.jsonl`
 > Retrieval rule (Section 17): keyword match kaafi nahi — scope + authority + freshness + confidence + current instruction dekh kar use karo.
 
@@ -31,7 +31,7 @@
 | `MEM-CONS-0003` | verified | high | High-risk ya irreversible action (delete, publish, payment, external send) se pehle user confirmation lena compulsory hai. | user_instruction | - |
 | `MEM-CONS-0004` | verified | high | Capability claims sirf evidence ke saath: 'full internet' ya 'sab access' jaisa dava nahi; paywall/login/CAPTCHA bypass kabhi nahi; RESTRICTED sites (reddit, SO direct, medium, quora, Bloomberg, WSJ, ScienceDirect, TripAdvisor, NSE, Instagram/LinkedIn login walls) ko blocked hi maana jaayega. | tool_result | - |
 
-## SEMANTIC (33)
+## SEMANTIC (34)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -68,6 +68,7 @@
 | `MEM-SEM-0031` | verified | very_high | api.pullpush.io = Reddit data ka asli route jab reddit.com IP-block kare: submission/comment endpoints ka q= (keyword) aur ids=/link_id= free hai (aaj ke posts milte hain), lekin subreddit= listing param rate-limited/paywalled ('does not provide free scraping resources for agents'). social_unlock.py pullpush me r/<sub> par automatic q=<sub> fallback lagta hai. | live test 2026-09-23 | - |
 | `MEM-SEM-0032` | verified | high | Discord invite API (discord.com/api/v9/invites/<code>?with_counts=true) aur Spotify oEmbed (open.spotify.com/oembed?url=) tokenless public metadata dete hain — guild member counts (Python: 431,757 members / 29,845 online) aur track title/thumbnail/embed URL. | live test 2026-09-23 | - |
 | `MEM-SEM-0033` | verified | very_high | RSSHub sweep (250 namespaces, automated): 120 WORKING (48%) — top routes /bilibili/app/android (491 items), /ai-bot/daily-ai-news (436), /aiaa/journal/aiaaj (205), /4chan/g/catalog (151), /android/pixel-update-bulletin (107), /amazon/awsblogs (50). Fail hone ka pattern: upstream IP block, login/cookie (boundary), ya china-only geo-block. | live sweep 2026-09-23 | - |
+| `MEM-SEM-0034` | verified | very_high | Workspace ab lean hai: heavy artifacts /opt/uai-cache me — rsshub (996M, 2015 namespaces, :1200), bin/{yq,crane} (25M), node22 (200M), models (469M+87M). Workspace repo sirf 8 MB (pehle 1.1 GB). Cleanup cadence: har 3-5 turn ya push se pehle tools/cleanup_workspace.py (report -> --apply). | cleanup run 2026-09-23 | - |
 
 ## EPISODIC (4)
 
@@ -78,7 +79,7 @@
 | `MEM-EPI-0003` | verified | high | 2026-09-23 (deep pass): capability audit v1.1 complete — persistence solved, browser/model cache /opt me shift, 13+ naye capabilities verified, 5 naye limits documented, bootstrap script + probe scripts banaye. | user_instruction | - |
 | `MEM-EPI-0004` | active | high | 2026-09-23 ko PHASE 2 (access expansion) complete hui: 12 blocked targets me 9 ke verified routes + working library + 6 deliverable docs | user_instruction | access |
 
-## PROCEDURAL (10)
+## PROCEDURAL (11)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -92,6 +93,7 @@
 | `MEM-PROC-0008` | verified | very_high | Agent boot procedure (V2 apply karna): (1) python3 tools/agent_boot.py — poora system ek payload me (identity+rules+spec map+protocol+memory snapshot+capability truth+open threads+attestation), (2) health check (provenance 4/4, audit 100/100, tests 28/28), (3) BOOT ATTESTATION bharna (tests/boot_attestation.md, 12 points + scoring) — iske bina kaam shuru nahi karna. | user feedback 2026-09-23: 'pehle V2 prompt uske environment me apply karna chahiye, test kiya wo ye nahi kar raha' | - |
 | `MEM-PROC-0009` | verified | very_high | Naya prompt/phase apply karne ka system: (1) prompt aaye to tools/import_prompt.py (url/file/text) -> 00_SYSTEM me hash-verified save + memory + auto phase; (2) naya kaam bole to tools/phase_runner.py add/set; (3) kaam -> evidence -> CAPABILITY_MAP bump -> memory -> agent_boot.py --write -> push. | user standing instruction 2026-09-23 | - |
 | `MEM-PROC-0010` | verified | very_high | RSSHub route verification procedure: local RSSHub :1200 chalu karo -> python3 tools/rsshub_verify.py (registry /api/namespace se 2015 namespaces + example routes) -> evidence files -> monitor me naye routes add karo -> phase done. | agent procedure | - |
+| `MEM-PROC-0011` | verified | very_high | Structured prompts ka system: user ke saare structured prompts (V1, V2, Phase 1/2/3, rules-packs) PROMPTS/registry.json me register hote hain — id, type, source, verbatim flag, body hash, aur applied_in (kahan apply hua). Naya prompt aaye: tools/prompt_registry.py add -> apply --where -> agent_boot.py --write -> verify. Rule: bina apply ke koi structured prompt nahi chhodna. | user instruction 2026-09-23 | - |
 
 ## WORKING (1)
 
@@ -117,7 +119,7 @@
 | `MEM-DEC-0005` | active | high | Self-audit ko versioned rakha jaayega (v1.0 -> v1.x): environment/tools/permissions badalne par map + memory + probe evidence update honge — blueprint Part 22 ke according. | user_instruction | - |
 | `MEM-DEC-0006` | verified | very_high | Decision: koi bhi agent kaam se pehle V2 system me boot hoga — proof dena padega (attestation). Boot fail = kaam nahi shuru, pehle boot karaya jayega (booot prompt/system paste). | user instruction 2026-09-23 | - |
 
-## ERROR (5)
+## ERROR (6)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -126,6 +128,7 @@
 | `MEM-ERR-0003` | verified | high | Playwright launch fail hua tha 'libnspr4.so missing' se — fix: sudo apt-get install libnspr4 libnss3 libasound2 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libgbm1 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libpango-1.0-0 libcairo2. | tool_result | - |
 | `MEM-ERR-0004` | verified | high | Devanagari rendering trap: matplotlib complex-script shaping sahi nahi karta ('सदासुहागिन' -> galat matra order), aur Devanagari font me Latin glyphs nahi hote (boxes aa jate hain). Fix: image me Hindi text PIL (Raqm=True) se likho; matplotlib me font.family=['Noto Sans Devanagari','DejaVu Sans'] fallback lagao. | tool_result | - |
 | `MEM-ERR-0005` | verified | high | Shell safety: 'pkill -f <pattern>' khud ki shell bhi maar sakta hai (pattern self-match) — pehle pattern verify karo ya PID se kill karo. | tool_result | - |
+| `MEM-ERR-0006` | verified | very_high | CLEANUP INCIDENT (2026-09-23): workspace cleanup tool ke pehle version ne node_modules/.pnpm + lib/ ke andar 'duplicates' delete kar diye (7959 files) jisse RSSHub toota (ERR_MODULE_NOT_FOUND punycode.js). Recovery: /opt/uai-cache/rsshub me fresh clone + pnpm install (22.7s) + pnpm build (16.4s) -> 4 routes verified 200. | agent incident + fix 2026-09-23 | - |
 
 ## SOURCE (2)
 

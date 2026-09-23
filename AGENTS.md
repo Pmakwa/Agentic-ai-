@@ -64,7 +64,9 @@ UAI-COS BOOT ATTESTATION
 | 6 | `CONVERSATION/00_A_TO_Z_LOG.md` | Start se ab tak ki poori baat-cheet + kya hua |
 | 7 | `RUNBOOK.md` | Kisi bhi capability ko dobara chalane ka exact command |
 | 8 | `PROJECT_BOARD/PHASES.md` + `phases.json` | Phase tracker (21 phases) — `python3 tools/phase_runner.py next` |
-| 9 | `PHASE_PROTOCOL.md` | Naya phase/prompt apply karne ka contract (import → evidence → push) |
+| 9 | `PHASE_PROTOCOL.md` | Naya phase/prompt apply karne ka contract (import → evidence → push) + recurring kaam |
+| 10 | `PROMPTS/REGISTRY.md` | **Structured prompts** (V1/V2/Phase-1/2/3/rules) ka index + kahan apply hue |
+| 11 | `logs/cleanup_*.md` | Workspace hygiene ka last report (kya/kya delete hua aur kyun) |
 
 ---
 
@@ -157,7 +159,7 @@ Rules for adding anything new: install → **live tokenless test** → evidence 
   GITHUB_TOKEN=<token> bash tools/sync_to_github.sh "short message"
   ```
   Script: secret-scan → commit → push → summary. **(ye sirf tab jab user ne token diya ho / bolo "push kar do")**
-- Push ke baad **CI green** verify karo (Actions → "UAI-COS smoke checks") aur `PUSH_STATUS.md` me entry karo.
+- Push ke baad **CI green** verify karo (Actions → "UAI-COS smoke checks") aur `PUSH_LOG.md` me entry karo.
 - Progress tracker: **`PROJECT_BOARD/PHASES.md`** (P0…P18) — naya phase wahin add karo.
 - Standing rules ka poora record: **`CONVERSATION/04_STANDING_INSTRUCTIONS.md`** (language, boundary, evidence, sync, boot).
 
@@ -176,6 +178,35 @@ python3 tools/social_unlock.py status
 Expected: provenance 4/4 PASS · audit 100/100 · tests 28 passed / 0 failed · status me verified routes 200.
 
 ---
+
+## 12. Workspace hygiene (user ka standing rule — time to time karte rehna)
+
+```bash
+python3 tools/cleanup_workspace.py                 # report: junk / 0-byte / duplicates / big dirs
+python3 tools/cleanup_workspace.py --apply         # safe junk delete (__pycache__, tmp, 0-byte)
+python3 tools/cleanup_workspace.py --apply --dedupe  # + untracked exact-duplicates (sambhal ke)
+python3 tools/cleanup_workspace.py --check         # exit 1 agar junk mila (monitor/CI ke liye)
+```
+- **Cadence:** har 3–5 turn ke baad, har bade kaam ke baad, aur push se pehle ek report — user ne bola
+  "time to time karte rehna" taaki space full na ho.
+- **Heavy dirs (`node_modules`, `.pnpm`, `dist`, `.venv`, …) workspace me nahi rakhte** → `/opt/uai-cache/`
+  (RSSHub wahan hai: `/opt/uai-cache/rsshub`). Ye tool unhe kabhi chhoota nahi.
+- ⚠️ **Lesson (2026-09-23):** cleanup tool ke pehle version ne node_modules + `lib/` ke andar "duplicates"
+  delete kar diye → RSSHub toot gaya (7959 files). Ab heavy dirs protected hain aur dedupe alag flag hai.
+  **Ye protections hataana mana hai.** Har deletion ka reason `logs/cleanup_*.md` me likha jaata hai.
+
+## 13. Structured prompts registry (V2 / Phase-1 / Phase-2 / aage jo bhi)
+
+- User ka koi bhi **structured prompt** (jaise V1, V2, Phase 1, Phase 2, Phase 3, naya rules-pack) →
+  `PROMPTS/registry.json` me entry + usko environment me **apply** karke `applied_in` likhna.
+- Naya prompt aaye:
+  ```bash
+  python3 tools/prompt_registry.py add --file /tmp/new.txt --title "Phase 4 — X" --type phase --source "user" --verbatim
+  python3 tools/prompt_registry.py apply --id SP-009 --where "AGENTS.md §9, UAI-COS_BOOT_PROMPT.md"
+  python3 tools/prompt_registry.py verify && python3 tools/agent_boot.py --write
+  ```
+  (Bada/raw prompt ho to pehle `tools/import_prompt.py`, phir registry me entry.)
+- **Rule:** koi structured prompt bina apply ke nahi chhodna — CI `python3 tools/prompt_registry.py verify` chalata hai.
 
 ## 11. Security & privacy notes for the agent
 

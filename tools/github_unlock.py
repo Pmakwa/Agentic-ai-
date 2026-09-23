@@ -135,7 +135,7 @@ def cmd_getbin(a):
                 p = os.path.join(root, f)
                 os.chmod(p, 0o755)
                 print(f"  extracted: {p}")
-        print(f"  -> tools/bin/{a.slug.split('/')[-1]}/ me ready (PATH me bas jodo)")
+        print(f"  -> /opt/uai-cache/bin/{a.slug.split('/')[-1]}/ me ready (PATH me bas jodo)")
     else:
         os.chmod(dest, 0o755)
         print("  executable ready:", dest)

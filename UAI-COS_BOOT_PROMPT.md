@@ -43,6 +43,20 @@
 - Task ke end me: **Hindi summary + options (a/b/c)**.
 - Naya capability = install → **live test** → evidence `probes/` me → report → CAPABILITY_MAP bump → memory record → README/index sync.
 
+### 4b. STRUCTURED PROMPTS (PROMPTS/registry.json — user ke prompts + kahan apply hue)
+(10 structured prompts registered — engine: tools/prompt_registry.py)
+- SP-001 [spec] V1.0 structured spec (Parts 1-15)  ✅ applied: AGENTS.md §1, tools/agent_boot.py, 00_SYSTEM/OPERATIONAL_PROTOCOL.md
+- SP-002 [spec] V2.0 structured spec (112 sections)  ✅ applied: AGENTS.md §1-§4, UAI-COS_BOOT_PROMPT.md, tools/agent_boot.py (SPEC MAP), memory/, tests/bo
+- SP-003 [phase] Phase 1 — capability baseline + audit prompt  ✅ applied: 02_CAPABILITY_AUDIT/, ENVIRONMENT.md, AGENTS.md §4
+- SP-004 [phase] Phase 2 — access expansion prompt  ✅ applied: 03_ACCESS_EXPANSION/, tools/access_routes.py, CONVERSATION/01_ACTION_LEDGER.md §D
+- SP-005 [phase] Phase 3 — repo hunt + apply (GitHub repos ko capability me badlo)  ✅ applied: 06_REPO_HUNT/, 05_SOCIAL_UNLOCK/, tools/social_unlock.py, PROJECT_BOARD/phases.json
+- SP-006 [rules] Standing instructions pack (user rules — always apply)  ✅ applied: AGENTS.md §5,§9, UAI-COS_BOOT_PROMPT.md, PHASE_PROTOCOL.md §5, tests/ci_extra.py (boot fre
+- SP-007 [boot] Boot prompt (paste-ready, generated)  ✅ applied: CLAUDE.md, GEMINI.md, .windsurfrules, .cursor/rules/uai-cos.mdc, .github/copilot-instructi
+- SP-008 [rules] Workspace hygiene + recurring cleanup rule  ✅ applied: AGENTS.md §12, PHASE_PROTOCOL.md §7, PROJECT_BOARD/phases.json (recurring_checklist), tool
+- SP-009 [rules] Structured-prompt apply rule (V2 / Phase-1 / Phase-2 / aage jo bhi)  ✅ applied: PROMPTS/registry.json, PROMPTS/REGISTRY.md, AGENTS.md §13, PHASE_PROTOCOL.md §8, tests/ci_
+- SP-010 [rules] Cleanup safety lesson (node_modules dedupe incident)  ✅ applied: tools/cleanup_workspace.py (PROTECTED/HEAVY_SKIP/DELETE_CAP), AGENTS.md §12, PHASE_PROTOCO
+- Naya structured prompt aaye -> `prompt_registry.py add ...` + apply In likho + `agent_boot.py --write`
+
 ### 5. SPEC MAP (42,743 chars ka index — poora spec `00_SYSTEM/00_UAI-COS_V2.0_SPEC.md` me, sha256[16]=4aa1c6a1f872a3f3)
 - UNIVERSAL AI MIND-MAP, MEMORY MANAGEMENT & MULTI-AGENT OPERATING SYSTEM
 - ADVANCED V2.0 — UNIVERSAL AI COGNITIVE OPERATING ARCHITECTURE
@@ -166,7 +180,7 @@
 1. **Reality rule:** "permanent/unlimited memory" ka claim nahi — sirf jo disk par actually save hai wahi persistent hai [`V1 reality rule`].
 2. **Blind retrieval ban:** keywor
 
-### 7. MEMORY SNAPSHOT (live: 79 records; ye sirf key rules hain, poora `memory/store/memory.jsonl`)
+### 7. MEMORY SNAPSHOT (live: 82 records; ye sirf key rules hain, poora `memory/store/memory.jsonl`)
   [MEM-CORE-0001/core] User ka long-term goal: ek governed, memory-aware, multi-agent AI operating system chalana (UAI-COS), jisme memory verify hoti hai aur blind use nahi hoti.
   [MEM-PREF-0001/preference] User se Hindi me baat karni hai, lekin English alphabet/spelling (Roman Hindi) me — jab tak user khud Devanagari ya doosri language na maange.
   [MEM-PREF-0002/preference] User ko detailed, advanced, master-level aur practical output chahiye; basic ya generic answer nahi.
@@ -182,7 +196,7 @@
   [MEM-DEC-0002/decision] Memory store ke liye JSONL choose kiya (append-friendly, git-friendly, zero dependency); vector/embedding retrieval future upgrade hai.
   [MEM-DEC-0003/decision] Step 2 = implementation layer: roadmap + user scenarios + memory-type integration + agent lifecycle + evaluation/regression (yahi 3 cheezein source chat me next-step ke roop me offer hui thi
 
-### 8. CAPABILITY TRUTH (CAPABILITY_MAP v2.5 · sha256[16]=7ee2b20ab7d47496 — jhooth nahi, sirf verified)
+### 8. CAPABILITY TRUTH (CAPABILITY_MAP v2.6 · sha256[16]=2db85042115111db — jhooth nahi, sirf verified)
 **Social (verified tokenless):** {"reddit_rss": "✅ 24,685 B (60s window)", "telegram_public_preview": "✅ 127,691 B via t.me/s/<channel>", "bluesky_public_api": "✅ 200 searchActors (1,289 B) — neutral UA zaroori (full browser UA → 403)", "bluesky_sdk_atproto": "✅ actor search works (base_url=public.api.bsky.app)", "mastodon_fediverse": "✅ fosstodon 6,808 B / mastodon.world 7,358 B (instance-dependent)", "tiktok_oembed": "✅ 1,522 B (no key)", "youtube_ytdlp": "✅ channel listing works", "x_thirdparty_bridge_fxtwitter": "✅ 682 B public profile (third-party service, not GitHub)", "reddit_oauth": "⚠️ 2026: self-service app registra
 **Repo-unlock (installed + live-tested):**
   - gallery-dl: {'version': '1.32.13', 'verified_for': ['tiktok media 19.4MB', 'bluesky media 3.4MB', 'pinterest metadata 105KB', 'tumbl
@@ -198,7 +212,7 @@
 **Blocked (naya authorized route mile bina dobara try mat karo):** Instagram (429 + login wall) · Facebook (login redirect) · LinkedIn (login wall) · Quora · Bilibili (412 risk control) · X full API (paid) · Reddit direct (IP block → redlib instances use karo) · Nitter/Invidious (dead/gated).
 
 ### 9. CURRENT STATUS
-- Memory: **79 records** · Capability map: **v2.5** · Reports: `00_SYSTEM`…`06_REPO_HUNT` + `CONVERSATION`
+- Memory: **82 records** · Capability map: **v2.6** · Reports: `00_SYSTEM`…`06_REPO_HUNT` + `CONVERSATION`
 - Tools: `tools/social_unlock.py` (10 cmds) · `uai_mem.py` (13 cmds) · `access_routes.py` · `github_unlock.py` · `local_ai.py` · `route_monitor.py`
 - Har verified route ka exact command: **`RUNBOOK.md`** · limits: **`ENVIRONMENT.md`**
 

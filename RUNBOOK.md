@@ -55,7 +55,7 @@ curl -sL -o /tmp/node22.tar.xz https://nodejs.org/dist/v22.23.2/node-v22.23.2-li
 sudo tar -xJf /tmp/node22.tar.xz -C /opt/uai-cache/node22 --strip-components=1
 
 # (c) repo + install
-git clone --depth 1 https://github.com/DIYgod/RSSHub tools/rsshub && cd tools/rsshub
+git clone --depth 1 https://github.com/DIYgod/RSSHub /opt/uai-cache/rsshub && cd /opt/uai-cache/rsshub
 sudo npm i -g pnpm@9 tsx tsdown cross-env typescript     # global CLIs
 export PATH="/opt/uai-cache/node22/bin:/usr/bin:$PATH"
 pnpm install --reporter=append-only                       # ~914 MB node_modules

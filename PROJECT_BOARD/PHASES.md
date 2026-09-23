@@ -29,6 +29,8 @@
 | P19 | **Prompt intake system (naya V2-type prompt aaye to apply karna)** | ✅ DONE | agent | tools/import_prompt.py + 00_SYSTEM/prompts_index.json | user naya prompt de -> import_prompt.py -> phase auto-add -> apply -> push |
 | P20 | **Multi-platform agent pointers (sab agents same system apply karein)** | ✅ DONE | agent | CLAUDE.md, GEMINI.md, .windsurfrules, .cursor/rules/uai-cos.mdc, .github/copilot-instructions.md | - |
 | P21 | **Repo unlock sweep (30+ starred repos) — test karo, verified tools lock karo** | 🟡 NEXT | agent | target: 06_REPO_HUNT/probes/repo_sweep_starred.txt + CAPABILITY_MAP bump + social_unlock subcommands | kaam shuru karo + evidence add karo |
+| P22 | **Structured prompt registry + apply (V2/Phase-1/2/3 jaise saare prompts)** | ✅ DONE | agent | tools/prompt_registry.py + PROMPTS/registry.json (10 entries, SP-001..SP-010) + boot payload §4b + AGENTS §13 + PHASE_PROTOCOL §8 | - |
+| P23 | **Workspace hygiene: junk/duplicate cleanup + heavy deps /opt me** | ✅ DONE | agent | tools/cleanup_workspace.py (protected heavy dirs) + logs/cleanup_2026-09-23.md + workspace 1.1GB->8.1MB + RSSHub /opt/uai-cache/rsshub | - |
 <!-- PHASES:END -->
 
 **Total:** 21 phases · **Updated:** 2026-09-23

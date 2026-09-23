@@ -2,7 +2,7 @@
 
 > 🚀 **Naya agent? pehle [`AGENTS.md`](AGENTS.md) padho, phir [`START_HERE.md`](START_HERE.md).**
 > Poori baat-cheet ka A-to-Z record [`CONVERSATION/`](CONVERSATION/00_A_TO_Z_LOG.md) me · chalane ke commands [`RUNBOOK.md`](RUNBOOK.md) ·
-> environment ki haqeeqat [`ENVIRONMENT.md`](ENVIRONMENT.md) · machine-readable truth [`CAPABILITY_MAP.json`](02_CAPABILITY_AUDIT/CAPABILITY_MAP.json) (v2.5).
+> environment ki haqeeqat [`ENVIRONMENT.md`](ENVIRONMENT.md) · machine-readable truth [`CAPABILITY_MAP.json`](02_CAPABILITY_AUDIT/CAPABILITY_MAP.json) (v2.6).
 
 Ye tumhare **V2 prompt** ka poora implementation hai — spec sirf text me nahi, chalne wale system me.
 
@@ -25,7 +25,7 @@ uai-cos/
 │   └── UAI-COS_SYSTEM_PROMPT_{compact,standard,full}.md   ✅ paste-anywhere compiled prompts (live memory inline)
 │
 ├── memory/                                 ← MEMORY OS (live data)
-│   ├── store/memory.jsonl                  ✅ 78 records — Section-13 schema par
+│   ├── store/memory.jsonl                  ✅ 82 records — Section-13 schema par
 │   ├── INDEX.md                            ✅ auto-generated retrieval index (boot-read)
 │   └── store/archive.jsonl                 ✅ archive (delete nahi, retire)
 │
@@ -65,6 +65,9 @@ uai-cos/
 │   └── probes/                             ✅ raw evidence (2 probe files)
 │
 ├── tools/github_unlock.py                  ✅ GitHub toolkit (12 commands, bina token)
+├── PROMPTS/registry.json + REGISTRY.md     ✅ structured prompts (V1/V2/Phase-1/2/3/rules) + kahan apply hue
+├── tools/prompt_registry.py                ✅ structured prompt add/apply/verify engine
+├── tools/cleanup_workspace.py              ✅ workspace hygiene (junk/duplicate cleanup, time-to-time)
 ├── PHASE_PROTOCOL.md                       ✅ naye phase/prompt apply karne ka contract (boot → phase → evidence → push)
 ├── UAI-COS_BOOT_PROMPT.md                  ✅ paste-ready boot prompt (chat-only agents, auto-generated)
 ├── CLAUDE.md / GEMINI.md / .windsurfrules  ✅ har agent-platform ke liye boot pointers (same system apply)
@@ -80,8 +83,8 @@ uai-cos/
 ├── tools/agent_boot.py                     ✅ V2 boot payload generator (agent isse boot hota hai)
 ├── UAI-COS_BOOT_PROMPT.md                  ✅ paste-ready boot prompt (chat-only agents ke liye, 14 KB)
 ├── tests/boot_attestation.md               ✅ 12-sawal boot test + scoring (booted / partial / not booted)
-├── tools/rsshub/                           ✅ self-hosted RSSHub (2015 namespaces, :1200, 13 routes live)
-├── tools/bin/{yq,crane}                    ✅ GitHub release se aaye binaries (persist)
+├── /opt/uai-cache/rsshub                   ✅ self-hosted RSSHub (2015 namespaces, :1200) — heavy deps workspace ke bahar
+├── /opt/uai-cache/bin/{yq,crane}           ✅ GitHub release se aaye binaries (persist, workspace ke bahar)
 ├── tools/access_routes.py                  ✅ WORKING route library (fetch/rss/so/papers/nse/wayback + demo)
 ├── 02_CAPABILITY_AUDIT/                    ← SELF-AUDIT (blueprint Phase 1–15)
 │   ├── 00_EXECUTIVE_SUMMARY.md             ✅ asli discovery: kya possible hai, kya nahi (evidence ke saath)
@@ -108,7 +111,7 @@ uai-cos/
 
 | Metric | Value | Command |
 |---|---|---|
-| Live memory records | **78** | `python3 tools/uai_mem.py stats` |
+| Live memory records | **82** | `python3 tools/uai_mem.py stats` |
 | Memory health score | **100/100** | `python3 tools/uai_mem.py audit` |
 | Golden tests | **28/28 pass** | `bash tests/test_memory_os.sh` |
 | Open conflicts | 0 | audit |
