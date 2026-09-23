@@ -1,0 +1,26 @@
+##### RSSHub local routes test (2026-09-23T05:28:23Z) #####
+telegram/channel/telegram          http=200 bytes=49499 items=1 kind=<rss
+twitter/user/jack                  http=503 bytes=5765 items=0
+0 kind=none
+twitter/trends/US                  http=503 bytes=5896 items=0
+0 kind=none
+instagram/user/instagram           http=503 bytes=5901 items=0
+0 kind=none
+tiktok/user/@tiktok                http=200 bytes=14393 items=1 kind=<rss
+tumblr/posts/staff                 http=503 bytes=5897 items=0
+0 kind=none
+threads/user/zuck                  http=200 bytes=7820 items=5 kind=<rss
+linkedin/company/microsoft         http=503 bytes=6684 items=0
+0 kind=none
+mastodon/acct fosstodon            http=200 bytes=17850 items=1 kind=<rss
+weibo/user/2803301701              http=503 bytes=6668 items=0
+0 kind=none
+youtube/user/Fireship              http=200 bytes=22015 items=1 kind=<rss
+bilibili/user/video 2267573        http=503 bytes=6677 items=0
+0 kind=none
+pinterest/user/pinterest           http=200 bytes=10505 items=1 kind=<rss
+douyin/user                        http=503 bytes=6672 items=0
+0 kind=none
+github/trending/python             http=503 bytes=5937 items=0
+0 kind=none
+zhihu/hot (control)                http=200 bytes=32637 items=1 kind=<rss

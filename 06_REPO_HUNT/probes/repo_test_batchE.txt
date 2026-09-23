@@ -1,0 +1,40 @@
+##### BATCH E: third-party front-end instances (2026-09-23T05:25:12Z) #####
+=== [TeddiT (reddit frontend)]
+  http=000 bytes=0 final=https://teddit.net/r/privacy
+grep: /tmp/p.html: No such file or directory
+=== [Xeddit (reddit frontend)]
+  http=302 bytes=0 final=http://ww80.xeddit.com/?subid1=2745c4c8-b70f-11f1-93b2-1b6bc2544f9d
+grep: /tmp/p.html: No such file or directory
+=== [Quetre (quora frontend)]
+  http=410 bytes=3361 final=https://quetre.iket.me/search?q=python
+     hit: error
+     hit: error
+=== [ProxiTok (tiktok frontend)]
+  http=000 bytes=0 final=https://proxitok.pabloferreiro.es/@tiktok
+     hit: error
+     hit: error
+=== [Nitter (twitter frontend)]
+  http=000 bytes=0 final=https://nitter.net/troyhunt
+     hit: error
+     hit: error
+=== [Neuters (reuters frontend)]
+  http=502 bytes=16 final=https://neuters.de/
+     hit: error
+=== [Invidious yewtu.be API]
+  http=200 bytes=275 final=https://yewtu.be/api/v1/stats
+     hit: version
+     hit: software
+=== [Invidious inv.nadeko.net API]
+  http=200 bytes=338 final=https://inv.nadeko.net/api/v1/stats
+     hit: version
+     hit: software
+=== [Piped API kavin.rocks]
+  http=526 bytes=0 final=https://pipedapi.kavin.rocks/streams/TbkUKCm3CHQ
+=== [LibreMDB (imdb frontend)]
+  http=500 bytes=8282 final=https://libremdb.iket.me/title/tt0111161
+     hit: error
+     hit: error
+=== [Biblio (medium frontend)]
+  http=000 bytes=0 final=https://biblio.iket.me/
+     hit: error
+     hit: error

@@ -1,0 +1,7 @@
+##### BATCH I: Instagram embed / ddinstagram routes (2026-09-23T05:27:21Z) #####
+--- extract public post shortcodes from instagram.com homepage HTML:
+  http=302 bytes=0
+  shortcodes:  
+--- Instagram oEmbed (no token):
+  https://api.instagram.com/oembed/?url=...                  http=302 bytes=0
+

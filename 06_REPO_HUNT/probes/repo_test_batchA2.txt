@@ -1,0 +1,173 @@
+########## BATCH A2 deep (2026-09-23T05:14:49Z) ##########
+=== [gallery-dl REDDIT listing]
+  exit=0 stdout_bytes=130 stderr_bytes=0
+  --stdout--
+[
+  [
+    -1,
+    {
+      "error": "AbortExtraction",
+      "message": "\"You've been blocked by network security.\""
+    }
+  ]
+]
+
+  --stderr(tail)--
+
+
+=== [gallery-dl X jack]
+  exit=0 stdout_bytes=123 stderr_bytes=0
+  --stdout--
+[
+  [
+    6,
+    "https://x.com/jack/timeline",
+    {
+      "category": "twitter",
+      "subcategory": "user"
+    }
+  ]
+]
+
+  --stderr(tail)--
+
+
+=== [gallery-dl INSTAGRAM]
+  exit=0 stdout_bytes=140 stderr_bytes=0
+  --stdout--
+[
+  [
+    6,
+    "https://www.instagram.com/instagram/posts/",
+    {
+      "category": "instagram",
+      "subcategory": "user"
+    }
+  ]
+]
+
+  --stderr(tail)--
+
+
+=== [gallery-dl TIKTOK]
+  exit=0 stdout_bytes=260 stderr_bytes=0
+  --stdout--
+[
+  [
+    6,
+    "https://www.tiktok.com/@tiktok/avatar",
+    {
+      "category": "tiktok",
+      "subcategory": "user"
+    }
+  ],
+  [
+    6,
+    "https://www.tiktok.com/@tiktok/posts",
+    {
+      "category": "tiktok",
+      "subcategory": "user"
+    }
+  ]
+]
+
+  --stderr(tail)--
+
+
+=== [gallery-dl BLUESKY]
+  exit=0 stdout_bytes=135 stderr_bytes=0
+  --stdout--
+[
+  [
+    6,
+    "https://bsky.app/profile/bsky.app/media",
+    {
+      "category": "bluesky",
+      "subcategory": "user"
+    }
+  ]
+]
+
+  --stderr(tail)--
+
+
+=== [gallery-dl FACEBOOK NASA]
+  exit=0 stdout_bytes=133 stderr_bytes=0
+  --stdout--
+[
+  [
+    6,
+    "https://www.facebook.com/NASA/photos",
+    {
+      "category": "facebook",
+      "subcategory": "user"
+    }
+  ]
+]
+
+  --stderr(tail)--
+
+
+=== [gallery-dl PINTEREST pin]
+  exit=0 stdout_bytes=105194 stderr_bytes=297
+  --stdout--
+[
+  [
+    2,
+    {
+      "access": [],
+      "affiliate_disclosure": null,
+      "affiliate_link": null,
+      "aggregated_pin_data": {
+        "aggregated_stats": {
+          "done": 0,
+          "saves": 58
+        },
+        "comment_count": 39,
+        "creator_analytics": null,
+        "did_it_data": {
+          "details_count": 0,
+          "images_count": 0,
+          "rating": -1,
+          "recommend_scores": [
+            {
+              "count": 0,
+              "score": 1
+           
+  --stderr(tail)--
+[pinterest][warning] 424605071136961057: Unsupported story block 'story_pin_mention_sticker_block'
+[pinterest][warning] 424605071136961057: Unsupported story block 'story_pin_mention_sticker_block'
+[pinterest][warning] 424605071136961057: Unsupported story block 'story_pin_mention_sticker_block'
+
+
+=== [facebook-scraper bbcnews page]
+  exit=0 stdout_bytes=19 stderr_bytes=95
+  --stdout--
+RESULT ok posts= 0
+
+  --stderr(tail)--
+<sys>:0: UserWarning: A low page limit (<=2) might return no results, try increasing the limit
+
+
+=== [instaloader profile instagram]
+  exit=0 stdout_bytes=325 stderr_bytes=0
+  --stdout--
+instagram: JSON Query to api/v1/users/web_profile_info/: Expecting value: line 1 column 1 (char 0)
+
+Errors or warnings occurred:
+profile: JSON Query to api/v1/users/web_profile_info/: Expecting value: line 1 column 1 (char 0)
+instagram: JSON Query to api/v1/users/web_profile_info/: Expecting value: line 1 column 1 (char 0)
+
+  --stderr(tail)--
+
+
+=== [youtube-transcript-api]
+  exit=0 stdout_bytes=93 stderr_bytes=0
+  --stdout--
+video_id=TbkUKCm3CHQ
+RESULT ok segments= 166
+ sample: Last week, everything about AI changed
+
+  --stderr(tail)--
+
+

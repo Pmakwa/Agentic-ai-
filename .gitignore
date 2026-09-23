@@ -1,0 +1,25 @@
+# ---- bade / regenerated cheezein (repo halka rakhne ke liye) ----
+tools/rsshub/
+tools/douyin_api/
+tools/bin/
+node_modules/
+.cache/
+.venv/
+__pycache__/
+*.pyc
+dist/
+build/
+coverage/
+
+# ---- secrets (kabhi commit nahi) ----
+.env
+*.env
+.credentials
+*-credentials.json
+.netrc
+.git-credentials
+
+# ---- temp ----
+_persist_test/
+*.tar
+*.bundle

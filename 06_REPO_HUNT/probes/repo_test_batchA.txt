@@ -1,0 +1,120 @@
+########## BATCH A: installed-repo live tests (2026-09-23T05:14:33Z) ##########
+=== [gallery-dl REDDIT subreddit]
+[
+  [
+    -1,
+    {
+      "error": "AbortExtraction",
+      "message": "\"You've been blocked by network security.\""
+    }
+  ]
+]
+
+   exit=0
+
+=== [gallery-dl X/Twitter user]
+[
+  [
+    6,
+    "https://x.com/jack/timeline",
+    {
+      "category": "twitter",
+      "subcategory": "user"
+    }
+  ]
+]
+
+   exit=0
+
+=== [gallery-dl INSTAGRAM profile]
+[
+  [
+    6,
+    "https://www.instagram.com/instagram/posts/",
+    {
+      "category": "instagram",
+      "subcategory": "user"
+    }
+  ]
+]
+
+   exit=0
+
+=== [gallery-dl TIKTOK user]
+[
+  [
+    6,
+    "https://www.tiktok.com/@tiktok/avatar",
+    {
+      "category": "tiktok",
+      "subcategory": "user"
+    }
+  ],
+  [
+    6,
+    "https://www.tiktok.com/@tiktok/posts",
+    {
+      "category": "tiktok",
+      "subcategory": "user"
+    }
+  ]
+]
+
+   exit=0
+
+=== [gallery-dl BLUESKY profile]
+[
+  [
+    6,
+    "https://bsky.app/profile/bsky.app/media",
+    {
+      "category": "bluesky",
+      "subcategory": "user"
+    }
+  ]
+]
+
+   exit=0
+
+=== [gallery-dl MASTODON profile]
+[gallery-dl][error] Unsupported URL 'https://fosstodon.org/@kev'
+
+   exit=0
+
+=== [gallery-dl PINTEREST board]
+[pinterest][warning] 424605071136961057: Unsupported story block 'story_pin_mention_sticker_block'
+[pinterest][warning] 424605071136961057: Unsupported story block 'story_pin_mention_sticker_block'
+[pinterest][warning] 424605071136961057: Unsupported story block 'story_pin_mention_sticker_block'
+[
+  [
+    2,
+    {
+      "access": [],
+      "aggregated_pin_data": {
+        "aggregated_stats": {
+          "done": 1,
+          "saves": 101
+        },
+        "creator_analytics": null,
+        "did_it_data": {
+          "details_count": 1,
+          "images_count": 1,
+          "rating": -1,
+     
+   exit=0
+
+=== [gallery-dl FACEBOOK page]
+[
+  [
+    6,
+    "https://www.facebook.com/NASA/photos",
+    {
+      "category": "facebook",
+      "subcategory": "user"
+    }
+  ]
+]
+
+   exit=0
+
+=== [facebook-scraper public page bbcnews]

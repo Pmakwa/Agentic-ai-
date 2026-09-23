@@ -1,0 +1,39 @@
+##### BATCH G: reddit frontends + X/IG bridges + jina-reddit (2026-09-23T05:26:28Z) #####
+--- redlib public instances list:
+  http=200 bytes=1253
+  instances: 9
+    https://safereddit.com | tor: None
+    https://redlib.catsarch.com | tor: None
+    https://redlib.ducks.party | tor: None
+    https://red.artemislena.eu | tor: None
+    https://redlib.cow.rip | tor: None
+    https://redlib.privacyredirect.com | tor: None
+--- live-test first 4 redlib instances:
+  https://safereddit.com                     http=200 bytes=47194  hit=programming
+
+  https://redlib.catsarch.com                http=429 bytes=2424  hit=error
+
+  https://redlib.ducks.party                 http=502 bytes=154
+  https://red.artemislena.eu                 http=200 bytes=47175  hit=programming
+
+--- X bridges:
+  https://api.vxtwitter.com/jack                http=200 bytes=356
+     keys: ['created_at', 'description', 'fetched_on', 'followers_count', 'following_count', 'id']
+  https://api.fxtwitter.com/jack/status/20      http=200 bytes=1246
+     keys: ['code', 'message', 'tweet']
+--- Instagram viewers:
+  https://imginn.com/instagram/                 http=403 bytes=5409
+  https://www.picuki.com/profile/instagram      http=522 bytes=16
+  https://instanavigation.com/user-profile/instagram http=000 bytes=0
+--- r.jina.ai on reddit JSON:
+  jina reddit .json  http=200 bytes=488
+Title: 
+
+URL Source: https://www.reddit.com/r/programming/top.json?limit=3
+
+Warning: Target URL returned error 403: Forbidden
+
+Markdown Content:
+You've been blocked by network security.
+
+To continue, log in to your Reddi

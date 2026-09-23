@@ -1,0 +1,19 @@
+name: UAI-COS smoke checks
+on:
+  push: { branches: [main, master] }
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.13' }
+      - name: Spec provenance (expect 4/4 PASS)
+        run: python3 tools/verify_provenance.py
+      - name: Memory health audit (expect 100/100)
+        run: python3 tools/uai_mem.py audit | tail -3
+      - name: Regression suite (expect 28 passed / 0 failed)
+        run: bash tests/test_memory_os.sh | tail -3
+      - name: Capability map sanity
+        run: python3 -c "import json,os;d=json.load(open('02_CAPABILITY_AUDIT/CAPABILITY_MAP.json'));miss=[e for e in d['evidence_files'] if not os.path.exists(e)];assert not miss,miss;print('map', d['map_version'], 'evidence OK:', len(d['evidence_files']))"

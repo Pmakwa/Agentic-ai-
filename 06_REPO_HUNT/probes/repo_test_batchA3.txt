@@ -1,0 +1,55 @@
+########## BATCH A3 real-download (2026-09-23T05:15:21Z) ##########
+=== [X (twitter) user jack]
+  exit=16 files=0 bytes=0
+  --log--
+    [twitter][info] Requesting guest token
+    [twitter][error] AuthRequired: authenticated cookies needed to access this timeline
+
+=== [X single tweet /jack/status/20]
+  exit=0 files=0 bytes=0
+  --log--
+    [twitter][info] No results for https://x.com/jack/status/20
+
+=== [Instagram user instagram]
+  exit=124 files=0 bytes=0
+  --log--
+    [instagram][info] Waiting for 1 minutes until 05:16:23 (429 Too Many Requests)
+    [instagram][info] Waiting for 1 minutes until 05:17:24 (429 Too Many Requests)
+
+=== [TikTok user tiktok]
+  exit=0 files=3 bytes=19383185
+  --log--
+     items)
+    [tiktok][info] https://www.tiktok.com/@tiktok: retrieving creator/item_list page 100 (1431 items)
+    [tiktok][info] https://www.tiktok.com/@tiktok: retrieving creator/item_list page 101 (1446 items)
+    [tiktok][info] https://www.tiktok.com/@tiktok: retrieving creator/item_list page 102 (1461 items)
+    [tiktok][info] https://www.tiktok.com/@tiktok: retrieving creator/item_list page 103 (1476 items)
+
+=== [Facebook page NASA]
+  exit=16 files=0 bytes=0
+  --log--
+    [facebook][error] AuthRequired: You must be logged in to continue viewing images.
+    You can use this URL to continue from where you left off (added "&setextract"): 
+    https://www.facebook.com/photo/?fbid=1636198837875486&set=pb.100044561550831.-2207520000&setextract
+
+=== [Bluesky profile bsky.app media]
+  exit=0 files=2 bytes=3398798
+  --log--
+
+=== [Bluesky single post via public API + gallery-dl]
+  rkey=3mw2cdr44fc2a
+=== [Bluesky post 3mw2cdr44fc2a]
+  exit=0 files=0 bytes=0
+  --log--
+
+=== [Pinterest: does the 105KB payload contain real image URLs?]
+  RESULT pin keys: 120
+   id: 424605071136961057
+   grid_title: The journey to a more inclusive Pinterest starts here. 📌
+   pinner: pinterest
+   images.orig.url: {'height': 1920, 'url': 'https://i.pinimg.com/originals/dc/59/c7/dc59c78056607f0250deb7611d387731.jpg', 'width': 1080}
+   videos: None
+   link: https://www.pinterest.com/today/best/ideas-in-every-shape-and-size/113552/?utm_campaign=Consumer_InclusiveTech
+   description: Your favorite plus-size fashion tastemakers helped Pinterest develop new tech that champions diversity. Now yo
+=== [facebook-scraper retry pages=3]
+  RESULT ok posts= 0

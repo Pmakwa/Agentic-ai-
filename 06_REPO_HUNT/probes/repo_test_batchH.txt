@@ -1,0 +1,27 @@
+##### BATCH H: redlib deep verify (2026-09-23T05:27:02Z) #####
+=== [https://safereddit.com] /r/programming
+  http=200 bytes=47184 titles=25 posts=50 scores=['63', '365', '7', '51']
+   - C3 0.8.4: Parameter Reflection, Stack Protection, iOS Support—and One Last Renaming
+   - TIL: 0xCAFEBABE
+   - The History of Compiled (portion of) Javascript and V8 Engine
+   - FloatLib: Verified Floating-Point Arithmetic in Lean
+   - Category Theory Explained for Haskell Programmers – Part 1 ZuriHac 2026
+  --- thread: https://safereddit.com/r/programming/comments/1wn5gnz/c3_084_parameter_reflection_stack_protection_i
+  http=200 bytes=18661 | title: C3 0.8.4: Parameter Reflection, Stack Protection, iOS Support—and One Last Renaming
+  post_body: 
+  comments_found=6
+    c: Changing keywords is hardly the best way to convey stability, but sometimes it is necessary faultdef -&gt; exc
+    c: Probably the second best language keyword after Rust&#39;s yeet (which is experimental to avoid bike shedding,
+=== [https://red.artemislena.eu] /r/programming
+  http=200 bytes=47167 titles=25 posts=50 scores=['65', '361', '6', '45']
+   - C3 0.8.4: Parameter Reflection, Stack Protection, iOS Support—and One Last Renaming
+   - TIL: 0xCAFEBABE
+   - The History of Compiled (portion of) Javascript and V8 Engine
+   - FloatLib: Verified Floating-Point Arithmetic in Lean
+   - Category Theory Explained for Haskell Programmers – Part 1 ZuriHac 2026
+  --- thread: https://red.artemislena.eu/r/programming/comments/1wn5gnz/c3_084_parameter_reflection_stack_protecti
+  http=200 bytes=18658 | title: C3 0.8.4: Parameter Reflection, Stack Protection, iOS Support—and One Last Renaming
+  post_body: 
+  comments_found=6
+    c: TIL about C3, and as someone who hasn&#39;t touched C in decades, it looks awesome!
+    c: It&#39;s great watching C3 evolve. Well done!

@@ -1,0 +1,294 @@
+##### social_unlock.py smoke test (2026-09-23T05:32:08Z) #####
+
+########## CMD: reddit programming -n 5 --threads 2
+{
+  "route": "redlib",
+  "path": "/r/programming/",
+  "instances_tried": [],
+  "instance": "https://safereddit.com",
+  "posts": [
+    {
+      "title": "C3 0.8.4: Parameter Reflection, Stack Protection, iOS Support—and One Last Renaming",
+      "permalink": "https://safereddit.com/r/programming/comments/1wn5gnz/c3_084_parameter_reflection_stack_protection_ios/",
+      "score": "65",
+      "author": null
+    },
+    {
+      "title": "TIL: 0xCAFEBABE",
+      "permalink": "https://safereddit.com/r/programming/comments/1wn5gnz/c3_084_parameter_reflection_stack_protection_ios/",
+      "score": "365",
+      "author": null
+    },
+    {
+      "title": "The History of Compiled (portion of) Javascript and V8 Engine",
+      "permalink": "https://safereddit.com/r/programming/comments/1wmqwd3/til_0xcafebabe/",
+      "score": "8",
+      "author": null
+    },
+    {
+      "title": "FloatLib: Verified Floating-Point Arithmetic in Lean",
+      "permalink": "https://safereddit.com/r/programming/comments/1wmqwd3/til_0xcafebabe/",
+      "score": "47",
+      "author": null
+    },
+    {
+      "title": "Category Theory Explained for Haskell Programmers – Part 1 ZuriHac 2026",
+      "permalink": "https://safereddit.com/r/programming/comments/1wnictu/the_history_of_compiled_portion_of_javascript_and/",
+      "score": "2",
+      "author": null
+    }
+  ],
+  "count": 25,
+  "top_thread": {
+    "url": "https://safereddit.com/r/programming/comments/1wn5gnz/c3_084_parameter_reflection_stack_protection_ios/",
+    "status": 200,
+    "body": "",
+    "comments": [
+      "Changing keywords is hardly the best way to convey stability, but sometimes it is necessary faultdef -&gt; excuse excuse as a language keyword? Honesty designed into the syntax i guess. I love it.",
+      "Probably the second best language keyword after Rust&#39;s yeet (which is experimental to avoid bike shedding, but still funny)."
+    ]
+  }
+}
+
+########## CMD: rsshub /threads/zuck -n 3
+{
+  "route": "rsshub",
+  "path": "/threads/zuck",
+  "http": 200,
+  "items": [
+    {
+      "title": "@zuck: Muse for Mac is out today! It works across apps, files, calendar, notes, and messages on your computer. You control what it can access. The tea...",
+      "link": "https://www.threads.com/t/DdZ7sQvkTFn",
+      "date": "Thu, 17 Sep 2026 22:27:44 GMT"
+    },
+    {
+      "title": "@zuck: Last month I wrote about how we can build a positive and safe future for everyone: meta.com/thefutureisforeveryone Every lab has the responsibi...",
+      "link": "https://www.threads.com/t/DdU1-6okapE",
+      "date": "Tue, 15 Sep 2026 23:01:39 GMT"
+    },
+    {
+      "title": "@zuck: The reality is: - People won&#39;t want to use agents that are misaligned with them and that don&#39;t do what they ask, so labs have a strong natural ...",
+      "link": "https://www.threads.com/t/DdU1-7_kb4B",
+      "date": "Tue, 15 Sep 2026 23:01:39 GMT"
+    }
+  ],
+  "count": 3,
+  "error": null
+}
+
+########## CMD: rsshub /weibo/search/hot -n 2
+{
+  "route": "rsshub",
+  "path": "/weibo/search/hot",
+  "http": 200,
+  "items": [
+    {
+      "title": "习近平向全国农民致以节日祝贺",
+      "link": "https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%90%91%E5%85%A8%E5%9B%BD%E5%86%9C%E6%B0%91%E8%87%B4%E4%BB%A5%E8%8A%82%E6%97%A5%E7%A5%9D%E8%B4%BA",
+      "date": null
+    },
+    {
+      "title": "闲鱼公布调查结果",
+      "link": "https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E9%97%B2%E9%B1%BC%E5%85%AC%E5%B8%83%E8%B0%83%E6%9F%A5%E7%BB%93%E6%9E%9C",
+      "date": null
+    }
+  ],
+  "count": 2,
+  "error": null
+}
+
+########## CMD: gallery https://bsky.app/profile/bsky.app/media --meta-only
+{
+  "route": "gallery-dl",
+  "url": "https://bsky.app/profile/bsky.app/media",
+  "exit": 0,
+  "entries": 174,
+  "sample_keys": [
+    "$type",
+    "author",
+    "bookmarkCount",
+    "category",
+    "cid",
+    "count",
+    "createdAt",
+    "date",
+    "embed",
+    "facets",
+    "indexedAt",
+    "instance",
+    "labels",
+    "langs",
+    "likeCount",
+    "post_id",
+    "quoteCount",
+    "reply",
+    "replyCount",
+    "repostCount",
+    "subcategory",
+    "text",
+    "threadgate",
+    "uri"
+  ],
+  "stderr_tail": ""
+}
+
+########## CMD: gallery https://www.tiktok.com/@tiktok --limit 1
+{
+  "route": "gallery-dl",
+  "url": "https://www.tiktok.com/@tiktok",
+  "exit": 0,
+  "files": [
+    {
+      "file": "7686945827008433439 trying something new can start with your DMs — @Dine with Kent would know 🍽️.mp4",
+      "bytes": 7066522
+    },
+    {
+      "file": "107955 @tiktok [ba67b11de451691939223e9d978e613a].jpg",
+      "bytes": 41017
+    }
+  ],
+  "total_bytes": 7107539,
+  "stderr_tail": "tok: retrieving creator/item_list page 100 (1431 items)\n[tiktok][info] https://www.tiktok.com/@tiktok: retrieving creator/item_list page 101 (1446 items)\n[tiktok][info] https://www.tiktok.com/@tiktok: retrieving creator/item_list page 102 (1461 items)\n[tiktok][info] https://www.tiktok.com/@tiktok: retrieving creator/item_list page 103 (1476 items)\n"
+}
+
+########## CMD: pin search:minimal desk setup -n 2
+usage: social_unlock.py [-h]
+                        {reddit,rsshub,gallery,pin,transcript,comments,x,bsky,status} ...
+social_unlock.py: error: unrecognized arguments: desk setup
+
+########## CMD: transcript TbkUKCm3CHQ --chars 300
+{
+  "route": "youtube-transcript-api",
+  "video": "TbkUKCm3CHQ",
+  "segments": 166,
+  "language": "en",
+  "text": "Last week, everything about AI changed forever. I realize everything about AI changes forever almost every week, but this time AI changed forever more than usual because one of the OpenAI researchers behind the instruction-following work that eventually became ChatGPT just released the next big fron"
+}
+
+########## CMD: comments TbkUKCm3CHQ -n 3
+{
+  "route": "youtube-comment-downloader",
+  "video": "TbkUKCm3CHQ",
+  "comments": [
+    {
+      "author": "@dariobonifaz",
+      "text": "Horse tinder is mankind's ultimate benchmark",
+      "votes": "0",
+      "time": "7 minutes ago"
+    },
+    {
+      "author": "@batbawls",
+      "text": "2:26 almost spit up",
+      "votes": "0",
+      "time": "24 minutes ago"
+    },
+    {
+      "author": "@igmallubot",
+      "text": "Can you do a video on LAYA",
+      "votes": "0",
+      "time": "32 minutes ago"
+    }
+  ],
+  "count": 3
+}
+
+########## CMD: x jack
+{
+  "route": "fxtwitter/vxtwitter",
+  "url": "https://api.vxtwitter.com/jack",
+  "http": 200,
+  "data": {
+    "created_at": "Tue Mar 21 20:50:14 +0000 2006",
+    "description": "no state is the best state",
+    "fetched_on": 1789560352,
+    "followers_count": 12161655,
+    "following_count": 3,
+    "id": 12,
+    "location": "",
+    "name": "jack",
+    "profile_image_url": "https://pbs.twimg.com/profile_images/1661201415899951105/azNjKOSH_normal.jpg",
+    "protected": false,
+    "screen_name": "jack",
+    "tweet_count": 30966
+  }
+}
+
+########## CMD: bsky bsky.app
+{
+  "route": "bsky public api",
+  "url": "https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile?actor=bsky.app",
+  "http": 200,
+  "data": {
+    "did": "did:plc:z72i7hdynmk6r22z27h6tvur",
+    "handle": "bsky.app",
+    "displayName": "Bluesky",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:z72i7hdynmk6r22z27h6tvur/bafkreihwihm6kpd6zuwhhlro75p5qks5qtrcu55jp3gddbfjsieiv7wuka",
+    "associated": {
+      "lists": 18,
+      "feedgens": 7,
+      "starterPacks": 15,
+      "labeler": false,
+      "chat": {
+        "allowIncoming": "none"
+      },
+      "activitySubscription": {
+        "allowSubscriptions": "followers"
+      }
+    },
+    "labels": [],
+    "createdAt": "2023-04-12T04:53:57.057Z",
+    "verification": {
+      "verifications": [],
+      "verifiedStatus": "none",
+      "trustedVerifierStatus": "valid"
+    },
+    "description": "official Bluesky account (check username👆)\n\nBugs, feature requests, feedback: support@bsky.app",
+    "indexedAt": "2025-10-27T21:05:26.152Z",
+    "banner": "https://cdn.bsky.app/img/banner/plain/did:plc:z72i7hdynmk6r22z27h6tvur/bafkreichzyovokfzmymz36p5jibbjrhsur6n7hjnzxrpbt5jaydp2szvna",
+    "followersCount": 35007523,
+    "followsCount": 15,
+    "postsCount": 864,
+    "pinnedPost": {
+      "cid": "bafyreicnt42y6vo6pfpvyro234ac4o6ijug6adwwrh7awflgrqlt4zibxq",
+      "uri": "at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.post/3l6oveex3ii2l"
+    }
+  }
+}
+
+########## CMD (quoted): pin search:minimal desk setup -n 2
+{
+  "route": "pinterest-dl",
+  "target": "search:minimal desk setup",
+  "exit": 0,
+  "files": [
+    {
+      "file": "992199361685235263.png",
+      "bytes": 1128769
+    },
+    {
+      "file": "633387444195508.jpg",
+      "bytes": 86044
+    }
+  ],
+  "total_bytes": 1214813,
+  "stdout_tail": "Searching minimal desk setup...\n\nDone.\n"
+}
+
+########## CMD: pin url:board
+{
+  "route": "pinterest-dl",
+  "target": "url:https://www.pinterest.com/pinterest/official-news/",
+  "exit": 0,
+  "files": [
+    {
+      "file": "424605071112831904.jpg",
+      "bytes": 2584793
+    },
+    {
+      "file": "424605071093691246.jpg",
+      "bytes": 220106
+    }
+  ],
+  "total_bytes": 2804899,
+  "stdout_tail": "Scraping https://www.pinterest.com/pinterest/official-news/...\n\nDone.\n"
+}

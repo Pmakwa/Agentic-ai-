@@ -1,0 +1,39 @@
+--- QUERY: reddit downloader archive api
+--- QUERY: instagram downloader scraper
+  awesome-yasin/Media-Downloader               star=    262  Download Instagram Reels, Stories, Post, Stalk Instagram Pro
+  tnychn/instascrape                           star=    176  🚀 A fast and lightweight utility and Python library for down
+  fernandod1/Instagram-downloader              star=     74  Instagram user's photos and videos downloader. Download all 
+  parthmax2/parth-dl                           star=     47  ⚡ Lightweight Instagram Reels, Posts & Profile Picture Downl
+--- QUERY: twitter x scraper downloader
+  M-e-d-u-s-a-X/xdl                            star=     14  CLI downloader for X - Twitter. Get images and videos from p
+  ArturMiguel/twitter-scraper                  star=      3  A "X" (old Twitter) scraper with Node.js and Puppeteer to au
+  jungeai/x-video-downloader                   star=      1  X (Twitter) video downloader & anti-ban auto collector — con
+--- QUERY: tiktok downloader api
+  Evil0ctal/Douyin_TikTok_Download_API         star=  20290  🚀 Self-hosted TikTok & Douyin scraper and no-watermark video
+  JoeanAmier/TikTokDownloader                  star=  16256  抖音 / TikTok 平台作品下载/数据采集工具
+  Johnserf-Seed/f2                             star=   2658  High-speed downloader for multiple platforms
+  hansputera/tiktok-dl                         star=    164  Free TikTok Video Downloader | Watermark and Without Waterma
+--- QUERY: pinterest downloader scraper
+  sean1832/pinterest-dl                        star=    200  An unofficial Pinterest media downloader
+  UxHarshit/PinterestVideoDownloader           star=     17  
+  Swag666baby/pinterest-dl                     star=     16  a library to search and download images from pinterest 
+  pashtetx/pin-downloader                      star=      6  Pinterest scraper, API pinterest
+--- QUERY: facebook scraper public page
+  kevinzg/facebook-scraper                     star=   3294  Scrape Facebook public pages without an API key
+  jpryda/facebook-multi-scraper                star=     84  Multi-threaded Facebook scraper for social analytics of publ
+  refeed/scrapy_facebooker                     star=     27  Collection of scrapy spiders which can scrape posts, images,
+  ishwaryaabalakrishnan/Facebook-photo-scraper star=     24  A fast, lightweight scraper that automatically downloads all
+--- QUERY: rss bridge generator
+  badster-git/instagram-twitter-rss-generator  star=      1  Python script to generate rss-bridge Instagram urls and RSS 
+  teethyorg/TeethyCommunity-RSS                star=      1  TeethyCommunity RSS, is a specialized feed generator for the
+  mistertfy64/TextFeedBridger                  star=      0  RSS generator for blog.mistertfy64.com (just started)
+--- QUERY: youtube transcript api
+  jdepoix/youtube-transcript-api               star=   8358  This is a python API which allows you to get the transcript/
+  ZeroPointRepo/youtube-skills                 star=    909  YouTube Transcript API skills for AI agents. Get transcripts
+  zlxlabs/VideoTranscriptAPI                   star=    214  基于 Python 3.11+ FastAPI 的异步音视频转录服务，支持 YouTube、小宇宙、Bilibili、视
+  ScrapingBee/youtube-scraper-api              star=    188  YouTube Scraper API for scraping YouTube videos, channels, p
+--- QUERY: redlib libreddit nitter alternative
+  zedeus/nitter: star=14476 archived=True pushed=2026-09-07 lang=Nim
+  redlib-org/redlib: star=3774 archived=False pushed=2026-04-24 lang=Rust
+  pystardust/ytfzf: star=4153 archived=False pushed=2024-09-27 lang=Shell
+  mikf/gallery-dl: star=19809 archived=False pushed=2026-09-19 lang=Python

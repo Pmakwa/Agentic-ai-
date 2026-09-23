@@ -1,0 +1,49 @@
+########## BATCH C: extra platforms via gallery-dl (2026-09-23T05:19:14Z) ##########
+=== [WEIBO user (m.weibo.cn)]
+  exit=4 files=0 bytes=0
+    [weibo][info] Sina Visitor System
+    [weibo][error] HttpError: '403 Forbidden' for 'https://weibo.com/ajax/statuses/mymblog?uid=2803301701&feature=0'
+
+=== [WEIBO weibo.com]
+  exit=4 files=0 bytes=0
+    [weibo][error] HttpError: '403 Forbidden' for 'https://weibo.com/ajax/statuses/mymblog?uid=2803301701&feature=0'
+
+=== [BILIBILI video]
+  exit=64 files=0 bytes=0
+    [gallery-dl][error] Unsupported URL 'https://www.bilibili.com/video/BV1GJ411x7h7'
+
+=== [VK public page]
+  exit=0 files=0 bytes=0
+
+=== [TUMBLR public blog]
+  exit=0 files=2 bytes=530430
+
+=== [MASTODON /media suffix]
+  exit=64 files=0 bytes=0
+    [gallery-dl][error] Unsupported URL 'https://fosstodon.org/@kev/media'
+
+=== [THREADS profile]
+  exit=64 files=0 bytes=0
+    [gallery-dl][error] Unsupported URL 'https://www.threads.net/@zuck'
+
+=== [pinterest-dl search tokenless]
+  exit=0 files=3 bytes=8510201
+Searching nature photography...
+
+Done.
+█| 3/3 [00:00<00:00,  3.45it/s][ADownloading Media: 100%|██████████| 3/3 [00:00<00:00,  3.46it/s]
+Searching: 100%|██████████| 3/3 [00:05<00:00,  1.71s/it]
+
+=== [pinterest-dl scrape board]
+  exit=0 files=3 bytes=3043941
+Scraping https://www.pinterest.com/pinterest/official-news/...
+
+Done.
+�   | 2/3 [00:00<00:00,  6.15it/s][ADownloading Media: 100%|██████████| 3/3 [00:00<00:00,  8.30it/s]
+Scraping: 100%|██████████| 3/3 [00:01<00:00,  1.68it/s]
+
+=== [FACEBOOK raw evidence: mbasic login redirect?]
+  https://mbasic.facebook.com/bbcnews -> http=200 bytes=3790 final=https://mbasic.facebook.com/login.php?next=https%3A%2F%2Fmbasic.facebook.com%2Fbbcnews&refsrc=deprecated&_rdr
+     marker: Log in
+  https://m.facebook.com/bbcnews -> http=200 bytes=3790 final=https://m.facebook.com/login.php?next=https%3A%2F%2Fm.facebook.com%2Fbbcnews&refsrc=deprecated&_rdr
+     marker: Log in
