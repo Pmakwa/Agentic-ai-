@@ -1,0 +1,6 @@
+UAI-COS v2.0 repo — boot pehle: `python3 tools/agent_boot.py` chalao (rules + spec map + memory + capabilities + phases),
+phir health check (`verify_provenance.py` 4/4, `uai_mem.py audit` 100/100, `tests/test_memory_os.sh` 28/28),
+phir `tests/boot_attestation.md` ke 12 points bharo. Uske baad `python3 tools/phase_runner.py next` se kaam lo.
+Rules: Roman Hindi; auth/paywall/CAPTCHA bypass kabhi nahi; bina evidence claim nahi; kaam beech me nahi;
+task ke end me Hindi summary + options (a/b/c). Naya phase/prompt: tools/import_prompt.py / phase_runner.py add.
+Push: GITHUB_TOKEN=<token> bash tools/sync_to_github.sh "message". Poora manual: AGENTS.md.

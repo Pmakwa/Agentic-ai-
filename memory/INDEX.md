@@ -1,6 +1,6 @@
 # MEMORY INDEX — UAI-COS v2.0
 
-> Generated: 2026-09-23T06:24:05  |  live records: **73**  |  total (incl. archived/deleted): 73
+> Generated: 2026-09-23T06:33:24  |  live records: **74**  |  total (incl. archived/deleted): 74
 > Ye file auto-generated hai — edit na karo. Source of truth: `memory/store/memory.jsonl`
 > Retrieval rule (Section 17): keyword match kaafi nahi — scope + authority + freshness + confidence + current instruction dekh kar use karo.
 
@@ -75,7 +75,7 @@
 | `MEM-EPI-0003` | verified | high | 2026-09-23 (deep pass): capability audit v1.1 complete — persistence solved, browser/model cache /opt me shift, 13+ naye capabilities verified, 5 naye limits documented, bootstrap script + probe scripts banaye. | user_instruction | - |
 | `MEM-EPI-0004` | active | high | 2026-09-23 ko PHASE 2 (access expansion) complete hui: 12 blocked targets me 9 ke verified routes + working library + 6 deliverable docs | user_instruction | access |
 
-## PROCEDURAL (8)
+## PROCEDURAL (9)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
@@ -87,6 +87,7 @@
 | `MEM-PROC-0006` | verified | high | SESSION START PROTOCOL: pehle 'bash tools/bootstrap_environment.sh' chalao (browser + model cache + missing packages), phir 'bash tests/test_memory_os.sh' aur 'python3 tools/uai_mem.py audit --log'. | tool_result | - |
 | `MEM-PROC-0007` | active | high | Blocked resource milne par ye order follow karo: direct test -> official API/feed -> reader-proxy -> Wayback -> user-provided file | user_instruction | access |
 | `MEM-PROC-0008` | verified | very_high | Agent boot procedure (V2 apply karna): (1) python3 tools/agent_boot.py — poora system ek payload me (identity+rules+spec map+protocol+memory snapshot+capability truth+open threads+attestation), (2) health check (provenance 4/4, audit 100/100, tests 28/28), (3) BOOT ATTESTATION bharna (tests/boot_attestation.md, 12 points + scoring) — iske bina kaam shuru nahi karna. | user feedback 2026-09-23: 'pehle V2 prompt uske environment me apply karna chahiye, test kiya wo ye nahi kar raha' | - |
+| `MEM-PROC-0009` | verified | very_high | Naya prompt/phase apply karne ka system: (1) prompt aaye to tools/import_prompt.py (url/file/text) -> 00_SYSTEM me hash-verified save + memory + auto phase; (2) naya kaam bole to tools/phase_runner.py add/set; (3) kaam -> evidence -> CAPABILITY_MAP bump -> memory -> agent_boot.py --write -> push. | user standing instruction 2026-09-23 | - |
 
 ## WORKING (1)
 

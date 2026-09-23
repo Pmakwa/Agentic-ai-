@@ -65,6 +65,17 @@ uai-cos/
 │   └── probes/                             ✅ raw evidence (2 probe files)
 │
 ├── tools/github_unlock.py                  ✅ GitHub toolkit (12 commands, bina token)
+├── PHASE_PROTOCOL.md                       ✅ naye phase/prompt apply karne ka contract (boot → phase → evidence → push)
+├── UAI-COS_BOOT_PROMPT.md                  ✅ paste-ready boot prompt (chat-only agents, auto-generated)
+├── CLAUDE.md / GEMINI.md / .windsurfrules  ✅ har agent-platform ke liye boot pointers (same system apply)
+├── .cursor/rules/uai-cos.mdc               ✅ Cursor rule (always apply)
+├── .github/copilot-instructions.md         ✅ Copilot instructions
+├── PROJECT_BOARD/phases.json               ✅ machine-readable phase source of truth (21 phases)
+├── tools/phase_runner.py                   ✅ phase engine (status/next/add/set/md)
+├── tools/import_prompt.py                  ✅ naya V2-type prompt import (hash + memory + auto phase)
+├── tools/sync_to_github.sh                 ✅ ek command me commit + push (secret-scan ke saath)
+├── tests/boot_attestation.md               ✅ 12-sawal boot test + scoring
+├── tests/ci_extra.py                       ✅ CI checks: phases/prompt-hash/boot-freshness
 ├── tools/social_unlock.py                  ✅ repo-verified platform layer (10 commands, smoke-tested)
 ├── tools/agent_boot.py                     ✅ V2 boot payload generator (agent isse boot hota hai)
 ├── UAI-COS_BOOT_PROMPT.md                  ✅ paste-ready boot prompt (chat-only agents ke liye, 14 KB)

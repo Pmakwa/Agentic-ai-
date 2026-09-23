@@ -1,0 +1,25 @@
+{
+  "prompts": [
+    {
+      "name": "V2.0",
+      "file": "00_SYSTEM/00_UAI-COS_V2.0_SPEC.md",
+      "source": "https://chatgpt.com/share/6ab02379-e58c-83ee-b573-63caedeca943",
+      "method": "r.jina.ai reader (chatgpt.com direct 403)",
+      "chars": 43054,
+      "body_sha256_16": "4aa1c6a1f872a3f3",
+      "imported": "2026-09-23",
+      "note": "112 sections — canonical system spec (never edit)"
+    },
+    {
+      "name": "V1.0",
+      "file": "00_SYSTEM/01_UAI-COS_V1.0_SPEC.md",
+      "source": "same share link (Parts 1-15)",
+      "method": "r.jina.ai reader (chatgpt.com direct 403)",
+      "chars": 21491,
+      "body_sha256_16": "456102f91c061b6e",
+      "imported": "2026-09-23",
+      "note": "base spec — history + intent disambiguation"
+    }
+  ],
+  "note": "Har imported prompt ka canonical body hash. Naya prompt: tools/import_prompt.py"
+}

@@ -166,7 +166,7 @@
 1. **Reality rule:** "permanent/unlimited memory" ka claim nahi — sirf jo disk par actually save hai wahi persistent hai [`V1 reality rule`].
 2. **Blind retrieval ban:** keywor
 
-### 7. MEMORY SNAPSHOT (live: 73 records; ye sirf key rules hain, poora `memory/store/memory.jsonl`)
+### 7. MEMORY SNAPSHOT (live: 74 records; ye sirf key rules hain, poora `memory/store/memory.jsonl`)
   [MEM-CORE-0001/core] User ka long-term goal: ek governed, memory-aware, multi-agent AI operating system chalana (UAI-COS), jisme memory verify hoti hai aur blind use nahi hoti.
   [MEM-PREF-0001/preference] User se Hindi me baat karni hai, lekin English alphabet/spelling (Roman Hindi) me — jab tak user khud Devanagari ya doosri language na maange.
   [MEM-PREF-0002/preference] User ko detailed, advanced, master-level aur practical output chahiye; basic ya generic answer nahi.
@@ -198,7 +198,7 @@
 **Blocked (naya authorized route mile bina dobara try mat karo):** Instagram (429 + login wall) · Facebook (login redirect) · LinkedIn (login wall) · Quora · Bilibili (412 risk control) · X full API (paid) · Reddit direct (IP block → redlib instances use karo) · Nitter/Invidious (dead/gated).
 
 ### 9. CURRENT STATUS
-- Memory: **73 records** · Capability map: **v2.4** · Reports: `00_SYSTEM`…`06_REPO_HUNT` + `CONVERSATION`
+- Memory: **74 records** · Capability map: **v2.4** · Reports: `00_SYSTEM`…`06_REPO_HUNT` + `CONVERSATION`
 - Tools: `tools/social_unlock.py` (10 cmds) · `uai_mem.py` (13 cmds) · `access_routes.py` · `github_unlock.py` · `local_ai.py` · `route_monitor.py`
 - Har verified route ka exact command: **`RUNBOOK.md`** · limits: **`ENVIRONMENT.md`**
 

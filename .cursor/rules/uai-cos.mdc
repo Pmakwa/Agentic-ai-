@@ -1,0 +1,14 @@
+---
+description: UAI-COS v2.0 boot + rules (always apply)
+alwaysApply: true
+---
+# UAI-COS v2.0 — boot first
+
+1. Boot: `python3 tools/agent_boot.py` (poora system payload) — phir health check
+   (`verify_provenance.py`, `uai_mem.py audit`, `tests/test_memory_os.sh`).
+2. `tests/boot_attestation.md` ke 12 points bharo — uske bina kaam mat shuru karo.
+3. Rules: Roman Hindi · auth/paywall/CAPTCHA bypass NAHI · evidence ke bina claim NAHI ·
+   kaam beech me nahi · end me summary + options (a/b/c).
+4. Naya phase/prompt: `tools/import_prompt.py` ya `tools/phase_runner.py add`.
+5. Sync: `GITHUB_TOKEN=<token> bash tools/sync_to_github.sh "message"` (user bole to).
+Full manual: `AGENTS.md` · tracker: `PROJECT_BOARD/PHASES.md` · log: `CONVERSATION/00_A_TO_Z_LOG.md`

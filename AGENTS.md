@@ -63,6 +63,8 @@ UAI-COS BOOT ATTESTATION
 | 5 | `02_CAPABILITY_AUDIT/CAPABILITY_MAP.json` (v2.4) | Kya verified hai, kya blocked, kya unknown |
 | 6 | `CONVERSATION/00_A_TO_Z_LOG.md` | Start se ab tak ki poori baat-cheet + kya hua |
 | 7 | `RUNBOOK.md` | Kisi bhi capability ko dobara chalane ka exact command |
+| 8 | `PROJECT_BOARD/PHASES.md` + `phases.json` | Phase tracker (21 phases) — `python3 tools/phase_runner.py next` |
+| 9 | `PHASE_PROTOCOL.md` | Naya phase/prompt apply karne ka contract (import → evidence → push) |
 
 ---
 
@@ -128,6 +130,8 @@ Picked up from the last user instruction (2026-09-23, repo-hunt completed). Next
 3. **Monitoring integration:** naye verified routes ko `tools/route_monitor.py` me add karke 30-min cycle me daalo.
 4. **Memory hygiene:** naye findings ko `uai_mem.py add` se record karo, phir `index` + `dash` regen + `audit` 100/100.
 5. **Report every change:** README tree + `index.html` tiles + CAPABILITY_MAP version bump (currently **v2.4**).
+6. **Naya prompt aaye (V2-type)** → `python3 tools/import_prompt.py --url/--file/--text ... --name "V3"` (hash + memory + auto phase),
+   phir uske rules boot payload + protocol me apply karo, `agent_boot.py --write` chalao, push karo.
 
 Rules for adding anything new: install → **live tokenless test** → evidence file in the right `probes/` dir → report → CAPABILITY_MAP bump → memory record → README/index sync.
 

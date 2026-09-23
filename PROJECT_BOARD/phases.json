@@ -1,0 +1,39 @@
+{
+  "system": "UAI-COS v2.0",
+  "updated": "2026-09-23",
+  "rule": "Har naya kaam = ek phase entry. Status: done | active | next | waiting_user. Naya phase add karne ka command: python3 tools/phase_runner.py add --id P19 --title \"...\" --evidence \"<path>\"",
+  "phases": [
+    {"id": "P0",  "title": "Spec import (Step 1): V1 + V2.0 hash-verified", "status": "done", "owner": "agent", "evidence": "00_SYSTEM/00_UAI-COS_V2.0_SPEC.md (4aa1c6a1f872a3f3)", "next_step": "-"},
+    {"id": "P1",  "title": "Step 2 implementation: memory OS + protocol + tests", "status": "done", "owner": "agent", "evidence": "01_STEP2/, tools/uai_mem.py, tests/test_memory_os.sh (28/28)", "next_step": "-"},
+    {"id": "P2",  "title": "Capability audit: 29-site matrix + secrets scan + map v1.0", "status": "done", "owner": "agent", "evidence": "02_CAPABILITY_AUDIT/", "next_step": "-"},
+    {"id": "P3",  "title": "Deep exploration #1: persistence, /opt caches, bug fixes", "status": "done", "owner": "agent", "evidence": "02_CAPABILITY_AUDIT/07_SELF_SWEEP_v2.md, /opt/ms-playwright", "next_step": "-"},
+    {"id": "P4",  "title": "Access Expansion (Phase 2): blocked targets -> legitimate routes", "status": "done", "owner": "agent", "evidence": "03_ACCESS_EXPANSION/ (6 deliverables + route_provenance.jsonl)", "next_step": "-"},
+    {"id": "P5",  "title": "Sweep #1: systemd correction + proxy UA fix + route monitor", "status": "done", "owner": "agent", "evidence": "tools/route_monitor.py, logs/route_health*.txt", "next_step": "-"},
+    {"id": "P6",  "title": "Installs + Local AI (Qwen 0.5B, edge-tts, whisper)", "status": "done", "owner": "agent", "evidence": "tools/local_ai.py, /opt/uai-cache/models_qwen05b.gguf", "next_step": "-"},
+    {"id": "P7",  "title": "Self-Sweep v2 -> capability map v2.1", "status": "done", "owner": "agent", "evidence": "07_SELF_SWEEP_v2.md, MEM-SEM-0017..0024", "next_step": "-"},
+    {"id": "P8",  "title": "GitHub dig (tokenless capability report)", "status": "done", "owner": "agent", "evidence": "04_GITHUB_UNLOCK/, tools/github_unlock.py (12 cmds)", "next_step": "-"},
+    {"id": "P9",  "title": "Social unlock matrix (tokenless / needs-creds / no-route)", "status": "done", "owner": "agent", "evidence": "05_SOCIAL_UNLOCK/00_SOCIAL_PLATFORM_UNLOCK_REPORT.md", "next_step": "-"},
+    {"id": "P10", "title": "Repo hunt: 15 repos live-tested + RSSHub self-host", "status": "done", "owner": "agent", "evidence": "06_REPO_HUNT/ (30 evidence files), tools/social_unlock.py", "next_step": "-"},
+    {"id": "P11", "title": "GitHub handover + push (repo live, CI green)", "status": "done", "owner": "agent", "evidence": "Pmakwa/Agentic-ai- · PUSH_LOG.md", "next_step": "-"},
+    {"id": "P12", "title": "Boot mechanism: V2 apply karna (agent_boot.py + attestation)", "status": "done", "owner": "agent", "evidence": "tools/agent_boot.py, UAI-COS_BOOT_PROMPT.md, tests/boot_attestation.md", "next_step": "-"},
+    {"id": "P13", "title": "Sync + standing rules (har baat-cheet repo me)", "status": "active", "owner": "agent", "evidence": "tools/sync_to_github.sh, CONVERSATION/04_STANDING_INSTRUCTIONS.md", "next_step": "har kaam ke baad push + PUSH_LOG entry"},
+    {"id": "P14", "title": "RSSHub route expansion (baaki namespaces verify)", "status": "next", "owner": "agent", "evidence": "target: 06_REPO_HUNT/probes/rsshub_routes_test2.txt", "next_step": "RSSHub start karo (RUNBOOK §3) -> /vimeo, /spotify, /hackernews, regional test -> report + push"},
+    {"id": "P15", "title": "Monitoring integration (naye verified routes 30-min cycle me)", "status": "next", "owner": "agent", "evidence": "tools/route_monitor.py", "next_step": "P14 ke verified routes add karo -> manual run -> logs"},
+    {"id": "P16", "title": "Naye public endpoints (Discord invite, Spotify oEmbed, pullpush)", "status": "next", "owner": "agent", "evidence": "target: 06_REPO_HUNT/probes/endpoints2.txt", "next_step": "test -> evidence -> social_unlock.py me subcommand"},
+    {"id": "P17", "title": "Keyed APIs (Reddit OAuth, YouTube Data, Telegram bot, Meta app)", "status": "waiting_user", "owner": "user+agent", "evidence": "target: .env (gitignored) + live tests", "next_step": "user creds de -> live test -> map update"},
+    {"id": "P18", "title": "Project board cards paste karna", "status": "waiting_user", "owner": "user", "evidence": "PROJECT_BOARD/CARDS.md", "next_step": "GitHub Project -> Add item -> paste"},
+    {"id": "P19", "title": "Prompt intake system (naya V2-type prompt aaye to apply karna)", "status": "done", "owner": "agent", "evidence": "tools/import_prompt.py, PHASE_PROTOCOL.md", "next_step": "user naya prompt de -> import_prompt.py -> phase auto-add -> apply -> push"},
+    {"id": "P20", "title": "Multi-platform agent pointers (sab agents same system apply karein)", "status": "done", "owner": "agent", "evidence": "CLAUDE.md, GEMINI.md, .github/copilot-instructions.md, .cursor/rules/", "next_step": "-"}
+  ],
+  "recurring_checklist": [
+    "live test + evidence probes/ me",
+    "report update",
+    "CAPABILITY_MAP.json version bump",
+    "uai_mem.py add (memory)",
+    "index + dash + audit (100/100)",
+    "README/index sync",
+    "GITHUB_TOKEN=<token> bash tools/sync_to_github.sh \"message\"",
+    "CI green verify + PUSH_LOG entry",
+    "Hindi summary + options (a/b/c)"
+  ]
+}
