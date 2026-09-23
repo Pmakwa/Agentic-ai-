@@ -1,0 +1,30 @@
+=== PHASE 2 BLUEPRINT — ACCESS PATH PROBE (2026-09-23T07:30:48Z) ===
+route classes: official API | dataset | structured data | archive | mirror | feed | open-source
+
+PyPI JSON API          200    192973 B  {"info":{"author":null,"author_email":"Kenneth Reitz <me@kennethreitz.
+npm registry           200    808982 B  {"_id":"express","_rev":"4390-0c09529b4ee7414904da84797adf0732","name"
+crates.io API          200    440990 B  {"crate":{"id":"serde","name":"serde","updated_at":"2026-07-18T23:05:1
+World Bank API         200       416 B  [{"page":1,"pages":1,"per_page":"50","total":1},[{"id":"IND","iso2Code
+Our World in Data      200    605250 B  Entity,Code,Year,Life expectancy Afghanistan,AFG,1950,28.1563 Afghanis
+Wikidata SPARQL        200       191 B  {   "head" : {     "vars" : [ "x" ]   },   "results" : {     "bindings
+Open Library API       404         0 B  
+Internet Archive       200      6703 B  {"alternate_locations":{"servers":[{"server":"dn790001.ca.archive.org"
+Google Books API       429      1306 B  {   "error": {     "code": 429,     "message": "Quota exceeded for quo
+PubMed E-utilities     200       985 B  {"header":{"type":"esearch","version":"0.3"},"esearchresult":{"count":
+Open-Meteo (Rajkot)    200       323 B  {"latitude":22.319859,"longitude":70.8273,"generationtime_ms":0.622153
+CoinGecko              200        27 B  {"bitcoin":{"inr":8267757}}
+HN Firebase API        200      4501 B  [49805509,49803892,49811065,49811429,49801324,49808023,49805278,497818
+Docker Hub API         200      5670 B  {"count":1339,"next":"https://hub.docker.com/v2/repositories/library/n
+SEC EDGAR (gov)        200    164033 B  {"cik":"0000320193","entityType":"operating","sic":"3571","sicDescript
+OpenFDA                200      1819 B  {   "meta": {     "disclaimer": "Do not rely on openFDA to make decisi
+Zenodo (research)      200     10705 B  {"hits": {"hits": [{"created": "2026-09-23T07:30:49.459488+00:00", "mo
+BBC world RSS          200     21145 B  <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/d
+The Hindu RSS          200     50362 B  <?xml version="1.0" encoding="UTF-8"?><rss xmlns:atom="http://www.w3.o
+data.gov.in (demo)     200      3393 B  {     "created": 1627939168,     "updated": 1790146849,     "created_d
+
+--- retest (pehle fail the):
+RSSHub weibo hot       503      5797 B  <html><head><title>Welcome to RSSHub!</title><meta name="color-scheme"
+RSSHub github trending 503      5937 B  <html><head><title>Welcome to RSSHub!</title><meta name="color-scheme"
+RSSHub spotify artist  503      5895 B  <html><head><title>Welcome to RSSHub!</title><meta name="color-scheme"
+
+=== END ===

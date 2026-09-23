@@ -25,7 +25,7 @@ uai-cos/
 │   └── UAI-COS_SYSTEM_PROMPT_{compact,standard,full}.md   ✅ paste-anywhere compiled prompts (live memory inline)
 │
 ├── memory/                                 ← MEMORY OS (live data)
-│   ├── store/memory.jsonl                  ✅ 85 records — Section-13 schema par
+│   ├── store/memory.jsonl                  ✅ 86 records — Section-13 schema par
 │   ├── INDEX.md                            ✅ auto-generated retrieval index (boot-read)
 │   └── store/archive.jsonl                 ✅ archive (delete nahi, retire)
 │
@@ -66,6 +66,7 @@ uai-cos/
 │
 ├── tools/github_unlock.py                  ✅ GitHub toolkit (12 commands, bina token)
 ├── 07_SELF_AUDIT/                          ✅ capability/reasearch/fallback maps + unknown queue + master report (self-audit)
+├── 00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md      ✅ Phase 2 ACCESS BLUEPRINT (verbatim, hash 8a801fdcfc9329e7)
 ├── 00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md ✅ Phase 1+2 ka original prompt (verbatim, hash e8d8620d378adc48)
 ├── tools/apply_phase.py                    ✅ spec apply engine (v2 | self_audit | phase1 | phase2) + attestation
 ├── tools/self_audit.py                     ✅ continuous self-audit (env probe + diff + version bump)
@@ -116,7 +117,7 @@ uai-cos/
 
 | Metric | Value | Command |
 |---|---|---|
-| Live memory records | **85** | `python3 tools/uai_mem.py stats` |
+| Live memory records | **86** | `python3 tools/uai_mem.py stats` |
 | Memory health score | **100/100** | `python3 tools/uai_mem.py audit` |
 | Golden tests | **28/28 pass** | `bash tests/test_memory_os.sh` |
 | Open conflicts | 0 | audit |

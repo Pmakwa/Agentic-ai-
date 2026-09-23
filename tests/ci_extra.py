@@ -142,7 +142,8 @@ try:
         parts = t.split("\n---\n", 1)
         return _h.sha256(((parts[1].strip() + "\n") if len(parts) == 2 else (t.strip() + "\n")).encode()).hexdigest()[:16]
     specs = {"00_SYSTEM/00_UAI-COS_V2.0_SPEC.md": "4aa1c6a1f872a3f3",
-             "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md": "e8d8620d378adc48"}
+             "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md": "e8d8620d378adc48",
+             "00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md": "8a801fdcfc9329e7"}
     for f, want in specs.items():
         got = _canon(f)
         if got != want:
@@ -152,7 +153,7 @@ try:
     deliver = ["07_SELF_AUDIT/AGENT_CAPABILITY_MAP.json", "07_SELF_AUDIT/RESEARCH_CAPABILITY_MAP.json",
                "07_SELF_AUDIT/ENVIRONMENT_FALLBACK_MAP.json", "07_SELF_AUDIT/UNKNOWN_CAPABILITY_QUEUE.json",
                "07_SELF_AUDIT/CAPABILITY_EXPANSION_ROADMAP.md", "07_SELF_AUDIT/00_SELF_AUDIT_MASTER_REPORT.md",
-               "tools/apply_phase.py", "tools/self_audit.py"]
+               "tools/apply_phase.py", "tools/self_audit.py", "03_ACCESS_EXPANSION/01_PHASE2_BLUEPRINT_APPLY.md"]
     miss = [f for f in deliver if not (ROOT / f).exists()]
     if miss:
         bad(f"self-audit deliverables missing: {miss}")

@@ -59,14 +59,18 @@
     },
     {
       "id": "SP-004",
-      "title": "Phase 2 — access expansion prompt",
+      "title": "PHASE 2 — ACCESS PATH & CAPABILITY EXPANSION blueprint (verbatim)",
       "type": "phase",
-      "source": "user structured prompt (conversation) — verbatim text repo me nahi tha",
-      "file": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md",
+      "source": "user message (Arena chat) 2026-09-23 — direct paste (verbatim)",
+      "file": "00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md",
       "verbatim": true,
-      "body_sha256_16": "e8d8620d378adc48",
+      "body_sha256_16": "8a801fdcfc9329e7",
       "applied_in": [
         "03_ACCESS_EXPANSION/",
+        "03_ACCESS_EXPANSION/01_PHASE2_BLUEPRINT_APPLY.md",
+        "04_GITHUB_UNLOCK/",
+        "05_SOCIAL_UNLOCK/",
+        "06_REPO_HUNT/",
         "07_SELF_AUDIT/",
         "CONVERSATION/01_ACTION_LEDGER.md §D",
         "tools/access_routes.py",
@@ -74,7 +78,7 @@
       ],
       "applied": true,
       "added": "2026-09-23",
-      "note": "Original prompt ka verbatim text SP-011 (master blueprint) me hai — ye ab usi spec ka hissa maana jata hai."
+      "note": "Master blueprint: blocked -> classification -> official/API/SDK/OSS/dataset/archive/mirror/connector/environment routes; No-False-Access (§27)."
     },
     {
       "id": "SP-005",
@@ -207,5 +211,5 @@
       "note": ""
     }
   ],
-  "updated": "2026-09-23 07:25:49"
+  "updated": "2026-09-23 07:37:45"
 }

@@ -178,14 +178,16 @@ SPECS: dict[str, dict] = {
                    ("hygiene", c_hygiene), ("boundary §24 documented", c_boundary)],
     },
     "phase2": {
-        "title": "Phase 2 — access, research methods, fallback routes",
-        "file": "00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md",
-        "checks": [("spec import", c_spec("00_SYSTEM/02-UAI-COS_MASTER_SELF_AUDIT_SPEC.md")) if False else
-                   ("spec import", c_spec("00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md")),
-                   ("audit deliverables", c_audit_maps), ("network routes", c_net),
+        "title": "Phase 2 — ACCESS PATH & CAPABILITY EXPANSION MASTER BLUEPRINT",
+        "file": "00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md",
+        "checks": [("spec import + hash", c_spec("00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md", "8a801fdcfc9329e7")),
+                   ("apply deliverable report", c_spec("03_ACCESS_EXPANSION/01_PHASE2_BLUEPRINT_APPLY.md")),
+                   ("access probe results", c_spec("03_ACCESS_EXPANSION/probes/phase2_access_paths.txt")),
+                   ("network routes", c_net),
                    ("social/rsshub route tool", c_spec("tools/social_unlock.py")),
                    ("rsshub verify tool", c_spec("tools/rsshub_verify.py")),
-                   ("monitor tool", c_spec("tools/route_monitor.py")), ("prompt registry", c_prompts)],
+                   ("monitor tool", c_spec("tools/route_monitor.py")),
+                   ("prompt registry", c_prompts)],
     },
 }
 

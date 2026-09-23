@@ -1,0 +1,66 @@
+{
+  "applied_at": "2026-09-23 07:36:42",
+  "results": [
+    {
+      "spec": "phase2",
+      "title": "Phase 2 — ACCESS PATH & CAPABILITY EXPANSION MASTER BLUEPRINT",
+      "spec_file": "00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md",
+      "checks": [
+        {
+          "check": "spec import + hash",
+          "ok": true,
+          "detail": "00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md OK (hash 8a801fdcfc9329e7)",
+          "evidence": "00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md"
+        },
+        {
+          "check": "apply deliverable report",
+          "ok": true,
+          "detail": "03_ACCESS_EXPANSION/01_PHASE2_BLUEPRINT_APPLY.md OK (hash 832604315a06c6da)",
+          "evidence": "03_ACCESS_EXPANSION/01_PHASE2_BLUEPRINT_APPLY.md"
+        },
+        {
+          "check": "access probe results",
+          "ok": true,
+          "detail": "03_ACCESS_EXPANSION/probes/phase2_access_paths.txt OK (hash 7b23730e08b084d8)",
+          "evidence": "03_ACCESS_EXPANSION/probes/phase2_access_paths.txt"
+        },
+        {
+          "check": "network routes",
+          "ok": true,
+          "detail": "github=200 reader=200",
+          "evidence": null
+        },
+        {
+          "check": "social/rsshub route tool",
+          "ok": true,
+          "detail": "tools/social_unlock.py OK (hash bd19000a947895a3)",
+          "evidence": "tools/social_unlock.py"
+        },
+        {
+          "check": "rsshub verify tool",
+          "ok": true,
+          "detail": "tools/rsshub_verify.py OK (hash 1da67238b11f1213)",
+          "evidence": "tools/rsshub_verify.py"
+        },
+        {
+          "check": "monitor tool",
+          "ok": true,
+          "detail": "tools/route_monitor.py OK (hash bde3e0e605c76b90)",
+          "evidence": "tools/route_monitor.py"
+        },
+        {
+          "check": "prompt registry",
+          "ok": true,
+          "detail": "SAARE PROMPTS OK",
+          "evidence": "PROMPTS/registry.json"
+        }
+      ],
+      "passed": 8,
+      "total": 8,
+      "verdict": "PASS",
+      "env": "e2b.local",
+      "python": "3.13.14",
+      "ts": "2026-09-23 07:36:42"
+    }
+  ]
+}

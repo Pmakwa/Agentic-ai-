@@ -1,6 +1,6 @@
 # MEMORY INDEX — UAI-COS v2.0
 
-> Generated: 2026-09-23T07:25:37  |  live records: **85**  |  total (incl. archived/deleted): 85
+> Generated: 2026-09-23T07:37:32  |  live records: **86**  |  total (incl. archived/deleted): 86
 > Ye file auto-generated hai — edit na karo. Source of truth: `memory/store/memory.jsonl`
 > Retrieval rule (Section 17): keyword match kaafi nahi — scope + authority + freshness + confidence + current instruction dekh kar use karo.
 
@@ -132,13 +132,14 @@
 | `MEM-ERR-0006` | verified | very_high | CLEANUP INCIDENT (2026-09-23): workspace cleanup tool ke pehle version ne node_modules/.pnpm + lib/ ke andar 'duplicates' delete kar diye (7959 files) jisse RSSHub toota (ERR_MODULE_NOT_FOUND punycode.js). Recovery: /opt/uai-cache/rsshub me fresh clone + pnpm install (22.7s) + pnpm build (16.4s) -> 4 routes verified 200. | agent incident + fix 2026-09-23 | - |
 | `MEM-ERR-0007` | verified | very_high | ENV RESET (2026-09-23 07:20 UTC): fresh sandbox me /opt/uai-cache khaali mila (RSSHub, node22, yq/crane, models gaye) aur pip tools (gallery-dl, yt-dlp, rg, pandoc, ffmpeg) gayab the. Workspace /home/user safe tha. Root cause: /opt root-owned tha (mkdir permission fail). Fix: bootstrap_environment.sh me sudo mkdir + chown, phir ~60s me sab wapas (apt+pip+yq+crane+node22) aur RSSHub ~2min me rebuild. | live incident + fix 2026-09-23 | - |
 
-## SOURCE (3)
+## SOURCE (4)
 
 | id | status | conf | statement | source | scope |
 |---|---|---|---|---|---|
 | `MEM-SRC-0001` | verified | high | UAI-COS V1 (22.7k chars) aur V2 (44.3k chars, 112 sections) ka original source: shared ChatGPT chat 'System Dekho Dhyan Se'. | url | - |
 | `MEM-SRC-0002` | verified | very_high | RSSHub (local :1200, 2015 namespaces) se 28 routes live-verified: Weibo hot search, Threads, Bilibili, Zhihu hot, GitHub activity, YouTube community, The Hindu, DNA India, NASA APOD, DeepMind/Anthropic blog, HuggingFace, arXiv, MIT OCW, Steam, Bandcamp, SoundCloud, GitLab, Substack, Medium, Pinterest, TikTok live, Wikipedia, HN threads, DockerHub, npm, EZTV, Telegram, Mastodon. Twitter/Instagram/Bluesky-keyword/Spotify/LinkedIn/Notion cookies ya token maangte hain -> boundary. | live test 2026-09-23 | - |
 | `MEM-SRC-0003` | verified | very_high | MASTER SELF-AUDIT blueprint = user ka original Phase 1 + Phase 2 structured prompt (35 sections). Verbatim import: 00_SYSTEM/02_UAI-COS_MASTER_SELF_AUDIT_SPEC.md (canonical hash e8d8620d378adc48, raw: 00_SYSTEM/_raw/prompt_master_self_audit_raw.md). Ye prompt capability discovery + access/research mapping + fallback + expansion maangta hai — zero-assumption, no-false-power. | user message 2026-09-23 (direct paste) | - |
+| `MEM-SRC-0004` | verified | very_high | PHASE 2 ACCESS MASTER BLUEPRINT: user ne dedicated Phase 2 prompt verbatim paste kiya (32 sections). Verbatim import: 00_SYSTEM/03_UAI-COS_PHASE_2_ACCESS_SPEC.md (canonical hash 8a801fdcfc9329e7, raw: 00_SYSTEM/_raw/prompt_phase_2_access_raw.md). Objective: blocked resource dekh kar 'access nahi hai' bolne ke bajaye legitimate alternative routes investigate karna. | user message 2026-09-23 (direct paste) | - |
 
 ## TEMPORAL (2)
 
