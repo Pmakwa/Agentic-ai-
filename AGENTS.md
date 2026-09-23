@@ -144,7 +144,22 @@ Rules for adding anything new: install → **live tokenless test** → evidence 
 
 ---
 
-## 7. One-command health check
+## 9. GitHub SYNC RULE (user ka standing instruction — 2026-09-23)
+
+- **Har baat-cheet aur har kaam repo me push hota rehta hai.** Naya rule, finding, report, tool, decision, evidence —
+  sab `github.com/Pmakwa/Agentic-ai-` par jaata hai.
+- Push karne ka command (token disk par save nahi hota):
+  ```bash
+  GITHUB_TOKEN=<token> bash tools/sync_to_github.sh "short message"
+  ```
+  Script: secret-scan → commit → push → summary. **(ye sirf tab jab user ne token diya ho / bolo "push kar do")**
+- Push ke baad **CI green** verify karo (Actions → "UAI-COS smoke checks") aur `PUSH_STATUS.md` me entry karo.
+- Progress tracker: **`PROJECT_BOARD/PHASES.md`** (P0…P18) — naya phase wahin add karo.
+- Standing rules ka poora record: **`CONVERSATION/04_STANDING_INSTRUCTIONS.md`** (language, boundary, evidence, sync, boot).
+
+---
+
+## 10. One-command health check
 
 ```bash
 cd uai-cos && \
@@ -158,7 +173,7 @@ Expected: provenance 4/4 PASS · audit 100/100 · tests 28 passed / 0 failed · 
 
 ---
 
-## 8. Security & privacy notes for the agent
+## 11. Security & privacy notes for the agent
 
 - Repo me **koi secret nahi hai** (scan kiya gaya). Credentials aayein to `.gitignore` me rakho, commit mat karo.
 - User ke personal data (chat log me) sensitive ho sakta hai — repo public karne se pehle user se confirm karo.

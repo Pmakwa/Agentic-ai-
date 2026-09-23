@@ -1,0 +1,55 @@
+### PHASE STATUS SNAPSHOT — 2026-09-23T06:27:32Z
+
+== agent_boot --json:
+{
+  "system": "UAI-COS v2.0",
+  "memory_records": 73,
+  "capability_map_version": "2.4",
+  "capability_map_sha256_16": "aef4a0c1a7bd36e9",
+  "evidence_files": 20,
+  "spec_sha256_16": "4aa1c6a1f872a3f3",
+  "repo_root": "/home/user/uai-cos"
+}
+
+== health checks:
+PROVENANCE OK — imported spec + raw extraction untouched hain, source traceable hai.
+
+HEALTH SCORE: 100/100
+  TOTAL: 28 passed, 0 failed
+===============================================
+
+== servers:
+  control-center :8000 -> 200
+  rsshub :1200 -> 200
+
+== social routes (live check):
+{
+  "rsshub_local": {
+    "http": 200,
+    "live": true
+  },
+  "gallery_dl": "1.32.13",
+  "redlib_safereddit": {
+    "http": 200,
+    "bytes": 47180
+  },
+  "redlib_artemislena": {
+    "http": 200,
+    "bytes": 47161
+  },
+  "fxtwitter": {
+    "http": 200,
+    "bytes": 682
+  },
+  "vxtwitter": {
+    "http": 200,
+    "bytes": 356
+  },
+  "bsky_public": {
+    "http": 200,
+    "bytes": 1051
+  },
+  "tiktok_oembed": {
+    "http": 200,
+    "bytes": 1383
+  },
